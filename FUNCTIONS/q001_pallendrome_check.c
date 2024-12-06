@@ -19,3 +19,14 @@ void isPallendrome(char str[]){//function define
         }
     printf("Pallendrome\n");
 }
+/*
+OUTPUT
+Enter number or character : 12345
+Not pallendrome
+
+Enter number or character : abba
+Pallendrome
+
+Enter number or character : 1221
+Pallendrome
+*/
