@@ -1,23 +1,23 @@
-// check pallendrome - optimized way
+// check palindrome - optimized way
 #include<stdio.h>
 #include<string.h>
-void isPallendrome(char*);//function declare
+void isPalindrome(char*);//function declare
 int main(){
     char str[10];
     printf("Enter number or character : ");
     scanf("%s",str);
-    isPallendrome(str);//fuction call
+    isPalindrome(str);//fuction call
     return 0;
 }
-void isPallendrome(char str[]){//function define
+void isPalindrome(char str[]){//function define
     int i,j;
     j = strlen(str)-1;
     for(i=0;i<j;i++,j--)
         if(str[i]!=str[j]){
-            printf("Not pallendrome\n");
+            printf("Not palindrome\n");
             return ;
         }
-    printf("Pallendrome\n");
+    printf("Palindrome\n");
 }
 /*
 OUTPUT
