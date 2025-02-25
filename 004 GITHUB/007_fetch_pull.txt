@@ -1,0 +1,16 @@
+FETCH REQUEST
+git fetch <remote-name>
+
+
+PULL REQUEST
+
+METHOD - 1 :
+git pull <remote-name> <branch-name>
+git pull origin main
+
+METHOD - 2 :
+git pull origin main --rebase
+git add .
+git rebase --continue
+
+git push origin main
