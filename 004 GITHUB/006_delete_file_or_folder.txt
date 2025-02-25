@@ -1,0 +1,7 @@
+delete any folder
+rm -rf folder_name (goto folder which folder contain the folder which will be delete)
+add, commit ,push
+
+delete any file
+git rm file_name (goto folder which folder contain the folder which will be delete)
+add, commit ,push
