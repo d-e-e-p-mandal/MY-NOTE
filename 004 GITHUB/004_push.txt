@@ -1,0 +1,20 @@
+git status
+
+untracked
+new files that git  doesn't yet track
+
+modified
+changed
+
+staged
+file is ready to be committed
+
+unmodified
+unchanged (no changed)
+
+
+git add <-filename->  (git add f1 f2) 
+    or
+git add .
+
+git commmit -m "commmit message"
