@@ -1,0 +1,16 @@
+METHOD - 1 : clone and status
+git clone [url]
+retrieve an entire repository from a hosted location via URL
+
+git status
+
+METHOD - 2 : remote / local repositories 
+git ls (to see the folder or files)
+git ls -a (to see the hidden folder or files)
+
+git init (.git folder initialization)
+git remote add origin <- link ->  (origin is the name)
+git remote -v (to verify remote)
+git branch (to check the branch)
+git branch -M main (to rename branch)
+git push origin main
