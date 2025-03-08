@@ -1,4 +1,6 @@
-c
+c 
+
+typecast
 #include<stdio.h>
 int main(){
     int x = 10;
@@ -10,5 +12,5 @@ int main(){
 
     printf("%f\n",p);
     //printf("%f\n",(float)(x+y)/2);
-    return 0;
+    return 0; 
 }
