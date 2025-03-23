@@ -1,0 +1,8 @@
+
+Components of STL
+The components of STL are the features provided by Standard Template Library (STL) in C++ that can be classified into 4 types:
+
+1. Containers
+2. Algorithms
+3. Iterators
+4. Functors
