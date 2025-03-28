@@ -22,4 +22,12 @@ git commmit -m "commmit message"  (staged)
 git push origin main
 
 
-//for 1st time 
+//for 1st time setting token 
+git push origin main
+user name 
+d-e-e-p-mandal
+pasword : token paste
+
+
+// token generate :
+go to setting in git hub - developer - generate classic token - give permission
