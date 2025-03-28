@@ -20,3 +20,6 @@ git add .   (modified)
 git commmit -m "commmit message"  (staged)
 
 git push origin main
+
+
+//for 1st time 
