@@ -26,6 +26,9 @@ git push origin main
 git pull origin main --rebase
 git push origin main
 
+or
+git push --force origin main
+
 
 //for 1st time setting token 
 git push origin main
