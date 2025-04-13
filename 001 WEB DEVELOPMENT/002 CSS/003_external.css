@@ -8,6 +8,7 @@ h1 {
 }
 
 p {
+    text-align: center;
     background-color: cadetblue;
     /* this is over the p but not which is inside p like b*/
 }
@@ -33,4 +34,7 @@ p#para {
 
 [id] {
     font-size: larger;
+}
+[anyname] { /* user define */
+    color: green;
 }
