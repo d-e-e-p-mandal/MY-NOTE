@@ -8,7 +8,7 @@ body {
     background-color: crimson;
 }
 
-.one {
+.parent :nth-child(1) {
     background-color: aquamarine;
     width: 50%;
     height: 50%; /* height of child will be pre declare before child height delcare */
