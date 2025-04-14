@@ -6,13 +6,19 @@ body {
     /* width: 800px; */
     height: 50%;
     background-color: crimson;
+    
 }
 
 .parent :nth-child(1) {
     background-color: aquamarine;
     width: 50%;
     height: 50%; /* height of child will be pre declare before child height delcare */
-    overflow : hidden;
+
+    padding: 10px;
+    border: 10px solid;
+    margin : 5px;
+    box-sizing: border-box;
+
     /* overflow: scroll; */
     /* word-break: break-all; */
 }
