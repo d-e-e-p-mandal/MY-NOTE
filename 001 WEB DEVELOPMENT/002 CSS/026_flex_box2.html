@@ -1,0 +1,53 @@
+<!-- flex-box -->
+<!-- align content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-box</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 50vh;
+            background-color: rgb(131, 141, 144);
+
+            /*flex-box */
+            display: flex;
+            flex-wrap: wrap;/* when to much box, it used to set box in new line(row)*/
+            /* align-items: end; */
+            align-content: center;/* It works to set the position and control of new line box positon, align itmes doesn't effect it */
+            justify-content: center;
+
+
+        }
+        .box{
+            height: 50px;
+            width: 80px;
+            background-color: rgb(126, 109, 211);
+            border: 3px solid;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+        <div class="box">box1</div>
+    </div>
+</body>
+</html>
