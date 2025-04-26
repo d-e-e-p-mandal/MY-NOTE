@@ -17,6 +17,9 @@ body {
     padding: 10px;
     border: 10px solid;
     margin : 5px;
+    /* margin: 10px 10px 10px 10px; */
+    /* margin-block: 10px; */ /* topdown */
+    /* margin-inline: 20px; */ /* left-right */
     box-sizing: border-box;
 
     /* overflow: scroll; */
