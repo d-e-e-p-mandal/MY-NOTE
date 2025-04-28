@@ -1,31 +1,33 @@
-// subsquence : arr = [1,2,3] : subsequence : not contigious and order maintain
-// base case index == 0 , from backside
 #include<bits/stdc++.h>
 using namespace std;
-void subsequence(int arr[], int n, vector<int>&sb, int index){
-    if( index < 0) {
-        for(auto it : sb){
-            cout<< it <<" ";
+
+void subsequence(int arr[], int n, vector<int>& sb, int index) {
+    if (index < 0) {
+        if (sb.empty()) {
+            cout << "{}";
+        } else {
+            for (auto it : sb) {
+                cout << it << " ";
+            }
         }
-        if(sb.size() == 0){
-            cout<<"{}";
-        }
-        cout<<endl;
-        return ;
+        cout << endl;
+        return;
     }
 
-    subsequence(arr,n,sb,index-1);
+    // Include the current element
     sb.push_back(arr[index]);
-    printf("\033[1;32m%dxx\033[0m\n",sb[0]);
-    subsequence(arr,n,sb,index-1);
-    printf("\033[1;31m%dxx\033[0m\n",sb[0]);
-    sb.pop_back();
-}
-int main(){
-    int n = 3;
-    int arr[] = {1,2,3};
-    vector<int>sb;
+    subsequence(arr, n, sb, index - 1);
 
-    subsequence(arr,n,sb,2);
+    // Exclude the current element (backtrack)
+    sb.pop_back();
+    subsequence(arr, n, sb, index - 1);
+}
+
+int main() {
+    int arr[] = {1, 2, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int> sb;
+
+    subsequence(arr, n, sb, n - 1);
     return 0;
 }
