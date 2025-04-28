@@ -22,12 +22,12 @@ struct node *createNode(){
 
 void display(struct node *head){
     if(head == NULL) {
-        printf("List is already empty......\n");
+        printf("\033[7;31mList is already empty......\033[0m\n");
         return;
     }
-    printf("Your List is : \n");
+    printf("\033[7;34mYour List is :\033[0m\n");
     while(head != NULL){
-        printf("%d\n",head->data);
+        printf("\033[7;34m%d\033[0m\n",head->data);
         head = head -> next;
     }
 }
@@ -173,7 +173,9 @@ int main(){
         printf("\033[1;31m5......for delete first\033[0m\n");
         printf("\033[1;31m6......for delete end\033[0m\n");
         printf("\033[1;31m7......for delete pos\033[0m\n");
-        printf("Others for exit .......");
+        printf("Others for exit ....... \n");
+
+        printf("Enter your choice : ");
         scanf("%d",&choice);
         
         switch (choice){
