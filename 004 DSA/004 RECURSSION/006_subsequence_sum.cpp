@@ -30,3 +30,8 @@ int main(){
 
     return 0;
 }
+/*
+OUTPUT :
+2 
+1 1 
+*/

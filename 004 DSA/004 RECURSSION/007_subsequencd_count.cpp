@@ -26,3 +26,4 @@ int main(){
     cout<<countSub(arr,n,0,sum,0) << endl; // initially courrent s (sum) = 0;
     return 0;
 }
+/* OUTPUT : 2 */

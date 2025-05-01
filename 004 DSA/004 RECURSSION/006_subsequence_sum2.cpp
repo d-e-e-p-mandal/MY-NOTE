@@ -34,3 +34,4 @@ int main(){
     isSubsequenceSum(arr, n, sum, sb, 0,0);
     return 0;
 }
+/* OUTPUT :2  */

@@ -30,3 +30,13 @@ int main(){
     subsequence(arr,n,sb,0);
     return 0;
 }
+/*
+1 2 3 
+1 2 
+1 3 
+1 
+2 3 
+2 
+3 
+{}
+*/
