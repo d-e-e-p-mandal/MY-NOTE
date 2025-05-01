@@ -3,14 +3,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 void subsequence(int arr[], int n, vector<int>&sb, int index){
-    // print all subsequence
-    for(auto it : sb){
-        cout<< it <<" ";
-    }
-    if(sb.size() == 0){
-        cout<<"{}";
-    }
-    cout<<endl;
 
     for(int i = index; i<n; i++){
         // pick element 
@@ -22,6 +14,14 @@ void subsequence(int arr[], int n, vector<int>&sb, int index){
         sb.pop_back();
     }
     
+    // print all subsequence
+    for(auto it : sb){
+        cout<< it <<" ";
+    }
+    if(sb.size() == 0){
+        cout<<"{}";
+    }
+    cout<<endl;
     
 
 }

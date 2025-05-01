@@ -1,8 +1,12 @@
 // subsquence : arr = [1,2,3] : subsequence : not contigious and order maintain
+// base case index == 0 , from backside
+
+//wrong answer : reverse ans
+
 #include<bits/stdc++.h>
 using namespace std;
 void subsequence(int arr[], int n, vector<int>&sb, int index){
-    if( index == n) {
+    if( index < 0) {
         for(auto it : sb){
             cout<< it <<" ";
         }
@@ -12,21 +16,19 @@ void subsequence(int arr[], int n, vector<int>&sb, int index){
         cout<<endl;
         return ;
     }
-    // pick element 
-    // add element in sb
+    
+    subsequence(arr,n,sb,index-1);
     sb.push_back(arr[index]);
-    subsequence(arr,n,sb,index+1);
-    // not pick element
-    //remove element and 
+  //  printf("\033[1;32m%dxx\033[0m\n",sb[0]);
+    subsequence(arr,n,sb,index-1);
+  //  printf("\033[1;31m%dxx\033[0m\n",sb[0]);
     sb.pop_back();
-    subsequence(arr,n,sb,index+1);
-
 }
 int main(){
     int n = 3;
     int arr[] = {1,2,3};
     vector<int>sb;
 
-    subsequence(arr,n,sb,0);
+    subsequence(arr,n,sb,2);
     return 0;
 }

@@ -12,14 +12,14 @@ bool isSubsequenceSum(int arr[], int n,int sum,vector<int> &sb, int index,int s)
         }
         return false;
     }
+
+    if(isSubsequenceSum(arr, n, sum, sb, index +1, s) == true) return true;
     s += arr[index];
     sb.push_back(arr[index]);
+
     if(isSubsequenceSum(arr, n, sum, sb, index +1, s) == true) return true;
-    
     s -= arr[index];
     sb.pop_back();
-    if(isSubsequenceSum(arr, n, sum, sb, index +1, s) == true) return true;
-    
 
     return false;
 }
