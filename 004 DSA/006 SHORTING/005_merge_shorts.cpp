@@ -36,6 +36,7 @@ void mergeShort(int arr[], int low, int high){
     mergeShort(arr,mid+1,high);
     merge(arr, low, mid, high);
 }
+
 int main(){
     int arr[] = { 1,4,2,10,5,6,8,3,4};
     int n = sizeof(arr)/sizeof(int);
@@ -47,3 +48,4 @@ int main(){
     }
     return 0;
 }
+/* OUTOUT : 1    2    3    4    4    5    6    8    10  */
