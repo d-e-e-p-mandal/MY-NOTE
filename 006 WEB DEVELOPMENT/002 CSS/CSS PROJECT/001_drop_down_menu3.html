@@ -1,0 +1,74 @@
+<!-- Drop Down Menu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 10px;
+        }
+        nav label{
+            height: 2em;
+            max-width : 40vh;
+            color: white;
+            background-color: rgb(35, 36, 32);
+            padding-inline: 20px;
+            display: flex;
+            justify-content :space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        nav :nth-child(2){
+            transform: rotate(90deg);
+        }
+
+        /* #c {
+            display: none;
+        } */
+
+        .container{
+            display: none;
+            max-width: 40vh;
+            background-color: lightgray;
+        }
+        .arrow{
+            transition: 0.9s ease;
+        }
+
+        #c:checked + nav  + .container {  /* checbox then nav then container */
+        display: block;
+        background-color: red;
+        }
+
+        #c:checked +nav label .arrow { /* check then nav so plus use then path for arrow */
+            transform: rotate(630deg);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <input type="checkbox" id ="c" >
+    <nav class="n">
+        <label for="c">
+            <div class="x">
+                 Menu :
+            </div>
+            <div class="arrow"> > </div>
+        </label>
+    </nav>
+    <div class="container">
+        <ul>
+            <li> item 1</li>
+            <li> item 2</li>
+            <li> item 3</li>
+            <li> item 4</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- Drop Down Menu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 10px;
+        }
+        nav label{
+            height: 2em;
+            max-width : 40vh;
+            color: white;
+            background-color: rgb(35, 36, 32);
+            padding-inline: 20px;
+            display: flex;
+            justify-content :space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        nav :nth-child(2){
+            transform: rotate(90deg);
+        }
+
+        /* #c {
+            display: none;
+        } */
+
+        .container{
+            display: none;
+            max-width: 40vh;
+            background-color: lightgray;
+        }
+
+        .n:has(#c:checked) + .container { /* has for check inside  */
+        /* .n:has(input:checked) + .container { */ /* same line*/
+        display: block;
+        background-color: red;
+    }
+    </style>
+
+</head>
+<body>
+    
+    <nav class="n">
+        <label>
+            <div class="x"> <!-- box will check any click on box -->
+                <input type="checkbox" id = "c"> Menu :
+            </div>
+            <div> > </div>
+        </label>
+    </nav>
+    <div class="container">
+        <ul>
+            <li> item 1</li>
+            <li> item 2</li>
+            <li> item 3</li>
+            <li> item 4</li>
+        </ul>
+    </div>
+</body>
+</html>
