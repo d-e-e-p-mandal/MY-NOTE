@@ -1,0 +1,120 @@
+<!-- Navigation Bar -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+           
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .page {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .usr-image {
+            display: flex;
+            position: relative;
+        }
+
+        .usr-image img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .usr-image p {
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        #course{
+            position: relative;
+        }
+        
+        .course-list {
+            display: none;
+            background-color: lightblue;
+            position: absolute;
+            border: 1px solid;
+            top:20;
+        }
+
+        .course-list ul {
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        #course:hover .course-list {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div>
+                logo
+            </div>
+            <div>
+                <ul class="page">
+                    <li> HOME </li>
+                    <li id="course"> COURSE
+                        <div class="course-list">
+                            <ul>
+                                <li> C </li>
+                                <li> C++ </li>
+                                <li> Java </li>
+                                <li> Paython </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li> ABOUT US </li>
+                    <li> CONTACT US </li>
+                </ul>
+            </div>
+            <div class="user">
+                <div>user name </div>
+                <div class="usr-image">
+                    <img src="/GITHUB/COLLEGE-PROGRAMMING/005%20WEB%20TECHNOLOGY/CSS%20PROJECT/image_passport_size.jpg"
+                        alt="Profile Image">
+                    <p>.</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>
