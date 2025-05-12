@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            padding-inline: 10px;
+            width: 100%;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            align-items: center;
+        }
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .page {
+            margin-inline: auto;
+        }
+
+        .page-content {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile {
+            position: relative;
+            display: flex;
+        }
+
+        .profile-image img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .status-dot {
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            height: 10px;
+            width: 10px;
+            background-color: green;
+            border: 2px solid white;
+            border-radius: 50%;
+
+        }
+
+        #course {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: -20px;
+
+
+        }
+
+        .course-list {
+            position: absolute;
+            top: 20px;
+            background-color: lightblue;
+            display: none;
+        }
+
+        .course-list ul {
+            list-style-type: disc;
+            padding: 20px;
+        }
+
+        nav input[type="checkbox"] {
+            display: none;
+        }
+
+        #course:hover .course-list {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                background-color: red;
+                padding: 10px;
+            }
+
+            header {
+                align-items: center;
+            }
+
+            .profile {
+                margin-left: auto;
+
+            }
+
+            nav {
+                flex-direction: column-reverse;
+                width: 100%;
+                position: relative;
+                transition: all ease-in-out 0.2s;
+            }
+
+            .page {
+                margin-right: -10px;
+                width: 40%;
+                position: absolute;
+                top: 40px;
+                right: 0px;
+                background-color: rgb(152, 161, 122);
+
+                border-top: 2px solid white;
+                border-bottom: 2px solid white;
+                border-left: 2px solid white;
+                display: none;
+            }
+
+            .page-content>li {
+                width: 100px;
+            }
+
+            .page-content {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0;
+            }
+
+            .course-list{
+                display: none !important;
+                position: static;
+                background-color: rgb(152, 161, 122);
+            }
+
+            nav:has(#profile-check:checked) .page {
+                display: block;
+            }
+
+            #cr:checked + li .course-list{
+                display: block !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            logo
+        </div>
+        <nav>
+            <div class="page">
+                <ul class="page-content">
+                    <li>HOME</li>
+                    <input type="checkbox" id="cr">
+                    <li id="course"> <label for="cr">COURSE</label>
+                        <div class="course-list">
+                            <ul>
+                                <li>C</li>
+                                <li>C++</li>
+                                <li>Python</li>
+                                <li>Java</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>ABOUT US</li>
+                    <li>CONTACT US</li>
+                </ul>
+            </div>
+            <div class="profile">
+                <p> User Name</p>
+                <label>
+                    <input type="checkbox" id="profile-check">
+                    <div class="profile-image">
+                        <img src="/GITHUB/COLLEGE-PROGRAMMING/005%20WEB%20TECHNOLOGY/CSS%20PROJECT/image_passport_size.jpg"
+                            alt="Profile Image">
+                    </div>
+                </label>
+                <p class="status-dot"></p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil expedita vero rerum, delectus quis ipsam qui,
+        dolor, doloribus fuga nisi ad maxime deserunt quibusdam praesentium iure cupiditate assumenda culpa. Aperiam!
+    </main>
+</body>
+
+</html>
