@@ -1,0 +1,85 @@
+<!-- Variable -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    <script>
+        // _(underscore) and $(dollar sign) also valid 
+        // 1.let : 
+        // 2.const :
+        // 3.var : used before 2015 (not recomended)
+        
+        
+        // number :
+
+        // int
+        let a = 50;
+        document.write(typeof a + "<br>")
+        const c = 10;
+        b = 10;//it is global veriable 
+        
+        document.write("a = " + a + "<br>");
+        document.write("<p> x = " + b + "</p>");
+
+        let m;
+        // document.write("<br"+m);
+        console.log(m); // undefine
+        // const n; //error
+        // console.log(n); 
+
+        // bigint
+
+        let p = BigInt("123");
+        document.write("<br> p = " + p +"<br>");
+
+        // float
+        let d = 2.5;
+        document.write("d = " +d+"<br>");
+
+        // boolean
+        let isFollow = true;
+        document.write(isFollow);
+
+        //arr
+        let arr = [1,2,3];
+        document.write("<br><br>"+arr);
+        document.write("<br>" + typeof(arr) + "<br>" )
+
+
+        // string 
+        let str1 = "Deep Mandal";
+        document.write("<br> <br>" + typeof(str1) + "<br>" )
+        document.write("<br>" + str1);
+        
+        let str2 = 'Mandal Deep'; // single quote
+        document.write("<br>" + str2);
+        
+        let str3 = `Deep 
+            Mandal `; // in console it will print in new line 
+        document.write("<br>" + str3);
+        console.log(str3);
+
+        //object
+        let obj = { a: 1, b: 2, c: 3 };  // Keys must be named
+        document.write("<br><br><br>" + typeof obj); // Outputs: "object"
+
+
+        const student = {
+            fulName : "Rahul Kumar",
+            age : 20,
+            cgpa : 4.2,
+            isPass : true,
+        };
+        document.write("<br>" + student.age);
+        document.write("<br>" + student['age']);
+        document.write("<br>" + student["age"]);
+        console.log(student);
+    </script>
+</body>
+
+</html>

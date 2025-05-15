@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Input - All DOM Methods</title>
+</head>
+<body>
+
+  <!-- ID -->
+  Name: <input type="text" id="name"><br><br>
+
+  <!-- Tag name (second input will be used for age) -->
+  Age: <input type="number"><br><br>
+
+  <!-- Name -->
+  Gender:
+  <input type="radio" name="gender" value="Male" checked> Male
+  <input type="radio" name="gender" value="Female"> Female<br><br>
+
+  <!-- Class name + querySelectorAll -->
+  Hobbies:
+  <input type="checkbox" class="hobby" value="Reading"> Reading
+  <input type="checkbox" class="hobby" value="Music"> Music
+  <input type="checkbox" class="hobby" value="Travel"> Travel<br><br>
+
+  <!-- querySelector by ID -->
+  Country:
+  <select id="country">
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+  </select><br><br>
+
+  <!-- querySelector for textarea -->
+  Message:<br>
+  <textarea rows="4" cols="40"></textarea><br><br>
+
+  <button onclick="getInputValues()">Submit</button>
+
+  <div id="output" style="margin-top:20px; padding:10px; background:#f2f2f2;"></div>
+
+  <script>
+    function getInputValues() {
+      // 1. By ID
+      let name = document.getElementById("name").value;
+
+      // 2. By Tag Name (second input is age)
+      let inputs = document.getElementsByTagName("input");
+      let age = inputs[1].value;
+      //querySelector
+      //let age = document.querySelector('input[type="number"]').value;
+
+      // 3. By Name (radio gender)
+      let genderRadios = document.getElementsByName("gender");
+      let gender = "";
+      for (let i = 0; i < genderRadios.length; i++) {
+        if (genderRadios[i].checked) {
+          gender = genderRadios[i].value;
+          break;
+        }
+      }
+      //querySelector by name or attribute :
+      //document.querySelector('[name="yourName"]')
+
+      // 4. By Class Name
+      let hobbies1 = [];
+      let hobbyBoxes = document.getElementsByClassName("hobby");
+      for (let i = 0; i < hobbyBoxes.length; i++) {
+        if (hobbyBoxes[i].checked) {
+          hobbies1.push(hobbyBoxes[i].value);
+        }
+      }
+
+      // 5. By querySelector
+      let country = document.querySelector("#country").value;
+      let message = document.querySelector("textarea").value;
+
+      // 6. By querySelectorAll (again for hobbies)
+      let hobbies2 = [];
+      let hobbyCheck = document.querySelectorAll(".hobby");
+      hobbyCheck.forEach(hobby => {
+        if (hobby.checked) {
+          hobbies2.push(hobby.value);
+        }
+      });
+
+      // Show output
+      document.getElementById("output").innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Age:</strong> ${age}</p>
+        <p><strong>Gender:</strong> ${gender}</p>
+        <p><strong>Hobbies (ClassName):</strong> ${hobbies1.join(", ")}</p>
+        <p><strong>Hobbies (querySelectorAll):</strong> ${hobbies2.join(", ")}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>

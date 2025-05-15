@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo: innerHTML, innerText, textContent, value</title>
+</head>
+
+<body>
+
+    <div>
+        <label for="a">Enter a :</label>
+        <input type="text" id="a">
+    </div>
+    <br>
+    <div>
+        <label for="b">Enter b :</label>
+        <input type="text" id="b">
+    </div>
+    <br>
+    <div>
+        <label for="c">Enter c :</label>
+        <input type="text" id="c">
+    </div>
+    <br>
+    <div>
+        <label for="d">Enter d :</label>
+        <input type="text" id="d">
+    </div>
+    <br>
+    <div>
+        <button type="button" onclick="display()">Display</button>
+    </div>
+    <br>
+
+    <!-- Output areas -->
+    <div id="htmlOutput"></div>             <!-- innerHTML -->
+    <p id="textOutput"></p>                 <!-- innerText -->
+    <p id="textContentOutput"></p>          <!-- textContent -->
+    <input type="text" id="valueOutput" readonly> <!-- value -->
+    <p id="dOutput"></p>                    <!-- output for d -->
+
+    <script>
+        function display() {
+            let x = document.getElementById("a").value;
+            let y = document.getElementById("b").value;
+            let z = document.getElementById("c").value;
+            let d = document.getElementById("d").value;
+
+            document.getElementById("htmlOutput").innerHTML = "<strong>a = " + x + "</strong>";
+            document.getElementById("textOutput").innerText = "b = " + y;
+            document.getElementById("textContentOutput").textContent = "c = " + z;
+            document.getElementById("valueOutput").value = "c = " + z;
+
+            // You can display `d` using any method, let's use textContent again
+            document.getElementById("dOutput").textContent = "d = " + d;
+        }
+    </script>
+
+</body>
+
+</html>

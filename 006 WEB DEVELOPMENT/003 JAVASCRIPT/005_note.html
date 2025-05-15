@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Content Methods - Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .note {
+            background-color: #fff;
+            padding: 20px;
+            border-left: 6px solid #4CAF50;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 90%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        p.example {
+            background: #f1f1f1;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Content Methods - Notes</h1>
+
+    <div class="note">
+        <h2>1. <code>innerHTML</code></h2>
+        <p>Gets or sets the HTML content inside an element. Parses HTML tags.</p>
+        <p class="example"><strong>Example:</strong><br>
+            <code>element.innerHTML = "&lt;b&gt;Hello&lt;/b&gt;";</code><br>
+            <strong>Output:</strong> <b>Hello</b>
+        </p>
+    </div>
+
+    <div class="note">
+        <h2>2. <code>innerText</code></h2>
+        <p>Gets or sets the visible plain text inside an element. Ignores HTML tags. Slower than <code>textContent</code>.</p>
+        <p class="example"><strong>Example:</strong><br>
+            <code>element.innerText = "&lt;b&gt;Hello&lt;/b&gt;";</code><br>
+            <strong>Output:</strong> &lt;b&gt;Hello&lt;/b&gt;
+        </p>
+    </div>
+
+    <div class="note">
+        <h2>3. <code>textContent</code></h2>
+        <p>Gets or sets all the text in an element, including hidden text. Also ignores HTML tags. Faster than <code>innerText</code>.</p>
+        <p class="example"><strong>Example:</strong><br>
+            <code>element.textContent = "&lt;b&gt;Hello&lt;/b&gt;";</code><br>
+            <strong>Output:</strong> &lt;b&gt;Hello&lt;/b&gt;
+        </p>
+    </div>
+
+    <div class="note">
+        <h2>4. <code>value</code></h2>
+        <p>Gets or sets the value of form elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, or <code>&lt;select&gt;</code>.</p>
+        <p class="example"><strong>Example:</strong><br>
+            <code>let inputVal = document.getElementById("myInput").value;</code>
+        </p>
+    </div>
+
+    <h2>🔍 Comparison Table</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Parses HTML?</th>
+            <th>Used on &lt;input&gt;?</th>
+            <th>Includes Hidden Text?</th>
+            <th>Performance</th>
+            <th>Common Use</th>
+        </tr>
+        <tr>
+            <td><code>innerHTML</code></td>
+            <td>✅ Yes</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>⚠️ Medium</td>
+            <td>Inject HTML</td>
+        </tr>
+        <tr>
+            <td><code>innerText</code></td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>❌ Slower</td>
+            <td>Visible text only</td>
+        </tr>
+        <tr>
+            <td><code>textContent</code></td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+            <td>✅ Faster</td>
+            <td>All text content</td>
+        </tr>
+        <tr>
+            <td><code>value</code></td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+            <td>N/A</td>
+            <td>✅ Fast</td>
+            <td>Form inputs</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
