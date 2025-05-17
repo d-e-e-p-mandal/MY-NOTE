@@ -1,3 +1,4 @@
+// using 2 queue
 #include<bits/stdc++.h>
 using namespace std;
 class Stack{
