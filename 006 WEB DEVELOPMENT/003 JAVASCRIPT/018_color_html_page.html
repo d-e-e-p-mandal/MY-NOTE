@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styled Output Using JS Function</title>
+</head>
+<body>
+
+  <!-- 🔲 Optional output target -->
+  <div id="outputArea"></div>
+
+<script>
+  /**
+   * ✅ Function to output styled text
+   * If `targetId` is provided, the output goes inside that element.
+   * Otherwise, it falls back to `document.write()`
+   */
+  function writeStyled(text, color = 'black', fontSize = '16px', fontWeight = 'normal', bgColor = '', padding = '', targetId = '') {
+    // Build style string
+    let style = `color: ${color}; font-size: ${fontSize}; font-weight: ${fontWeight};`;
+    if (bgColor) style += ` background-color: ${bgColor};`;
+    if (padding) style += ` padding: ${padding}; border-radius: 5px;`;
+
+    // Create HTML string
+    //document.write(`<p style="${style}">${text}</p>`); // this type
+    const html = `<p style="${style}">${text}</p>`;
+
+    // If a target ID is provided, insert there
+    if (targetId && document.getElementById(targetId)) {
+      document.getElementById(targetId).innerHTML += html;
+    } else {
+      // Else fallback to document.write
+      document.write(html);
+    }
+  }
+
+  // ✅ Using the function with document.write
+  writeStyled("This is red text", "red");
+  writeStyled("This is green and bold", "green", "16px", "bold");
+  writeStyled("Styled like a badge", "white", "14px", "normal", "blue", "6px 12px");
+
+  // ✅ With a variable
+  let name = "Alice";
+  writeStyled(`Welcome, ${name}!`, "teal", "18px", "italic");
+
+  // ✅ Writing to a specific ID instead of document.write
+  writeStyled("This is inside #outputArea", "purple", "18px", "bold", "lightyellow", "8px 12px", "outputArea");
+</script>
+
+</body>
+</html>

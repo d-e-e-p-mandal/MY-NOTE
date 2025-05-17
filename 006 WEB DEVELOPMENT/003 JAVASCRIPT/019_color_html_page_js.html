@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styled Text in Specific Element</title>
+  <style>
+    #outputArea {
+      border: 2px dashed gray;
+      padding: 10px;
+      margin: 20px;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔲 Target container -->
+  <div id="outputArea">
+    <h3>Output Goes Here 👇</h3>
+  </div>
+
+<script>
+  // ✅ Function to create a styled <p> and insert into a specific ID
+  function insertStyledTextInId(text, id, color = 'black', fontSize = '16px', fontWeight = 'normal', bgColor = '', padding = '') {
+    const p = document.createElement('p'); // Create paragraph element
+    p.textContent = text;
+
+    // Apply inline styles
+    p.style.color = color;
+    p.style.fontSize = fontSize;
+    p.style.fontWeight = fontWeight;
+    if (bgColor) p.style.backgroundColor = bgColor;
+    if (padding) p.style.padding = padding;
+
+    p.style.borderRadius = '4px';
+
+    // Find target by ID and append
+    const container = document.getElementById(id);
+    if (container) {
+      container.appendChild(p);
+      /*	•	createElement() creates a new HTML element (but it’s not in the DOM yet).
+	        •	appendChild() adds that element to the page (as a child of the container). */
+
+    } else {
+      console.error("Element with ID", id, "not found.");
+    }
+  }
+
+  // ✅ Use the function to write to #outputArea
+  insertStyledTextInId("This is red text", "outputArea", "red");
+  insertStyledTextInId("Green & bold", "outputArea", "green", "16px", "bold");
+  insertStyledTextInId("Badge style", "outputArea", "white", "14px", "normal", "blue", "6px 12px");
+
+  // ✅ With a variable
+  let name = "Alice";
+  insertStyledTextInId(`Hello, ${name}!`, "outputArea", "purple", "18px", "italic");
+</script>
+
+</body>
+</html>

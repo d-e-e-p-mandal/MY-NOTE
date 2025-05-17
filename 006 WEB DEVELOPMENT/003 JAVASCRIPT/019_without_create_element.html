@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styled Text Without createElement()</title>
+  <style>
+    #outputArea {
+      border: 2px dashed gray;
+      padding: 10px;
+      margin: 20px;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔲 Target container -->
+  <div id="outputArea">
+    <h3>Output Goes Here 👇</h3>
+  </div>
+
+<script>
+  // ✅ Function using innerHTML (no createElement)
+  function insertStyledHTML(text, id, color = 'black', fontSize = '16px', fontWeight = 'normal', bgColor = '', padding = '') {
+    const container = document.getElementById(id);
+
+    if (container) {
+      // Create inline style string
+      let style = "color:" + color + "; font-size:" + fontSize + "; font-weight:" + fontWeight + ";";
+      if (bgColor) style += " background-color:" + bgColor + ";";
+      if (padding) style += " padding:" + padding + "; border-radius:5px;";
+
+      // Append styled <p> tag to container
+      container.innerHTML += '<p style="' + style + '">' + text + '</p>';
+    } else {
+      console.error("Element with ID '" + id + "' not found.");
+    }
+  }
+
+  // ✅ Use the function to write to #outputArea
+  insertStyledHTML("This is red text", "outputArea", "red");
+  insertStyledHTML("Green & bold", "outputArea", "green", "16px", "bold");
+  insertStyledHTML("Badge style", "outputArea", "white", "14px", "normal", "blue", "6px 12px");
+
+  let name = "Alice";
+  insertStyledHTML("Hello, " + name + "!", "outputArea", "purple", "18px", "italic");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String Display with Single, Double, Backticks</title>
+</head>
+<body>
+
+<script>
+  // Strings with different quotes
+  let doubleQuoteStr = "This is a string using \"double quotes\"";
+  let singleQuoteStr = 'This is a string using \'single quotes\'';
+  let backtickStr = `This is a string using backticks & variable: ${doubleQuoteStr}`;
+
+  // Console.log without using $
+  console.log("Without $:");
+  console.log("Double quote string: " + doubleQuoteStr);
+  console.log("Single quote string: " + singleQuoteStr);
+  console.log("Backtick string: " + backtickStr);
+
+  // Console.log using $
+  console.log("\nWith $:");
+  console.log(`Double quote string: ${doubleQuoteStr}`);
+  console.log(`Single quote string: ${singleQuoteStr}`);
+  console.log(`Backtick string: ${backtickStr}`);
+
+  // document.write without using $
+  document.write("<h3>Without $:</h3>");
+  document.write("<p>Double quote string: " + doubleQuoteStr + "</p>");
+  document.write("<p>Single quote string: " + singleQuoteStr + "</p>");
+  document.write("<p>Backtick string: " + backtickStr + "</p>");
+
+  // document.write using $
+  document.write("<h3>With $:</h3>");
+  document.write(`<p>Double quote string: ${doubleQuoteStr}</p>`);
+  document.write(`<p>Single quote string: ${singleQuoteStr}</p>`);
+  document.write(`<p>Backtick string: ${backtickStr}</p>`);
+</script>
+
+</body>
+</html>

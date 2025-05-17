@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All .style Properties Example</title>
+</head>
+<body>
+<p>hlw</p>
+<div id="myElement">This element will be styled with many .style properties</div>
+
+<script>
+  // Function to apply many .style properties with comments
+  function applyAllStyles(id) {
+    const el = document.getElementById(id);
+    if (!el) {
+      console.warn(`No element with id="${id}" found.`);
+      return;
+    }
+
+    // Text styles
+    el.style.color = "red";                   // Text color
+    el.style.backgroundColor = "yellow";      // Background color
+    el.style.fontSize = "18px";                // Font size
+    el.style.fontWeight = "bold";              // Bold text
+    el.style.fontStyle = "italic";             // Italic text
+    el.style.textAlign = "center";             // Center text
+    el.style.textDecoration = "underline";     // Underline text
+    el.style.letterSpacing = "2px";            // Spacing between letters
+    el.style.lineHeight = "1.5";                // Line height
+
+    // Box model
+    el.style.width = "300px";                   // Width
+    el.style.height = "150px";                  // Height
+    el.style.margin = "20px auto";              // Margin (auto center horizontally)
+    el.style.padding = "15px";                   // Padding inside
+    el.style.border = "3px solid black";        // Border style
+    el.style.borderRadius = "10px";              // Rounded corners
+    el.style.boxSizing = "border-box";           // Include padding/border in size
+
+    // Display & positioning
+    el.style.display = "block";                  // Display type
+    el.style.position = "relative";              // Positioning type
+    el.style.top = "10px";                        // Vertical offset
+    el.style.left = "0px";                        // Horizontal offset
+    el.style.zIndex = "10";                       // Stack order
+
+    // Effects and misc
+    el.style.opacity = "0.85";                    // Opacity/transparency
+    el.style.visibility = "visible";              // Visibility
+    el.style.cursor = "pointer";                   // Cursor on hover
+    el.style.overflow = "hidden";                  // Hide overflow content
+    el.style.whiteSpace = "nowrap";                 // Prevent line breaks
+    el.style.textOverflow = "ellipsis";             // Ellipsis on overflow
+    el.style.boxShadow = "4px 4px 10px rgba(0,0,0,0.5)"; // Shadow effect
+    el.style.transition = "all 0.3s ease";          // Smooth transitions
+
+    // Flexbox (optional, overrides display:block)
+    el.style.display = "flex";
+    el.style.justifyContent = "center";            // Align items horizontally
+    el.style.alignItems = "center";                 // Align items vertically
+
+    // Transform and filters
+    el.style.transform = "rotate(3deg) scale(1.05)";  // Rotate and scale
+    el.style.filter = "blur(0)";                       // Filter effect (none here)
+  }
+
+  // Call the function to style the element with id 'myElement'
+  applyAllStyles("myElement");
+</script>
+
+</body>
+</html>
