@@ -40,12 +40,10 @@ int main(){
     s.push(40);
 
     //display
-    
-
     int x =s.pop();
     cout<<x<<endl;
 
     cout<<s.peek()<<endl;
 
-    
+    return 0; // auto matic call destructor
 }

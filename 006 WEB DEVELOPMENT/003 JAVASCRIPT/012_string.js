@@ -1,4 +1,4 @@
-/*  string :
+/*  string : immutable in javascript (value can not be change)
         In JavaScript, a string is a sequence of characters used to represent text. Strings are one of the primitive data types. */
 
 //  How to Create a String
