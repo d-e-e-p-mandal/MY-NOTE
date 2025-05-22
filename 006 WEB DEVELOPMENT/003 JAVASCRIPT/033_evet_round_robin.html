@@ -1,0 +1,60 @@
+<!-- event performe -->
+<!-- java script event get more piority -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para1,.para2,.para3{
+            height: 200px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .para1{  
+            color: white;
+            background-color: red;
+        }
+        .para2{  
+         
+            background-color: green;
+        }
+        .para3{  
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p class="para1"> I am red </p>
+    <button id="btn" onclick="makegreen()"> CLICK </button>
+    
+    <script>
+        let para = document.querySelector(".para1");
+        let btn = document.getElementById("btn");
+        
+        let a = 0;
+        btn.addEventListener("click",()=>{
+            ++a;
+            if(a == 1){
+                para.textContent = `I am green`;
+                para.classList.add("para2");
+            }
+            else if(a == 2){
+                para.textContent = `I am blue`;
+                para.classList.add("para3");
+            }
+            else{
+                para.textContent = `I am red`;
+                para.classList.remove("para2","para3");
+                // para.classList.remove("para3");
+                a%=3;
+            }
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Style using Dom -->
+<!-- using js inline-css applied -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box"> BOX </div>
+
+    <script>
+        let x = document.getElementsByTagName("div")[0];
+        x.style.backgroundColor = "green";
+
+        let btn = document.createElement("button");
+        btn.innerText = "click";
+        btn.style.height = "16px";
+        btn.style.width = "60px";
+
+        document.getElementById("box").after(btn);
+        // document.getElementById("box").before(btn);
+        // document.getElementById("box").append(btn);
+        // document.getElementById("box").prepend(btn);
+        // document.getElementById("box").appendChild(btn);
+    </script>
+</body>
+</html>

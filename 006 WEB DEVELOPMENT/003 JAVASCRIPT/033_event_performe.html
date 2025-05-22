@@ -1,0 +1,47 @@
+<!-- event performe -->
+<!-- java script event get more piority -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para1{  
+            color: white;
+            background-color: red;
+        }
+        .para2{  
+            font-size: 40px;
+            background-color: green;
+        }
+        .para3{  
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p class="para1"> I am red </p>
+    <button id="btn" onclick="makegreen()"> CLICK </button>
+
+    <script>
+        let para = document.querySelector(".para1");
+        let btn = document.getElementById("btn");
+        
+        btn.onclick = ()=>{
+            para.textContent = "I am blue";
+            para.classList.add("para3");
+        }
+        
+        
+        function makegreen() {
+            para.textContent = "I am green";
+            para.classList.add("para2");
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

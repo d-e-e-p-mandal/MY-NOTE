@@ -1,0 +1,33 @@
+<!-- Q. Create a<p> tag in html, give it a class & some styling. Now create a new class in CSS and try to append
+this class to the <p> element.-->
+<!-- Did you notice, how overwrite the class name when you add a new one? Solve this problem using clasList.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container1{
+            color: white;
+            background-color: red;
+        }
+        .container2{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1"> This is container </div>
+    <script>
+        let container = document.querySelector(".container1");
+
+        //container.setAttribute("class","container2");
+        
+        container.classList.add("container2");
+
+
+        //container.setAttribute("style","background-color :  red");
+        </script>
+</body>
+</html>

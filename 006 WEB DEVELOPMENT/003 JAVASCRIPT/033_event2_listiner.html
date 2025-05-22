@@ -1,0 +1,57 @@
+<!-- Two or more operation can performe -->
+<!-- event performe -->
+<!-- java script event get more piority -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para1{  
+            color: white;
+            background-color: red;
+        }
+        .para2{  
+            background-color: green;
+        }
+        .para3{  
+            font-size: 30px;
+        }
+        .para3{  
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p class="para1"> I am red </p>
+    <button id="btn"> CLICK </button>
+
+    <script>
+        let para = document.querySelector(".para1");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click",(evt)=>{
+            para.textContent = "I am green";
+            para.classList.add("para2");
+            console.log(evt.type);
+            console.log(evt.target);
+            console.log(evt.clientX,evt.clientY);
+        });
+
+        btn.addEventListener("click",()=>{
+            para.classList.add("para3");
+        });
+        const x = ()=>{
+            para.classList.add("para4");
+        };
+        btn.addEventListener("click",x);
+        
+        //remove
+        btn.removeEventListener("click",x);
+
+
+    </script>
+
+</body>
+</html>
