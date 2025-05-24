@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      height: 60vh;
+      width: 60vh;
+      background-color: lightslategrey;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      height: 20vh;
+      width: 20vh;
+      background-color: cornflowerblue;
+      border: 2px solid;
+      display: flex;
+      font-size: 8vh;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .box-x {
+      color: white;
+      background-color: red;
+    }
+
+    .box-o {
+      color: white;
+      background-color: green;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    #reset-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h3>Mini Game: (vs Computer)</h3>
+
+  <div class="container" id="game-board">
+    <!-- 9 game boxes -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div id="status"></div>
+  <button id="reset-btn">Reset Game</button>
+
+  <script>
+    const boxes = document.querySelectorAll(".box");
+    const status = document.getElementById("status");
+    const resetBtn = document.getElementById("reset-btn");
+    let gameOver = false;
+
+    const winPatterns = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    function checkWinner(player) {
+      return winPatterns.some(pattern =>
+        pattern.every(index => boxes[index].textContent === player)
+      );
+    }
+
+    function isDraw() {
+      return Array.from(boxes).every(box => box.textContent !== "");
+    }
+
+    function endGame(message) {
+      gameOver = true;
+      status.textContent = message;
+    }
+
+    function computerMove() {
+      if (gameOver) return;
+
+      let emptyBoxes = Array.from(boxes).filter(b => b.textContent === "");
+      if (emptyBoxes.length === 0) return;
+
+      let randBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
+      randBox.textContent = "O";
+      randBox.classList.add("box-o");
+
+      if (checkWinner("O")) {
+        endGame("Computer wins!");
+      } else if (isDraw()) {
+        endGame("It's a draw!");
+      }
+    }
+
+    boxes.forEach(box => {
+      box.addEventListener("click", () => {
+        if (box.textContent !== "" || gameOver) return;
+
+        box.textContent = "X";
+        box.classList.add("box-x");
+
+        if (checkWinner("X")) {
+          endGame("You win!");
+        } else if (isDraw()) {
+          endGame("It's a draw!");
+        } else {
+          setTimeout(computerMove, 300);
+        }
+      });
+    });
+
+    resetBtn.addEventListener("click", () => {
+      boxes.forEach(box => {
+        box.textContent = "";
+        box.classList.remove("box-x", "box-o");
+      });
+      status.textContent = "";
+      gameOver = false;
+    });
+  </script>
+</body>
+</html>
