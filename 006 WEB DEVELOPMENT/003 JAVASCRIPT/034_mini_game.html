@@ -1,166 +1,215 @@
+<!-- button disabled function -->
+<!-- text shadow-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mini Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
+      box-sizing: border-box;
     }
 
     h3 {
-      margin-bottom: 20px;
+      background-color: lightcoral;
+      font-size: 10vmin;
+      text-decoration: underline;
+      text-align: center;
+      margin: 10vmin;
     }
 
     .container {
-      height: 60vh;
-      width: 60vh;
-      background-color: lightslategrey;
+      height: 60vmin;
+      width: 60vmin;
+      margin-inline: auto;
+      background-color: lightslategray;
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5vmin;
     }
 
     .box {
-      height: 20vh;
-      width: 20vh;
-      background-color: cornflowerblue;
-      border: 2px solid;
-      display: flex;
-      font-size: 8vh;
-      align-items: center;
-      justify-content: center;
+      height: 18vmin;
+      width: 18vmin;
+      background-color: rgb(191, 197, 202);
       cursor: pointer;
-      user-select: none;
+      ;
+      /* margin: 6px;
+      padding: 2px; */
+
+      border-radius: 40px;
+
+      /* */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10vmin;
     }
 
-    .box-x {
+    .x-btn {
       color: white;
       background-color: red;
+      opacity: 0.5;
     }
 
-    .box-o {
+    .o-btn {
       color: white;
       background-color: green;
+      opacity: 0.5;
     }
 
-    #status {
-      margin-top: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
+    /* .x-btn:disabled {
+      background-color: red;
+      color: white;
+      
     }
 
-    #reset-btn {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
+    .o-btn:disabled {
+      background-color: green;
+      color: white;
+      
+    } */
+
+    #res {
+      text-wrap: nowrap;
+      color: brown;
+      position: absolute;
+      font-size: 20vmin;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: ease-in-out 9.0;
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 2px #333,
+        6px 6px 4px rgba(0, 0, 0, 0.6);
+    }
+    button[type = "reset"]{
+      
+      height: 10vmin;
+      width: 20vh;
+      padding: 1%;
+      margin: 2vmin;
+      transform: translate(43vw,0);
+      background-color: rgb(157, 174, 234);
+      border-radius: 10vmin;
+      box-shadow: 0px 2px 2px blueviolet;
     }
   </style>
-</head>
-<body>
-  <h3>Mini Game: (vs Computer)</h3>
 
-  <div class="container" id="game-board">
-    <!-- 9 game boxes -->
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+  
+</head>
+
+<body>
+  <h3>: Mini Game : </h3>
+
+  <div class="container">
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
   </div>
 
-  <div id="status"></div>
-  <button id="reset-btn">Reset Game</button>
+  <div id="res"></div>
+
+  <button type="reset">Reset Game </button>
+
 
   <script>
-    const boxes = document.querySelectorAll(".box");
-    const status = document.getElementById("status");
-    const resetBtn = document.getElementById("reset-btn");
-    let gameOver = false;
+    let boxes = document.querySelectorAll(".box");
+    let resetButton = document.querySelector("button[type=reset]");
 
-    const winPatterns = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
+    let turn = 'x';
+    let count = 0;
+    let winPatterns = [[0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]];
 
-    function checkWinner(player) {
-      return winPatterns.some(pattern =>
-        pattern.every(index => boxes[index].textContent === player)
-      );
+    for (let box of boxes) {
+      box.addEventListener("click", () => {
+        if (turn == 'x') {
+          box.innerHTML = "X";
+          box.classList.add("x-btn");
+          box.disabled = true;
+
+          turn = 'o';
+        }
+        else {
+          box.innerHTML = "O";
+          box.classList.add("o-btn");
+          box.disabled = true;
+          turn = 'x';
+        }
+        count++;
+        let win = isWinner();
+
+        if (count == 9 && !win) {
+          document.querySelector("#res").textContent = "DRAW";
+          resetButton.textContent = " Reset Game";
+        }
+      });
     }
 
-    function isDraw() {
-      return Array.from(boxes).every(box => box.textContent !== "");
+    const showWinner = (win) => {
+      disableButton();
+      document.querySelector("#res").textContent = "Winner " + win + "!";
+      resetButton.innerText = "New Game"
     }
 
-    function endGame(message) {
-      gameOver = true;
-      status.textContent = message;
-    }
+    const isWinner = () => {
+      for (let pattern of winPatterns) {
+        let val1 = boxes[pattern[0]].innerText;
+        let val2 = boxes[pattern[1]].innerText;
+        let val3 = boxes[pattern[2]].innerText;
 
-    function computerMove() {
-      if (gameOver) return;
-
-      let emptyBoxes = Array.from(boxes).filter(b => b.textContent === "");
-      if (emptyBoxes.length === 0) return;
-
-      let randBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
-      randBox.textContent = "O";
-      randBox.classList.add("box-o");
-
-      if (checkWinner("O")) {
-        endGame("Computer wins!");
-      } else if (isDraw()) {
-        endGame("It's a draw!");
+        if (val1 != "" && val2 != "" && val3 != "") {
+          if (val1 === val2 && val2 === val3) {
+            showWinner(val1);
+            disableButton();
+            return true;
+          }
+        }
       }
     }
 
-    boxes.forEach(box => {
-      box.addEventListener("click", () => {
-        if (box.textContent !== "" || gameOver) return;
+    function disableButton() {
+      for (let box of boxes) {
+        box.disabled = true;
+      }
+    }
 
-        box.textContent = "X";
-        box.classList.add("box-x");
+    
+    //reset game
+    resetButton.addEventListener("click",()=>{
+      for(let box of boxes){
+        count = 0;
+        box.innerText = "";
+        box.disabled = false;
+        box.setAttribute("class","box");
+        resetButton.textContent = " Reset Game";
+      }
 
-        if (checkWinner("X")) {
-          endGame("You win!");
-        } else if (isDraw()) {
-          endGame("It's a draw!");
-        } else {
-          setTimeout(computerMove, 300);
-        }
-      });
-    });
-
-    resetBtn.addEventListener("click", () => {
-      boxes.forEach(box => {
-        box.textContent = "";
-        box.classList.remove("box-x", "box-o");
-      });
-      status.textContent = "";
-      gameOver = false;
+      document.querySelector("#res").innerText = "";
+    
     });
   </script>
+
 </body>
+
 </html>
