@@ -31,4 +31,4 @@ arr10.forEach(printVal);
 arr10.forEach((val,idx,array)=>{
     console.log(val,idx,array);
     
-})
+});

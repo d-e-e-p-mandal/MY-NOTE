@@ -19,7 +19,7 @@
       font-size: 10vmin;
       text-decoration: underline;
       text-align: center;
-      margin: 10vmin;
+      margin: 5vmin;
     }
 
     .container {
@@ -64,46 +64,39 @@
       opacity: 0.5;
     }
 
-    /* .x-btn:disabled {
-      background-color: red;
-      color: white;
-      
-    }
-
-    .o-btn:disabled {
-      background-color: green;
-      color: white;
-      
-    } */
 
     #res {
       text-wrap: nowrap;
       color: brown;
+      background-color: azure;
       position: absolute;
       font-size: 20vmin;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 50%; 
+      transform: translate(-50%, -50%); 
       transition: ease-in-out 9.0;
+      /*right: 0%; for animation */
       text-shadow:
         2px 2px 0 #000,
         4px 4px 2px #333,
         6px 6px 4px rgba(0, 0, 0, 0.6);
     }
-    button[type = "reset"]{
-      
+
+    button[type="reset"] {
+
       height: 10vmin;
       width: 20vh;
       padding: 1%;
       margin: 2vmin;
-      transform: translate(43vw,0);
+      margin-left: 50%;
+      transform: translateX(-50%);
       background-color: rgb(157, 174, 234);
       border-radius: 10vmin;
       box-shadow: 0px 2px 2px blueviolet;
     }
   </style>
 
-  
+
 </head>
 
 <body>
@@ -128,6 +121,7 @@
 
   <script>
     let boxes = document.querySelectorAll(".box");
+    let res = document.querySelector("#res");
     let resetButton = document.querySelector("button[type=reset]");
 
     let turn = 'x';
@@ -162,6 +156,7 @@
         if (count == 9 && !win) {
           document.querySelector("#res").textContent = "DRAW";
           resetButton.textContent = " Reset Game";
+      
         }
       });
     }
@@ -169,7 +164,8 @@
     const showWinner = (win) => {
       disableButton();
       document.querySelector("#res").textContent = "Winner " + win + "!";
-      resetButton.innerText = "New Game"
+      resetButton.innerText = "New Game";
+
     }
 
     const isWinner = () => {
@@ -194,19 +190,19 @@
       }
     }
 
-    
+
     //reset game
-    resetButton.addEventListener("click",()=>{
-      for(let box of boxes){
+    resetButton.addEventListener("click", () => {
+      for (let box of boxes) {
         count = 0;
         box.innerText = "";
         box.disabled = false;
-        box.setAttribute("class","box");
+        box.setAttribute("class", "box");
         resetButton.textContent = " Reset Game";
       }
 
       document.querySelector("#res").innerText = "";
-    
+
     });
   </script>
 

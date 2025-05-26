@@ -1,0 +1,176 @@
+<!-- Form -->
+<!-- What is event.preventDefault();? -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        mark {
+            background-color: inherit;
+            color: red
+        }
+
+        /* .name *{
+            color: red;
+        } */
+
+        form {
+            max-width: 80vmin;
+            margin: auto;
+            margin-top: 5%;
+            border: 2px solid;
+            padding: 2vmin;
+        }
+
+        .name input {
+            padding: .5vmin;
+        }
+
+        .hobies ul {
+            list-style: none;
+        }
+
+        .display {
+            width: 80vmin;
+            margin: 5vmin;
+            text-decoration: underline;
+        }
+
+        .display ul {
+            list-style:decimal;
+            margin-left: 1vmin;
+            padding-left: 1rem;
+        }
+
+        .display ul li:nth-child(even) {
+            color: red;
+        }
+
+        #clr{
+            display: none;
+        }
+
+        .delete-btn {
+            margin-left: 10px;
+            padding: 2px 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h3> Form </h3>
+
+    <form action="">
+        <div class="name">
+            <mark>*</mark><label for="usr-name">Name : </label>
+            <input type="text" name="" id="usr-name" placeholder="Enter your name" required>
+        </div>
+        <div>
+            Gender :
+            <label>
+                <input type="radio" name="gender" value="male" checked>Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Female">Female
+            </label>
+        </div>
+        <div class="hobies">
+            <p>Hobies </p>
+            <ul>
+                <li><input type="checkbox" value="sing"> sing</li>
+                <li><input type="checkbox" value="dance"> dance</li>
+                <li><input type="checkbox" value="game"> game</li>
+            </ul>
+        </div>
+        <div>
+            <select name="studet" id="st">
+                <option value="school" >school</option>
+                <option value="college" selected>college</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Submit Form">
+            <input type="reset" value="Reset Form">
+        </div>
+    </form>
+
+    <div class="display">
+        <p> User List : </p>
+        <ul>
+
+        </ul>
+        <button id="clr" type="button"> Clear All</button>
+    </div>
+
+
+    <script>
+        // let btn = document.querySelector("input[type =submit]");
+        let btn = document.querySelector("form"); //when using from we use this ,it also store when reset botton click
+        let clearButton = document.querySelector("#clr");
+
+        let display = document.querySelector(".display ul");
+
+        // usr details
+
+        btn.addEventListener("submit", (event) => {
+            event.preventDefault();
+            let element = document.createElement("li");
+            let name = document.querySelector("#usr-name").value;
+            let gen = document.querySelector("input[name = gender]:checked").value;
+            //hobies using foreach  loop
+            let hobies = [];
+            document.querySelectorAll(".hobies ul input[type = checkbox]:checked").forEach((checkbox) => {
+                hobies.push(checkbox.value);
+            });
+
+            //option :
+            let std = document.querySelector("#st:selected").value;
+            const texta = name + "   " + gen + "   " + hobies + std;
+
+            //create button
+            const delBtn = document.createElement("button");
+            delBtn.textContent = "Delete";
+            
+            delBtn.classList.add("delete-btn");
+            
+            delBtn.addEventListener("click", () => {
+                element.remove();
+                if (display.children.length === 0) {
+                    clearButton.style.display = "none";
+                }
+            });
+            const textNode = document.createTextNode(texta);
+            element.appendChild(textNode);
+            
+            element.appendChild(delBtn);
+            display.appendChild(element);
+
+            clearButton.style.display = "block";
+           
+        });
+
+        clearButton.addEventListener("click",()=>{
+            display.innerHTML = ""; 
+            clearButton.style.display = "none";
+        });
+        
+
+    </script>
+</body>
+
+</html>
