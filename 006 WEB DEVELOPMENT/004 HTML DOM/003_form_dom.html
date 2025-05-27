@@ -139,8 +139,8 @@
             });
 
             //option :
-            let std = document.querySelector("#st:selected").value;
-            const texta = name + "   " + gen + "   " + hobies + std;
+            let std = document.querySelector("#st").value;
+            const texta = name + "   " + gen + "   " + hobies + " " +std;
 
             //create button
             const delBtn = document.createElement("button");
@@ -161,7 +161,8 @@
             display.appendChild(element);
 
             clearButton.style.display = "block";
-           
+
+           btn.reset();
         });
 
         clearButton.addEventListener("click",()=>{
