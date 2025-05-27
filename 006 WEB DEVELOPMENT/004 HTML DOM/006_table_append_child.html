@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Details</h2>
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    const student = {
+      firstName: "Ankur",
+      lastName: "Moriya",
+      age: 21,
+      course: "MCA"
+    };
+
+    const tbody = document.getElementById("tableBody");
+
+    for (let key in student) {
+      const row = document.createElement("tr");
+
+      const propertyCell = document.createElement("td");
+      propertyCell.textContent = key;
+
+      const valueCell = document.createElement("td");
+      valueCell.textContent = student[key];
+
+      row.appendChild(propertyCell);
+      row.appendChild(valueCell);
+      tbody.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>

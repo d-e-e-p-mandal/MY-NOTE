@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Details</h2>
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- JavaScript will insert rows here -->
+    </tbody>
+  </table>
+
+  <script>
+    const student = {
+      firstName: "Ankur",
+      lastName: "Moriya",
+      age: 21,
+      course: "MCA"
+    };
+
+    const tableBody = document.getElementById("tableBody");
+
+    for (let key in student) {
+      const row = tableBody.insertRow(); // Insert a new row into tbody
+
+      const cell1 = row.insertCell(); // First cell for property name
+      const cell2 = row.insertCell(); // Second cell for property value
+
+      cell1.textContent = key;
+      cell2.textContent = student[key];
+    }
+  </script>
+
+</body>
+</html>
