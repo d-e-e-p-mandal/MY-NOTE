@@ -1,0 +1,1 @@
+// Promises : to resolve callback hell we use promises
