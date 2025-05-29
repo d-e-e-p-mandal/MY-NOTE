@@ -21,10 +21,13 @@ console.log("getting data 1");
 let p1 = asyncFunction1();
 p1.then((res)=>{
     console.log(res);
-    
     console.log("getting data 2");
     asyncFunction2().then((res)=>{
         console.log(res);
         
     });
 });
+
+
+console.log("getting data 1");
+asyncFunction2.then()
