@@ -24,6 +24,7 @@ int largestArea(vector<int>&heights){
         s.pop();
     }
 
+    //right array 
     for(int i=n-1; i>=0; i--){
         while (!s.empty() && heights[i] <= heights[s.top()]){
             s.pop();
@@ -50,3 +51,4 @@ int main(){
     cout<<"MaximumArea : "<< largestArea(heights)<<endl;
     return 0;
 }
+/*OUTPUT : MaximumArea : 12*/
