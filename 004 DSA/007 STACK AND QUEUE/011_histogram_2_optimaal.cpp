@@ -1,23 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int largestArea(vector<int>&heights){
+
+int largestArea(vector<int>& heights) {
     stack<int> st;
     int maxA = 0;
-    for(int i=0; i<heights.size(); i++){
-        int height =heights[i];
-        int width = i - ((i==0)? 0 : st.top()) + 1;
-        maxA = max(maxA,width*height);
+    int n = heights.size();
 
-        while(!st.empty() && heights[i] < heights[st.top()])
+    for (int i = 0; i <= n; i++) {
+        // Treat i == n as height 0 to flush stack at the end
+        int currHeight = (i == n) ? 0 : heights[i];
+
+        while (!st.empty() && currHeight < heights[st.top()]) {
+            int height = heights[st.top()];
             st.pop();
+            int width = st.empty() ? i : i - st.top() - 1;
+            maxA = max(maxA, width * height);
+        }
 
         st.push(i);
     }
+
     return maxA;
 }
-int main(){
+
+int main() {
     vector<int> heights{6, 0, 5, 4, 5, 0, 6};
-    cout<<"MaximumArea : "<< largestArea(heights)<<endl;
+    cout << "MaximumArea : " << largestArea(heights) << endl;
     return 0;
 }
-/*OUTPUT : MaximumArea : 12*/
