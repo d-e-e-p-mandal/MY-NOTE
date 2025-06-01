@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Select</title>
+</head>
+<body>
+    <form action="">
+        <div class="usr-name">
+            <label for="input-name"> Name: </label>
+            <input type="text" id="input-name">
+        </div>
+        <div>
+            <p>Country Name:</p>
+            <select name="country-name" id="country-select">
+                <!-- Options will be added by JS -->
+                 <option value="nZ"> NEW ZEALAND</option>
+            </select>
+        </div>
+    </form>
+
+    <script>
+        // List of countries (you can expand this)
+        const countries = [
+            { code: 'in', name: 'India' },
+            { code: 'us', name: 'United States' },
+            { code: 'uk', name: 'United Kingdom' },
+            { code: 'ca', name: 'Canada' },
+            { code: 'au', name: 'Australia' }
+        ];
+
+        // Reference to the select element
+        const countryList = document.getElementById('country-select');
+
+        // Dynamically add options
+        countries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country.code;
+            option.textContent = country.name;
+            countryList.appendChild(option);
+        });
+    </script>
+</body>
+</html>
