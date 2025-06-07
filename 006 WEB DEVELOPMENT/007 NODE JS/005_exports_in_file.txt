@@ -1,0 +1,7 @@
+module.exports :
+by default it exports empty.
+
+require() :
+
+
+module.exports() :

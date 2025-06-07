@@ -1,0 +1,16 @@
+package.json :
+The package.json file contains descriptive and functional metadata about a project, such 
+as a name, version and dependency
+
+
+
+
+//
+if we share, we don't share node_modules folder, only share package.json folder 
+where all dependency are saved. or we delete node_modules folder
+<- npm install -> it install all dependency
+
+
+// package.jsos create 
+
+<- npm init ->

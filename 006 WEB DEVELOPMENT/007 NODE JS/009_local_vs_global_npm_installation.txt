@@ -1,0 +1,5 @@
+we install npm packages in local folder most of the times
+
+// we can not access in out side of the folder : not recomended
+comman for install global :
+<- sudo chown -R $USER/usr/local/lib/node_modules ->

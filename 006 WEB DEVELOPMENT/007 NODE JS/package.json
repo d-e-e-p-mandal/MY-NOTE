@@ -1,0 +1,12 @@
+{
+  "name": "007-node-js",
+  "version": "1.0.0",
+  "main": "003_node_file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DEEP",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}

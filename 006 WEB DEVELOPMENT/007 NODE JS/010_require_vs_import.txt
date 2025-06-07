@@ -1,0 +1,10 @@
+// es6 version it introdue : import , arrow function in js
+
+we use require or import entire project only one used
+
+
+import :
+we will create package.json folder
+<- npm int -> command
+add this line in package dependency
+"type": "module" 

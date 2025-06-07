@@ -1,0 +1,14 @@
+Process: 
+
+
+
+<- node -> command
+<- process -> command
+<- process.version -> command
+
+
+
+
+Process argv :
+
+    pass argument when run at command
