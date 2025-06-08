@@ -1,0 +1,7 @@
+Nodemon :
+    To automatically restart server with code changes
+
+install :
+
+npm install nodemon  //local
+npm install -g nodemon //global

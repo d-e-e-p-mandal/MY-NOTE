@@ -5,6 +5,6 @@ we use require or import entire project only one used
 
 import :
 we will create package.json folder
-<- npm int -> command
+<- npm init -> command
 add this line in package dependency
 "type": "module" 

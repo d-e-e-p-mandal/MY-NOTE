@@ -1,0 +1,27 @@
+Routing : 
+    It is process of selecting a path for traffic in a network or between or across multiple networks.
+
+import express from 'express';
+
+const app = express();
+let port = 3000;
+app.listen(port,()=>{
+    //define function
+});
+
+app.use((req,res)=>{//request and respond
+    //define 
+
+    res.send("page content - respond send");
+});
+
+For using custom response : /(forward slash) use app.get
+
+app.get() :
+
+app.get("/apple",(req,res) =>{
+    app.send({
+        name : "apple";
+        color : "red";
+    });
+});

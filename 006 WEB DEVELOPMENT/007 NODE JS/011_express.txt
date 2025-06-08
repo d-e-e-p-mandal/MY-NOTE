@@ -1,0 +1,25 @@
+Library :
+A library is a collectiion of pre-written code that can be used to perform specific tasks.
+eg - axios
+
+Framework :
+A Frameworkis a set of pre-written code that provides a structure for developing software application.
+eg - express
+
+Express : 
+A Node.js web application Framework that helps us to make web application. It is used for server side programming.
+
+
+
+
+Ports :
+Ports are the logical endpoints of a network connection that is used to exchange information between a web server
+and a wev client.
+
+
+
+command :
+<- npm init-> create package.json
+<-npm install express->
+<-"type" : "module" -> in package.json
+
