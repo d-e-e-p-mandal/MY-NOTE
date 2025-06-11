@@ -1,0 +1,17 @@
+npm init 
+npm install express
+npm install ejs
+
+Tags:
+<%  : Scriplet tag for control-flow no output
+<%_ : Whitespace slurping Scriplet tag, strips all Whitespace before in
+<%= Outputs value into the template(HTML escaped)
+<%- Outputs the unescaped value into the template
+<%# commment gat no execution, no output
+<%% Outputs literal '<%'
+%> Plain ending tag
+-%>Trim-mode('newline slurp')tag, trims following newline
+_%>'Whitespace' slurping' ending tag, remove all Whitespace after it
+
+
+//Passing data to ejs

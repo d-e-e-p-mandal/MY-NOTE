@@ -1,0 +1,3 @@
+Edit description of GIT Repo :
+
+gh repo edit --description "Your new description here"
