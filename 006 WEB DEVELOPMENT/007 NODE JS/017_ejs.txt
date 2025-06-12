@@ -2,6 +2,12 @@ npm init
 npm install express
 npm install ejs
 
+
+folder //
+ejs folder written in viwes folder
+
+static page written in public folder
+
 Tags:
 <%  : Scriplet tag for control-flow no output
 <%_ : Whitespace slurping Scriplet tag, strips all Whitespace before in
@@ -14,4 +20,6 @@ Tags:
 _%>'Whitespace' slurping' ending tag, remove all Whitespace after it
 
 
+
 //Passing data to ejs
+res.render("rollDice.ejs",{diceVal : num});

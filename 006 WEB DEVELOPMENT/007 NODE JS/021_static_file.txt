@@ -1,0 +1,2 @@
+Serving static File :
+we public public folder to saved static file.

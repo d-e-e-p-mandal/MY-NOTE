@@ -5,7 +5,7 @@ let port = 3000;
 
 //express import also import ejs 
 app.set("view engine","ejs");
-//app.set("views", path.join(__dirname,"/views")); //when we start server from another directory
+//app.set("views", path.join(__dirname,"/views")); //when we start server from another directory like 007 NODE js directory
 
 app.listen(port,()=>{
     console.log("server starting..........");

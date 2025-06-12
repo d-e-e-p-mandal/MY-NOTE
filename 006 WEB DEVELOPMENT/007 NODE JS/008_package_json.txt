@@ -14,3 +14,4 @@ where all dependency are saved. or we delete node_modules folder
 // package.jsos create 
 
 <- npm init ->
+<- npm init -y ->

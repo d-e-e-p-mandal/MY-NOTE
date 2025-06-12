@@ -7,7 +7,9 @@ npm install nodemon  //local
 npm install -g nodemon //global => recomended
 
 
-//deepmandal@Deeps-MacBook-Air 013_nodemon % sudo npm install -g nodemon
+1st time install
+//deepmandal@Deeps-MacBook-Air 013_nodemon %
+sudo npm install -g nodemon
 Password:
 
 

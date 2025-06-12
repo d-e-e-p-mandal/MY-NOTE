@@ -1,0 +1,5 @@
+Loop in EJS :
+
+<% for(let data of arr) { %>
+    <h2> Nice! Roll dice again.</h2> //write
+<% } %>
