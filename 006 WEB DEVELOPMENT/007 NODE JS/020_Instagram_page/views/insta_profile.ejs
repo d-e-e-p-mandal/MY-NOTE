@@ -17,12 +17,13 @@
         <button> Follow </button>
         <button> Message </button>
     </div>
+    <div>
         <% for(let post of data.posts) { %>
             <img src="<%= post.image %>" alt="loading">
             <p>Like : <%=post.likes %></p>
             <p>Comments : <%= post.comments %></p>
         <% } %>
-    <div>
+    
 
     </div>
 </body>
