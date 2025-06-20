@@ -1,0 +1,12 @@
+Object Prototypes :
+Prototypes are the mechanism by which javaScript objects inherit features from one another.
+it is like a songle template object that all objects inherit methods and properties from without having
+their own copy
+
+arr._proto_(reference)
+Array.prototype(actual object)
+String.prototype
+
+
+
+//prottype : properties

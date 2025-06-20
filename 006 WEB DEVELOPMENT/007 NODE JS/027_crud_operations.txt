@@ -1,0 +1,7 @@
+CRUD Operations :
+
+GET : retrieves resources 
+POST : submits new data to the server
+PUT : Update existing data partially
+PATCH : Update existing data 
+DELETE : removes data
