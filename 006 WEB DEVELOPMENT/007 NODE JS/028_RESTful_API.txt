@@ -5,3 +5,24 @@ POST :  /posts      to add a new post
 GET :   /posts/:id  to get one post(using id)
 PATCH : /posts/:id  to update specific post
 DELETE :/posts/:id  to delete specific post
+
+
+redierect to another page :
+res.redierect("path");
+res.redierect("/posts");
+
+
+for unique id : 
+npm install uuid
+
+const { v4 : uuidv4 } = require(uuidv4);
+uuidv4() //function call
+
+
+OverRide Method : (PATCH request) :
+
+1. Install method-override :
+npm install method-override
+
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));

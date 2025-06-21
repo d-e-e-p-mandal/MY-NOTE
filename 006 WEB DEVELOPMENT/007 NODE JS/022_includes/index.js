@@ -12,7 +12,7 @@ app.listen(port,()=>{
     console.log("server start..........");
 });
 
-app.get("/:username",async(req,res)=>{
+app.get("/:username",(req,res)=>{
     let {username} = req.params;
     let instaData = require("./data.json");
 
