@@ -81,7 +81,15 @@ app.put("/posts/:id", (req, res) => { //app.patch("/posts/:id", (req, res) => {
     res.redirect("/posts");
 });
 
+//delete item 
+app.delete("/posts/:id",(req,res)=>{
+    let { id }= req.params;
+    posts = posts.filter((p) => (id != p.id));
+    //res.send("delete successfully");
+    res.redirect("/posts");
+});
 
+//sever
 app.listen(port,()=>{
     console.log(`server started at port ${port}`);
     

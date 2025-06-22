@@ -1,0 +1,55 @@
+MySQL Package :
+to conncet Node with MySQL 
+install :
+npm install --save mysql2
+const mysql = require("mysql2");
+
+// To close connection
+connection.end() ;
+
+
+
+Using SQL from CLI
+/usr/local/mysql/bin/mysql -u root -p
+mysql -u <username> -p
+mysql -u root -p
+
+server :
+mysql -h <host> -P <port> -u <username> -p
+mysql -h 127.0.0.1 -P 3306 -u root -p
+
+
+command :
+show database :
+
+SHOW DATABASES;
+
+-->use sql command
+
+
+
+//index.js
+require
+
+//connection :
+create the connection to database
+  const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'test',
+    password :'password',
+    port: '3306',
+  });
+
+connection.query('SELECT * FROM students', (err, results, fields) => {
+    if (err) throw err;
+
+    console.log('Results:', results);
+    console.log('Fields:', fields);
+
+    // ✅ Close connection properly after query
+    connection.end((err) => {
+        if (err) console.error('Error closing connection:', err.message);
+        else console.log('Connection closed.');
+    });
+});
