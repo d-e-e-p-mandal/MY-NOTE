@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     port: '3306',
 });
 
-
+// connection. connect part is optional
 // connection.connect((err) => {
 //     if (err) throw err;
 //     console.log('Connected to MySQL!');
@@ -23,6 +23,9 @@ const connection = mysql.createConnection({
 //     });
 //   });
 
+
+//show table
+try{
 connection.query('SELECT * FROM students', (err, results, fields) => {
     if (err) throw err;
 
@@ -35,5 +38,9 @@ connection.query('SELECT * FROM students', (err, results, fields) => {
         else console.log('Connection closed.');
     });
 });
+}catch(err){
+    console.log("error");
+    
+}
 
 // connection.end(); //already use

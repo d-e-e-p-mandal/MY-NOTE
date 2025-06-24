@@ -2,8 +2,4 @@ create : For write in vs-code
 schema.sql
 
 source schema.sql; //file name
-
-global root :
-SOURCE /Users/deepmandal/Desktop/LEARN\ CODING/GITHUB/MY-NOTE/006\ WEB\ DEVELOPMENT/008\ SQL/002_MySQL2_package/schema.sql;
-
 -> sql command

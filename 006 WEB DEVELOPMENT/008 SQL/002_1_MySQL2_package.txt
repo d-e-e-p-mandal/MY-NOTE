@@ -11,6 +11,9 @@ connection.end() ;
 
 Using SQL from CLI
 /usr/local/mysql/bin/mysql -u root -p
+global root :
+SOURCE /Users/deepmandal/Desktop/LEARN\ CODING/GITHUB/MY-NOTE/006\ WEB\ DEVELOPMENT/008\ SQL/002_MySQL2_package/schema.sql;
+
 mysql -u <username> -p
 mysql -u root -p
 
@@ -40,6 +43,15 @@ create the connection to database
     password :'password',
     port: '3306',
   });
+
+/this part optional
+connection.connect((err) => {
+  if (err) {
+    console.error('Connection error:', err);
+    return;
+  }
+  console.log('Connected to MySQL!');
+});
 
 connection.query('SELECT * FROM students', (err, results, fields) => {
     if (err) throw err;

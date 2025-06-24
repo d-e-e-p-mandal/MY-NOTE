@@ -1,0 +1,67 @@
+app.get("/", (req, res) => {
+    const query = "SELECT COUNT(*) AS total FROM students; SELECT * FROM students";
+
+    // ✅ Enable multiple statements in MySQL connection config
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'Deep@2120',
+        database: 'College',
+        port: 3306,
+        multipleStatements: true // ✅ important
+    });
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).send("Database error");
+        }
+
+        const total = results[0][0].total;
+        const students = results[1]; // All student rows
+        res.render("home", { total, students });
+    });
+});
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Database</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Total Students in Database: <%= total %></h1>
+
+  <h2>Student List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(student => { %>
+        <tr>
+          <td><%= student.id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.age %></td>
+          <td><%= student.department %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

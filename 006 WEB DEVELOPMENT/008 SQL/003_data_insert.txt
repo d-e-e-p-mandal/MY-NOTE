@@ -1,0 +1,20 @@
+const newStudent = {
+    id: 7,
+    name: 'An',
+    age: 22,
+    department: 'IT-DD',
+};
+// for multiple data shore in array : use loop
+let q = 'INSERT INTO students (id, name, age, department) VALUES (?, ?, ?, ?)';
+try{
+connection.query(q, [newStudent.id, newStudent.name, newStudent.age, newStudent.department], (err, results) => {
+    if (err) {
+        console.error("Insert Error:", err);
+        return;
+    }
+    console.log("✅ New student inserted:", results);
+});
+}catch(err){
+    console.log("Errrr..............");
+    
+}
