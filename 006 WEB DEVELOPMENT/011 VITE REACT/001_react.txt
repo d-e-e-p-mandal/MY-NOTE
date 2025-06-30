@@ -1,0 +1,11 @@
+REACT :
+    JS library for creating UI.
+Code write in JSX format. JavaScript add in html.
+
+
+
+//
+file : index.html (don't change)
+file : main.jsx (don't change)
+
+file : app.jsx (link with component file)

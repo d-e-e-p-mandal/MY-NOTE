@@ -1,0 +1,14 @@
+.ProductTab {
+    display: flex;
+    gap: 1vmin; /* adds space between Products */
+    padding: 1vmin;
+    box-sizing: border-box;
+
+    height: 100px;
+    width: 50vmin;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: aqua;
+}

@@ -1,0 +1,11 @@
+Import & Export :
+
+Import :
+    import {componet name} from ./folder name
+
+Export :
+    1. default export:
+    export default {component name}
+
+    2. Named Export :
+    export {component name}

@@ -1,0 +1,35 @@
+React Props :
+    Props are the information that pass to a JSX Tag
+
+Example : 
+    <Product title="phone" price="30k" />
+    <Product title="phone" price={30000} />
+
+function Product(props) {
+    return (
+        <>
+           <div className="Product"> 
+                <p> This is { props.title }</p>
+                <p> Price : {props.price}</p>
+                <br />
+            </div>
+        </>
+    )
+}
+
+
+function Product({title, price}) {
+    return (
+        <>
+            <div className="Product"> 
+                <p> This is { title }</p>
+                <p> Price : {price}</p>
+            </div>  
+        </>
+    )
+}
+
+export default Product
+
+
+//Passing array in props :

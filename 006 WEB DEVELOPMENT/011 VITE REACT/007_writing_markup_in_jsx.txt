@@ -1,0 +1,5 @@
+Writing markup in JSX : 
+    write in camelCase
+
+    1. id 
+    2. class -> className

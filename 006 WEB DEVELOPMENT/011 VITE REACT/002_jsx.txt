@@ -1,0 +1,7 @@
+JSX :
+    JavaScript extension syntsx.
+It lets us write directly inside JS.
+
+Bable is used to compiled in JavaScript.
+
+JSX file name -> 1st letter : Capital

@@ -1,0 +1,10 @@
+Set Up Local Environment :
+
+setup ->
+install :
+    npm create vite@latest
+    :-> install all dependency : npm install (project file)
+
+
+
+run : npm run dev (run in project file)

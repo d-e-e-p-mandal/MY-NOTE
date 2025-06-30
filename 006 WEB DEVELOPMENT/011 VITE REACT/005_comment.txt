@@ -1,0 +1,11 @@
+Comment : 
+
+function App() {
+  return (
+    <div> 
+      {/* <> */} //for inside 
+      <h1>Deep Mandal</h1>
+    </div> 
+    /* </> */ // for outside
+  )
+}

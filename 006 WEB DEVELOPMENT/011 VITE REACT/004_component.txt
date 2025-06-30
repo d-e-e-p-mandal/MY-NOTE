@@ -1,0 +1,4 @@
+component
+    1. create component 
+    2. export
+        export default

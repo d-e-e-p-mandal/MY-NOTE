@@ -1,0 +1,9 @@
+.Product {
+    background-color: rgb(218, 146, 146);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 8vmin;
+    text-align: center;
+    font-size: 1rem;
+}

@@ -1,0 +1,7 @@
+Structuring Component & Structuring CSS Style :
+    For each JSX file we create a CSS file for each Component and apply style.
+
+ex: 
+    ProductTab : 
+        -> Product1
+        -> Product2
