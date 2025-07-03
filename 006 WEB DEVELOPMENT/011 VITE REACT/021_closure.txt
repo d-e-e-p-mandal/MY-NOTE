@@ -1,0 +1,16 @@
+Closure : 
+    A Closure is features of javaScript where an inner function has access to the outer (enclosing)
+function variables
+
+* In javaScript, once a function completes its execution, any variables that were defined inside the
+function scope cease to exist.
+
+//
+function outer() {
+    var b = 10;
+    function inner(){
+        var a = 20;
+        console.log(a+b);
+    }
+    return inner;
+}

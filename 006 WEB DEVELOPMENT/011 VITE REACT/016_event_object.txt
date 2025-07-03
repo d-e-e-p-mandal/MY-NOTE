@@ -1,0 +1,23 @@
+Event Object :
+    we can access the Event Object in Handler
+
+event.preventDefault(); :
+    event.preventDefault(); is used to stop the browser’s default behavior (like form submission or link navigation) when handling an event.
+
+
+
+Example:
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    console.log("Form submitted successfully");
+}
+
+function Button() {
+    return(
+       <form onSubmit={handleFormSubmit}>
+            <input type="text" placeholder="Write Something" />
+            <button type="submit">Submit</button>
+       </form>
+    );
+}

@@ -1,0 +1,8 @@
+Call back in updater function :
+    How to change state when it depends on the current value.
+
+
+problem : problem folder :
+
+
+solution : callback_set_function

@@ -1,0 +1,25 @@
+State in React :
+
+The State is a built-in React Object that is used to contain data or information about the component.
+A component State can change over time. Whenever it changes, the component re-renders.
+
+
+function Button() {
+    let count = 0;
+
+    function incCount() {
+        count += 1; // it increase count on console not update in dom
+        console.log(count);
+    }
+
+    return(
+       <>
+            <h3>count = {count}</h3>
+            <button onClick={incCount}>Increase Count</button>
+       </>
+    );
+}
+export default Button
+
+
+to update use Hooks

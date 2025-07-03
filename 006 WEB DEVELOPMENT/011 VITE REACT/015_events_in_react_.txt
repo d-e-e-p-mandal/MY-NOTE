@@ -1,0 +1,28 @@
+Events in React :
+    Handling click Events
+
+Important :
+<button onClick={printHlw}>Click Me</button> : We don't need printHlw()
+
+<button onClick={printHlw()}>Click Me</button> // THIS IS WRONG
+🔍 Why printHlw() causes error or runs automatically?
+    •   When you write printHlw(), you are calling the function immediately as the component renders.
+    •   So instead of passing the function reference to onClick, you’re passing its return value (which may be undefined, or worse — cause side effects).
+
+
+
+
+Example :
+function printHlw() {
+    console.log("hlw");
+}
+
+function Button() {
+    return(
+        <>
+            <button onClick={printHlw}>Click Me</button>
+        </>
+    );
+}
+
+export default Button
