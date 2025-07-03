@@ -1,0 +1,12 @@
+Objects & States :
+
+... : This is called spread operator if we use with out ... it send adress, the addrss is same it 
+does not rendering new value.
+
+Example :
+let updateBlue = () => {
+        console.log(`Blue Moves : ${moves.blue}`);
+        setMoves((prevMoves) => {
+            return { ...prevMoves, blue: prevMoves.blue + 1 }; // ... spread operaor
+        });
+    }

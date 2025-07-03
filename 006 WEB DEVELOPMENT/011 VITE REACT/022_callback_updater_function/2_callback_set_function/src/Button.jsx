@@ -4,11 +4,11 @@ export default function Button() {
 
     const incCount = (() => {
         // using call back for asynchronus function
-        setCount((c)=>{
-            return c+1;
+        setCount((currCount)=>{
+            return currCount+1;
         });
-        setCount((c)=>{
-            return c+1;
+        setCount((currCount)=>{
+            return currCount+1;
         });
         console.log(count); //when count is 1, in console it show 0 (count -1)
     })
