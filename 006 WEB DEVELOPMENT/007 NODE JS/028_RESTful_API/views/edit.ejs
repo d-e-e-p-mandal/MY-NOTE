@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Edit Portal</h2>
-    <form method="POST" action="/posts/<%= post.id %>?_method=PUT"> <!--<form method="POST" action="/posts/<%= post.id %>?_method=patch"></form> -->
+    <form method="POST" action="/posts/<%= post.id %>?_method=PUT"> <!--<form method="POST" action="/posts/< %= post.id %>?_method=patch"></form> -->
         <h2> User id : <%= post.id %></h2>
         <div>
             User Name : <input type="text" name="username" id="username" value="<%= post.username %>">

@@ -18,7 +18,7 @@ app.get("/:username/:id",(req,res,next)=>{
 },
 
 (req,res)=>{
-    res.end("hlw suman");
+    res.end("hlw world");
 }
 );
 

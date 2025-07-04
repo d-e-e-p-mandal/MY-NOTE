@@ -1,0 +1,5 @@
+Include Folder :
+    we can devide ejs foder in different part and include it. It make more Readable
+
+Example :
+    <%- include("includes/head.ejs")%>

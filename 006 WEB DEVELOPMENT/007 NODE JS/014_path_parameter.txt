@@ -1,1 +1,13 @@
-next function call -> in 014 folder 
+Next function call :
+
+app.get("/:username/:id",(req,res,next)=>{
+  //  console.log(req.params);
+    let {username,id} = req.params;
+    res.write(`${username} this page next call ${id}  => \n`);
+    next();
+},
+
+(req,res)=>{
+    res.end("hlw world");
+}
+);

@@ -15,7 +15,10 @@ res.redierect("/posts");
 for unique id : 
 npm install uuid
 
+require syntax: 
 const { v4 : uuidv4 } = require(uuidv4);
+import syntax :
+import { v4 as uuidv4 } from 'uuid';
 uuidv4() //function call
 
 

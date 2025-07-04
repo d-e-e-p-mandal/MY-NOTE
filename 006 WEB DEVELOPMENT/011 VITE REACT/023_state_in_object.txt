@@ -10,3 +10,6 @@ let updateBlue = () => {
             return { ...prevMoves, blue: prevMoves.blue + 1 }; // ... spread operaor
         });
     }
+
+
+when we use map function to print we use key
