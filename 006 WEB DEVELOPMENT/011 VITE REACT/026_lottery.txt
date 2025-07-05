@@ -1,0 +1,65 @@
+Lottery : 1
+    1. We are given Lottery tickets with a 3 digit number
+    2. The number is generated randomly. 
+    3. If the sum of all digit is 15 We win and get the prize.
+    
+
+Lottery : 2 : (Changes in Lottery)
+
+    1. Make the Lottery tickets for N number
+    2. The Winning sum could be any feasible number
+
+
+Note : (*)
+    Properties (For better readability and reuseability):
+        1. Maintain Hierarchy
+        2. Lifting state up : crate state int top level (minimum) and send by props
+         
+
+
+Component :
+    1. props
+    2. state
+    3. events
+
+
+Component Type in React :
+1. Logical 
+2. Presentational
+
+Logical : 
+    1. props
+    2. smart
+    3. state
+    4. Change
+    5. Logical
+
+Presentational :
+    1. props
+    2. Dumb
+    3. UI
+    4. No state
+
+
+
+Function as Pops :
+    JavaScript Function as 1st class Objects.
+This mean they can be passed to a Function, Returned from it & assigned to a variable.
+
+    Props : 
+        1. string
+        2. number
+        3. arrary
+        4. Objects
+        5. function
+
+
+Button Props :
+    event handling props send by action
+
+Example :
+<Button action={buyTicket}/> 
+
+export default function Button({action}) { //we must write action oherwise error
+    return <button onClick={action}> Buy New Ticket</button>
+}

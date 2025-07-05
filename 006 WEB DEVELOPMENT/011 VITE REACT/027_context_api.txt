@@ -1,0 +1,96 @@
+Context Api :
+    This is also a Hooks
+    The Context API is a way to pass data through the component tree without having to pass props down
+manually at every level.
+
+Why do you need Context Api :
+    Because passing props manually down through many nested components (prop drilling) can become messy,
+repetitive, and hard to manage.
+
+
+
+
+
+
+Step :
+    1. create Context : basicaly it create in Context folder
+
+        import { createContext, useState } from "react";
+
+        export const CounterContext = createContext(null); // use capital letter 1st character for export
+
+        export const CounterProvider = (props) => {
+            const [count, setCount] = useState(0);
+            return (
+                <CounterContext.Provider value={ {count, setCount, name : "Deep Mandal"}}>
+                    {props.children}
+                </CounterContext.Provider>
+            )
+        }
+
+
+    2. use Context
+
+    import { useState } from 'react'
+    import reactLogo from './assets/react.svg'
+    import viteLogo from '/vite.svg'
+    import './App.css'
+    import Counter from "./component/Counter";
+    import {CounterContext} from "./context/Counter";
+    import { useContext } from "react";
+
+
+    function App() {
+
+    const counterState = useContext(CounterContext);
+
+    return (
+        <>
+            <h1>Counter is :{counterState.count} </h1>
+            <Counter/>
+            <Counter/>
+            <Counter/>
+        </>
+    )
+    }
+
+export default App
+
+
+
+    import { useContext } from "react";
+    import { CounterContext } from "../context/Counter";
+
+    function Counter() {
+        const counterContext = useContext(CounterContext);
+        return (
+            <>
+                <div>
+                    <button onClick={()=>counterContext.setCount(counterContext.count+1)}>Increment</button>
+                    <button onClick={()=>counterContext.setCount(counterContext.count-1)}>Decrement</button>
+                </div>
+            </>
+        )
+    }
+
+export default Counter
+
+
+
+
+    3. warp at min(max) level ( index.js or main.jsx )
+
+
+        import { StrictMode } from 'react'
+        import { createRoot } from 'react-dom/client'
+        import './index.css'
+        import App from './App.jsx'
+        import {CounterProvider} from "./context/Counter.jsx";
+
+        createRoot(document.getElementById('root')).render(
+            <StrictMode>
+                <CounterProvider>
+                    <App />
+                </CounterProvider>
+                </StrictMode>,
+        )

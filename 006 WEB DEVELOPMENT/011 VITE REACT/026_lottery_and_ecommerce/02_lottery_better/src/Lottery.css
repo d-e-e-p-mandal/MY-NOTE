@@ -1,0 +1,8 @@
+.lottery{
+    box-sizing: border-box;
+
+    font-size: larger;
+    padding: 20px;
+    border: 2px solid rgb(66, 53, 63);
+    border: 15%;
+}

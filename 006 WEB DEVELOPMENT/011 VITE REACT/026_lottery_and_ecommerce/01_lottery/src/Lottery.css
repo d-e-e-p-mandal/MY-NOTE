@@ -1,0 +1,19 @@
+.ticket{
+    box-sizing: border-box;
+
+    font-size: larger;
+    padding: 20px;
+    border: 2px solid rgb(66, 53, 63);
+    border: 15%;
+}
+
+.ticket span{
+    border: 1px solid blueviolet;
+    font-size: 30px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    height: 35px;
+    width: 85px;
+
+    box-sizing: border-box;
+}

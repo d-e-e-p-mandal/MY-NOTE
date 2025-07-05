@@ -1,0 +1,9 @@
+.ticket {
+    border: 2px solid blueviolet;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 10px auto;
+    background-color: #f9f0ff;
+    text-align: center;
+    display: inline-block;
+  }
