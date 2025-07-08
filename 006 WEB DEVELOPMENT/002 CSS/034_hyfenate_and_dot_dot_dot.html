@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Line Clamp and Hyphens Example</title>
+  <style>
+    .simple p {
+      height: 200px;
+      width: 150px;
+      border: 2px solid;
+      padding: 5px;
+      overflow: hidden;
+    }
+
+    .hyphen-dot-dot p {
+      width: 200px;
+      height: 150px;
+      border: 2px solid;
+      padding: 5px;
+
+      /* Multi-line clamp with hyphenation */
+      text-align: justify;
+      hyphens: auto;
+      overflow: hidden;
+
+      display:-webkit-box;
+
+      -webkit-line-clamp: 8;
+      line-clamp: 8;  
+      
+      -webkit-box-orient: vertical;
+
+      /* Optional fallback */
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="simple">
+    <h3>This is Blog</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus adipisci
+      aperiam dolore in accusamus nesciunt quisquam! Maiores, sit quo
+      distinctio quia consequuntur sunt natus quidem odio doloremque
+      repellendus, eum sapiente voluptas adipisci rerum rem recusandae!
+    </p>
+  </div>
+
+  <br /><br />
+
+  <div class="hyphen-dot-dot" lang="en">
+    <h3>This is Blog</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus adipisci
+      aperiam dolore in accusamus nesciunt quisquam! Maiores, sit quo
+      distinctio quia consequuntur sunt natus quidem odio doloremque
+      repellendus, eum sapiente voluptas adipisci rerum rem recusandae! Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Quae, fugit!
+    </p>
+  </div>
+</body>
+</html>

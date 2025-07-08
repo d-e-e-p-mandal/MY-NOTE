@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Line Clamp and Hyphens Example</title>
+  <style>
+    .simple {
+      height: 200px;
+      width: 150px;
+      border: 2px solid;
+      padding: 5px;
+      overflow: auto;
+    }
+  
+    /* Scrollbar Styling (WebKit-based browsers) */
+    .simple::-webkit-scrollbar {
+      width: 60px;
+    }
+  
+    .simple::-webkit-scrollbar-track {
+      background: #7a0505;       /* Track color */
+      border-radius: 10px;
+    }
+  
+    .simple::-webkit-scrollbar-thumb {
+      background: #0e11d1;          /* Thumb color */
+      border-radius: 10px;
+    }
+  
+    .simple::-webkit-scrollbar-thumb:hover {
+      background: rgb(108, 185, 7);          /* On hover */
+    }
+  
+    /* Optional: Firefox support */
+    .simple {
+      scrollbar-width: thin;             /* Firefox: 'auto' or 'thin' */
+      scrollbar-color: #2f0da1 #80ccf2;     /* thumb track */
+    }
+  </style>
+</head>
+<body>
+  <div class="simple">
+    <h3>This is Blog</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus adipisci
+      aperiam dolore in accusamus nesciunt quisquam! Maiores, sit quo
+      distinctio quia consequuntur sunt natus quidem odio doloremque
+      repellendus, eum sapiente voluptas adipisci rerum rem recusandae!
+    </p>
+  </div>
+
+</body>
+</html>
