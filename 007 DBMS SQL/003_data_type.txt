@@ -1,0 +1,88 @@
+Here’s a clean and organized SQL Data Types note for study or reference purposes:
+
+⸻
+
+📘 SQL Data Types (Structured Query Language)
+
+SQL data types define the kind of value a column can hold. They vary slightly between databases (MySQL, PostgreSQL, SQL Server, Oracle), but here are the commonly used standard SQL data types:
+
+⸻
+
+🔢 Numeric Data Types
+
+Data Type	Description
+INT	Integer value (whole numbers)
+SMALLINT	Smaller integer range
+BIGINT	Larger integer range
+DECIMAL(p,s)/ NUMERIC(p,s)	Exact numeric (e.g., money)
+FLOAT(p)	Approximate numeric with precision p
+REAL	Approximate floating-point number
+DOUBLE / DOUBLE PRECISION	High precision float
+TINYINT	Very small integer (MySQL)
+
+
+⸻
+
+🔤 String (Character) Data Types
+
+Data Type	Description
+CHAR(n)	Fixed-length string (e.g., CHAR(10))
+VARCHAR(n)	Variable-length string
+TEXT	Large text field
+TINYTEXT	Very small text (MySQL)
+MEDIUMTEXT	Medium-size text (MySQL)
+LONGTEXT	Very large text (MySQL)
+
+
+⸻
+
+📅 Date & Time Data Types
+
+Data Type	Description
+DATE	Stores date (YYYY-MM-DD)
+TIME	Stores time (HH:MM:SS)
+DATETIME	Stores date and time
+TIMESTAMP	Stores date and time (auto-update)
+YEAR	Stores a year value
+
+
+⸻
+
+🧮 Boolean Type
+
+Data Type	Description
+BOOLEAN / BOOL	Stores TRUE or FALSE
+
+Note: In MySQL, BOOLEAN is just an alias for TINYINT(1)
+
+⸻
+
+📦 Binary Data Types
+
+Data Type	Description
+BINARY(n)	Fixed-length binary data
+VARBINARY(n)	Variable-length binary data
+BLOB	Binary Large Object (images/files)
+TINYBLOB / MEDIUMBLOB / LONGBLOB	Different BLOB sizes
+
+
+⸻
+
+🔧 Miscellaneous Types (Vendor-Specific)
+
+Data Type	Description
+ENUM	String object with predefined values (MySQL)
+SET	String object with multiple values (MySQL)
+JSON	Stores JSON formatted data (MySQL, PostgreSQL)
+UUID	Stores universally unique identifiers
+XML	Stores XML formatted data (SQL Server)
+
+
+⸻
+
+✨ Tips:
+	•	Always choose the smallest possible data type that fits your data.
+	•	Use NOT NULL or DEFAULT constraints to enforce rules.
+	•	Be mindful of precision in floating-point vs decimal values.
+
+⸻
