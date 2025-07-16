@@ -5,7 +5,11 @@ A software application used to manage our DB is called DBMS(Database Management 
 Types of Database :
 1. Relational :
     Data stored in tables.
+Example :
 *MySQL : we use SQL to work with relational DBMS
+Oracle
+PostgreSQL
+
 
 2. Non-Relational :
     data not stored in tables
