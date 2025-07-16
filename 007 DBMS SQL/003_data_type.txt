@@ -93,4 +93,61 @@ XML	XML formatted text (SQL Server)	Variable-length
 
 ⸻
 
-Would you like this as a downloadable PDF note or want a comparison across MySQL, PostgreSQL, and SQL Server?
+//
+📘 What is UNSIGNED in SQL?
+
+In SQL, especially in MySQL, the keyword UNSIGNED is used with numeric data types to indicate that only non-negative values (0 and positive numbers) are allowed.
+
+⸻
+
+✅ Why Use UNSIGNED?
+	•	By default, integer types are signed, meaning they can store both negative and positive values.
+	•	When you use UNSIGNED, the storage range doubles on the positive side and removes the negative range.
+	•	This is useful for values that should never be negative (e.g., age, quantity, IDs).
+
+⸻
+
+📊 Example: INT vs UNSIGNED INT
+
+Type	Range
+INT	-2,147,483,648 to 2,147,483,647
+UNSIGNED INT	0 to 4,294,967,295
+
+
+⸻
+
+🛠️ Syntax
+
+CREATE TABLE users (
+    user_id INT UNSIGNED PRIMARY KEY,
+    age TINYINT UNSIGNED,
+    points BIGINT UNSIGNED DEFAULT 0
+);
+
+	•	user_id cannot be negative.
+	•	age is stored as a small positive integer.
+	•	points defaults to 0 and cannot be negative.
+
+⸻
+
+🔥 Example Inserting Data
+
+INSERT INTO users (user_id, age, points) VALUES (1, 25, 500);
+
+⚠️ If You Try Negative with UNSIGNED
+
+INSERT INTO users (user_id, age) VALUES (-1, 20);
+-- ❌ Error: Out of range value for column 'user_id'
+
+
+⸻
+
+📝 Summary
+
+Keyword	Effect
+UNSIGNED	Prevents negative values; increases positive range
+Used With	TINYINT, SMALLINT, INT, BIGINT, FLOAT, etc.
+
+
+⸻
+
