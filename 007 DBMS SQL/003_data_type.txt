@@ -2,87 +2,95 @@ Here’s a clean and organized SQL Data Types note for study or reference purpos
 
 ⸻
 
-📘 SQL Data Types (Structured Query Language)
+Here’s your SQL Data Types note with the ranges added for each relevant data type (especially numeric and date types). This makes it a more complete and practical reference.
 
-SQL data types define the kind of value a column can hold. They vary slightly between databases (MySQL, PostgreSQL, SQL Server, Oracle), but here are the commonly used standard SQL data types:
+⸻
+
+📘 SQL Data Types (with Ranges)
+
+SQL data types define the kind of value a column can hold. Ranges may vary slightly between databases, but standard/common ones are listed below.
 
 ⸻
 
 🔢 Numeric Data Types
 
-Data Type	Description
-INT	Integer value (whole numbers)
-SMALLINT	Smaller integer range
-BIGINT	Larger integer range
-DECIMAL(p,s)/ NUMERIC(p,s)	Exact numeric (e.g., money)
-FLOAT(p)	Approximate numeric with precision p
-REAL	Approximate floating-point number
-DOUBLE / DOUBLE PRECISION	High precision float
-TINYINT	Very small integer (MySQL)
+Data Type					Description	Typical 					Range (MySQL)
+TINYINT						Very small integer				-128 to 127 (signed) or 0 to 255 (unsigned)
+SMALLINT					Small integer					-32,768 to 32,767 or 0 to 65,535
+MEDIUMINT					Medium-sized integer (MySQL)	-8,388,608 to 8,388,607
+INT / INTEGER				Standard integer				-2,147,483,648 to 2,147,483,647 or 0 to 4,294,967,295
+BIGINT						Large integer					-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+DECIMAL(p,s) / NUMERIC(p,s)	Exact numeric with precision	Up to 65 digits, p = precision, s = scale (MySQL)
+FLOAT(p)					Approximate floating-point number	4 bytes, approx. ±1.5e−45 to ±3.4e+38 (float precision)
+REAL	Approximate, lower precision float	Similar to FLOAT
+DOUBLE PRECISION / DOUBLE	Higher precision float	8 bytes, approx. ±5.0e−324 to ±1.7e+308
 
 
 ⸻
 
 🔤 String (Character) Data Types
 
-Data Type	Description
-CHAR(n)	Fixed-length string (e.g., CHAR(10))
-VARCHAR(n)	Variable-length string
-TEXT	Large text field
-TINYTEXT	Very small text (MySQL)
-MEDIUMTEXT	Medium-size text (MySQL)
-LONGTEXT	Very large text (MySQL)
+Data Type					Description				Max Length
+CHAR(n)						Fixed-length string		Up to 255 characters
+VARCHAR(n)					Variable-length string	Up to 65,535 bytes (depends on charset & row size)
+TEXT						Large text				Up to 65,535 characters
+TINYTEXT					Very small text			Up to 255 characters
+MEDIUMTEXT					Medium-sized text		Up to 16,777,215 characters
+LONGTEXT					Very large text			Up to 4,294,967,295 characters
 
 
 ⸻
 
 📅 Date & Time Data Types
 
-Data Type	Description
-DATE	Stores date (YYYY-MM-DD)
-TIME	Stores time (HH:MM:SS)
-DATETIME	Stores date and time
-TIMESTAMP	Stores date and time (auto-update)
-YEAR	Stores a year value
+Data Type				Description						Range
+DATE					Stores date (YYYY-MM-DD)		1000-01-01 to 9999-12-31
+TIME					Stores time (HH:MM:SS)			-838:59:59 to 838:59:59
+DATETIME				Date and time					1000-01-01 00:00:00 to 9999-12-31 23:59:59
+TIMESTAMP				Date and time (auto-update)		1970-01-01 00:00:01 UTC to 2038-01-19 03:14:07 UTC
+YEAR					Year (2-digit/4-digit)			1901 to 2155 (MySQL)
 
 
 ⸻
 
 🧮 Boolean Type
 
-Data Type	Description
-BOOLEAN / BOOL	Stores TRUE or FALSE
+Data Type	Description	Range / Notes
+BOOLEAN / BOOL	Stores TRUE or FALSE	Alias for TINYINT(1) in MySQL (0 = false, 1 = true)
 
-Note: In MySQL, BOOLEAN is just an alias for TINYINT(1)
 
 ⸻
 
 📦 Binary Data Types
 
-Data Type	Description
-BINARY(n)	Fixed-length binary data
-VARBINARY(n)	Variable-length binary data
-BLOB	Binary Large Object (images/files)
-TINYBLOB / MEDIUMBLOB / LONGBLOB	Different BLOB sizes
+Data Type					Description					Max Size
+BINARY(n)					Fixed-length binary			Up to 255 bytes
+VARBINARY(n)				Variable-length binary		Up to 65,535 bytes
+BLOB						Binary Large Object			Up to 65,535 bytes
+TINYBLOB					Very small BLOB				Up to 255 bytes
+MEDIUMBLOB					Medium-size BLOB			Up to 16 MB (16,777,215 bytes)
+LONGBLOB					Very large BLOB				Up to 4 GB (4,294,967,295 bytes)
 
 
 ⸻
 
-🔧 Miscellaneous Types (Vendor-Specific)
+🔧 Miscellaneous (Vendor-Specific)
 
-Data Type	Description
-ENUM	String object with predefined values (MySQL)
-SET	String object with multiple values (MySQL)
-JSON	Stores JSON formatted data (MySQL, PostgreSQL)
-UUID	Stores universally unique identifiers
-XML	Stores XML formatted data (SQL Server)
+Data Type	Description	Notes
+ENUM	String with predefined values	Up to 65,535 elements (MySQL)
+SET	Multiple predefined values (MySQL)	Max 64 members
+JSON	Stores JSON formatted data	Supported in MySQL & PostgreSQL
+UUID	Universally Unique Identifier	16 bytes (128-bit)
+XML	XML formatted text (SQL Server)	Variable-length
 
+
+⸻
+
+✨ Tips for Choosing Data Types
+	•	✅ Use the smallest appropriate type for performance.
+	•	✅ Avoid floating-point types for money; use DECIMAL(p,s) instead.
+	•	✅ Always define constraints like NOT NULL, DEFAULT, and CHECK.
 
 ⸻
 
-✨ Tips:
-	•	Always choose the smallest possible data type that fits your data.
-	•	Use NOT NULL or DEFAULT constraints to enforce rules.
-	•	Be mindful of precision in floating-point vs decimal values.
-
-⸻
+Would you like this as a downloadable PDF note or want a comparison across MySQL, PostgreSQL, and SQL Server?
