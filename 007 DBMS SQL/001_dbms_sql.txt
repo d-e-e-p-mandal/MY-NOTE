@@ -36,3 +36,10 @@ Query          Language
 Language
 
 We can called it both Sequel and SQL.
+
+
+
+comment in SQL :
+................
+
+-- comment

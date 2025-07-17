@@ -1,5 +1,5 @@
 CREATE TABLE table_name(
-    column_1_name datatype constraints,
+    column_1_name datatype constraints, // we can skip the constraints for some cases
     column_2_name datatype constraints,
 );
 

@@ -74,6 +74,9 @@ LONGBLOB					Very large BLOB				Up to 4 GB (4,294,967,295 bytes)
 
 ⸻
 
+Empty : Initilize wit :  NULL
+.......................
+
 🔧 Miscellaneous (Vendor-Specific)
 
 Data Type	Description	Notes

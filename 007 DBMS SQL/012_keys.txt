@@ -1,0 +1,47 @@
+Keys : 
+......
+
+PRIMARY KEY :
+.............
+    It is a column ( or set of column) in a table that uniquely identifies each row.
+(a unique id) There is only 1 PRIMARY KEY & it should be NOT NULL.
+
+Method 1 :
+CREATE TABLE Student(
+	col_1 INT PRIMARY KEY,
+    col_2 VARCHAR(50)
+);
+
+Exaple :
+........
+    CREATE TABLE Student(
+	    st_id INT PRIMARY KEY,
+        st_name VARCHAR(50) NOT NULL
+    );
+
+Method 2 : 
+    CREATE TABLE Student(
+	col2 INT,
+    col1 VARCHAR(50)
+    PRIMARY KEY(col1, col2)
+);
+
+Example :
+    CREATE TABLE Student(
+	    st_id INT,
+        st_name VARCHAR(50) NOT NULL
+        PRIMARY KEY(st_id, st_name)
+    );
+
+
+
+FOREIGN KEY :
+.............
+A foreign key is a column (or set of column) in a table that refers to the PRIMARY KEY;
+There can be multiple FOREIGN KEY.
+FOREIGN KEY can have duplicate & NULL valus
+
+CREATE TABLE table_name (
+    col1 INT,
+    FOREIGN KEY (col1) REFERENCES another_table_name(PRIMARY KEY)  //PRIMARY key of reference table
+);

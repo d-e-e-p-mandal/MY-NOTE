@@ -25,3 +25,24 @@ INSERT INTO table_name VALUES (data, "data");
 
 Example : 
 INSERT INTO Student VALUES (2, "Suman");
+
+
+
+
+
+Inseart Data in table : (Only one col1)
+..................................................................................
+INSERT INTO table_name
+(column_name)
+VALUES
+(data);   //other all asigined with null
+
+
+
+
+Inseart Data in table : (Uses of NULL)
+..................................................................................
+INSERT INTO table_name
+(column_1_name, column_2_name)
+VALUES
+(data, NULL);
