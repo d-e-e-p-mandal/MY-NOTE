@@ -17,3 +17,10 @@ CREATE TABLE Student(
 	st_id INT PRIMARY KEY,
     st_name VARCHAR(50) NOT NULL
 );
+
+
+
+
+DELETE TABLE :
+
+DROP TABLE table_name;
