@@ -11,3 +11,8 @@ step 3 : Select & view all your table data
 
 
 Qs 2. Create a database and find average in a city
+
+Qs 3. In the student table :
+    a. Change the name of column "Name" to "Full_name".
+    b. Delete all the students who scored marks less than 80.
+    c. Delete the column for grades.

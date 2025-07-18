@@ -73,3 +73,13 @@ CREATE TABLE table_name (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
+Example :
+    CREATE TABLE Teacher(
+	    Id INT PRIMARY KEY,
+        Name VARCHAR(50) NOT NULL,
+        Dept_Id INT,
+	    FOREIGN KEY (Dept_Id) REFERENCES Dept(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+    );
