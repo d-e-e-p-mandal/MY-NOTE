@@ -1,0 +1,14 @@
+SQL Sub Queries :
+.................
+
+A Subquery or Inner query or a Nested query is a query is a query within another SQL query.
+It involves 2 select statements.
+
+
+Syntax :
+........
+
+SELECT column(s)
+FROM table_name
+WHERE col_name operator
+(subquery);
