@@ -22,5 +22,5 @@ CREATE TABLE Student(
 
 
 DELETE TABLE :
-
+..............
 DROP TABLE table_name;
