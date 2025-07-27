@@ -54,28 +54,3 @@ Using Operators in Where :
 
     Bitwise Operators : & (Bitwise AND), | (Bitwise OR)
     ...................
-
-
-    Order By Clause :
-    .................
-        To sort in ascending (ASC) or descending order (DESC)
-
-        SELECT col1, col2 FROM table_name
-        ORDER BY col_name(s) ASC;
-
-        Example :
-                SELECT * FROM Student
-                ORDER BY st_name DESC;
-
-    
-    Use LIMIT :
-    ...........
-                SELECT * FROM Student
-                ORDER BY marks DESC
-                LIMIT 3;
-
-    Use OFFSET :
-    ............
-                SELECT * FROM Student
-                ORDER BY marks DESC
-                LIMIT 3 OFFSET 2;  -- 3rd highest

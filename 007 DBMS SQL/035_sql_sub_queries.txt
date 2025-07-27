@@ -68,11 +68,10 @@ ans :
 
 
 Question : Sub Query : Example FROM
-......................
+....................................
 
 1. Find the Students in Delhi.
 2. Find max number in Delhi.
 
 SELECT MAX(marks)
 FROM (SELECT * FROM StudentS WHERE City = "Delhi") AS Temp;
-
