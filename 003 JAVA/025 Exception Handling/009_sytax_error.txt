@@ -1,0 +1,39 @@
+📌 What is a Syntax Error in Java?
+
+A syntax error is a compile-time error caused by violating the rules of the Java language — like missing semicolons, wrong brackets, misspelled keywords, etc.
+
+⸻
+
+✅ Examples of Syntax Errors:
+	1.	Missing semicolon
+
+int x = 10   // ❌ Syntax error: missing semicolon
+
+	2.	Misspelled keyword
+
+publc class Test {  // ❌ 'publc' should be 'public'
+}
+
+	3.	Unmatched braces
+
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Hello");  // ❌ Missing closing brace for class
+
+	4.	Invalid method declaration
+
+public static void main(String args)  // ❌ Missing array brackets []
+
+
+⸻
+
+✅ Key Difference:
+
+Type	Occurs When?	Example
+Syntax Error	At compile-time	System.out.println("Hi") // missing ;
+Runtime Error	While program is running	int a = 5/0; (ArithmeticException)
+
+
+⸻
+
+Let me know if you want a full list of common syntax errors with fix.

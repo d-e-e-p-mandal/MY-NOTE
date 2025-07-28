@@ -1,0 +1,38 @@
+Here is the basic structure of a Java program — clean, simple, and beginner-friendly:
+
+⸻
+
+✅ Basic Java Program Structure
+
+// Class definition
+public class Main {
+
+    // Main method: starting point of Java program
+    public static void main(String[] args) {
+        // Code to execute
+        System.out.println("Hello, Java!");
+    }
+}
+
+
+⸻
+
+📘 Explanation:
+
+Part	Meaning
+public class Main	Declares a public class named Main. Filename must be Main.java.
+public static void main	Entry point of every Java program. JVM starts execution from here.
+String[] args	Command-line arguments (optional).
+System.out.println(...)	Used to print output to the console.
+
+
+⸻
+
+🧠 Key Points:
+	•	Only one public class per file, and the file name must match it (Main.java).
+	•	main() method is required for standalone execution.
+	•	Statements end with ;.
+	•	Java is case-sensitive.
+
+
+⸻

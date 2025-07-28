@@ -1,0 +1,145 @@
+Here’s a clear and complete guide to Operators and Expressions in Java — including types, examples, and output.
+
+⸻
+
+✅ What are Operators in Java?
+
+Operators are symbols that perform operations on variables and values.
+
+Example:
+
+int a = 10 + 5;  // + is an operator
+
+
+⸻
+
+🔹 Types of Java Operators
+
+1. Arithmetic Operators
+
+Perform basic math operations.
+
+Operator	Meaning	Example
++	Addition	a + b
+-	Subtraction	a - b
+*	Multiplication	a * b
+/	Division	a / b
+%	Modulus	a % b
+
+
+⸻
+
+2. Relational (Comparison) Operators
+
+Operator	Meaning	Example
+==	Equal to	a == b
+!=	Not equal to	a != b
+>	Greater than	a > b
+<	Less than	a < b
+>=	Greater than or equal	a >= b
+<=	Less than or equal	a <= b
+
+
+⸻
+
+3. Logical Operators
+
+Operator	Meaning	Example
+&&	Logical AND	a > 5 && b < 10
+`		`
+!	Logical NOT	!(a > 5)
+
+
+⸻
+
+4. Assignment Operators
+
+Operator	Meaning	Example
+=	Assign value	a = 10
++=	Add and assign	a += 5
+-=	Subtract and assign	a -= 3
+*=	Multiply and assign	a *= 2
+/=	Divide and assign	a /= 4
+%=	Modulus and assign	a %= 2
+
+
+⸻
+
+5. Unary Operators
+
+Operator	Meaning	Example
++	Unary plus	+a
+-	Unary minus	-a
+++	Increment	a++ or ++a
+--	Decrement	a-- or --a
+!	Logical NOT	!true
+
+
+⸻
+
+6. Ternary Operator
+
+Used as shorthand for if-else.
+
+int a = 10;
+int b = 20;
+int max = (a > b) ? a : b;
+
+
+⸻
+
+7. Bitwise Operators
+
+Operator	Meaning	Example
+&	AND	a & b
+`	`	OR
+^	XOR	a ^ b
+~	Complement	~a
+<<	Left shift	a << 2
+>>	Right shift	a >> 2
+
+
+⸻
+
+✅ Expressions in Java
+
+An expression is a combination of variables, operators, and values that produces a result.
+
+int result = (a + b) * 2;
+
+
+⸻
+
+🔸 Example Java Program
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+
+        // Arithmetic
+        System.out.println("Add: " + (a + b));
+        System.out.println("Sub: " + (a - b));
+        System.out.println("Mul: " + (a * b));
+        System.out.println("Div: " + (a / b));
+        System.out.println("Mod: " + (a % b));
+
+        // Relational
+        System.out.println("a > b: " + (a > b));
+
+        // Logical
+        System.out.println("a > 0 && b > 0: " + (a > 0 && b > 0));
+
+        // Assignment
+        a += 3;  // a = a + 3
+        System.out.println("a after += 3: " + a);
+
+        // Ternary
+        int max = (a > b) ? a : b;
+        System.out.println("Max: " + max);
+    }
+}
+
+
+⸻
+
+Would you like a short quiz, practice problems, or visual explanation with diagram for better understanding?

@@ -1,0 +1,75 @@
+✅ Variable Arguments (Varargs) in Java — Simple Explanation + Code
+
+Java supports Variable Arguments using ... (three dots) — which allows a method to accept zero or more arguments of the same type.
+
+⸻
+
+🔹 Why Use Varargs?
+
+Instead of writing multiple overloaded methods like:
+
+int sum(int a, int b)
+int sum(int a, int b, int c)
+
+You can simply write:
+
+int sum(int... numbers)
+
+
+⸻
+
+✅ Syntax:
+
+returnType methodName(datatype... variableName)
+
+🔸 Inside the method, the varargs behaves like an array.
+
+⸻
+
+✅ Example: Sum of Numbers Using Varargs
+
+public class Main {
+    // Method with variable number of int arguments
+    static int sum(int... numbers) {
+        int total = 0;
+        for (int num : numbers) {
+            total += num;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum of 2 numbers: " + sum(10, 20));           // 30
+        System.out.println("Sum of 3 numbers: " + sum(1, 2, 3));          // 6
+        System.out.println("Sum of 5 numbers: " + sum(5, 10, 15, 20, 25));// 75
+        System.out.println("Sum of 0 numbers: " + sum());                 // 0
+    }
+}
+
+
+⸻
+
+🔸 Rules for Varargs in Java
+	1.	Only one varargs parameter per method.
+	2.	It must be the last parameter.
+
+✅ Valid:
+
+void printData(String name, int... scores) {}
+
+❌ Invalid:
+
+void printData(int... scores, String name) {}  // ❌ Error: varargs must be last
+
+
+⸻
+
+🧠 Use Cases
+	•	Print multiple values
+	•	Sum/multiply unlimited arguments
+	•	Logging messages
+	•	Formatter methods
+
+⸻
+
+Let me know if you’d like a varargs + array comparison or a real-world use case!

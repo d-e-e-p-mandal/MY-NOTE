@@ -1,0 +1,23 @@
+An interface in Java is like a blueprint for classes.
+Advantage :
+    Multile inheritance achive
+Draw back :
+It declares methods that a class must implement.
+
+⸻
+
+✅ Key Features of an Interface:
+Feature
+Description
+Contains
+Method declarations (by default abstract)
+Variables
+Always public static final (constants)
+Methods
+Can be abstract, default, static, or private (from Java 8+)
+Objects
+❌ Cannot create objects of an interface
+Inheritance
+Supports multiple inheritance
+Access modifier
+Methods are public by default

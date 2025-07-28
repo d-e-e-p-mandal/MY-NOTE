@@ -1,0 +1,98 @@
+✅ Literals in Java (with Examples & Explanation)
+
+Literals are fixed values directly assigned to variables in Java. They represent constant values used in the code.
+
+⸻
+
+🧩 Types of Literals in Java
+
+1. Integer Literals
+	•	Whole numbers (by default int)
+	•	Can be in decimal, binary, octal, or hexadecimal.
+
+int decimal = 10;         // decimal
+int binary = 0b1010;      // binary (prefix 0b)
+int octal = 012;          // octal (prefix 0)
+int hex = 0xA;            // hexadecimal (prefix 0x)
+
+
+⸻
+
+2. Floating-Point Literals
+	•	Decimal numbers.
+	•	By default, Java treats as double. Use f or F for float.
+
+double pi = 3.14159;
+float rate = 7.5f;
+
+
+⸻
+
+3. Character Literals
+	•	A single character enclosed in single quotes (' ').
+	•	Internally stored as Unicode.
+
+char grade = 'A';
+char unicode = '\u0041';  // Unicode for 'A'
+
+
+⸻
+
+4. String Literals
+	•	A sequence of characters enclosed in double quotes (" ").
+
+String name = "Deep Mandal";
+
+
+⸻
+
+5. Boolean Literals
+	•	Only two values: true or false
+
+boolean isJavaFun = true;
+boolean isDifficult = false;
+
+
+⸻
+
+6. Null Literal
+	•	null is a literal used with reference types (like objects or arrays).
+
+String text = null;
+
+
+⸻
+
+✅ Full Example in Java
+
+public class Main {
+    public static void main(String[] args) {
+        int age = 20;             // Integer literal
+        float weight = 55.5f;     // Floating literal
+        char gender = 'M';        // Character literal
+        String name = "Deep";     // String literal
+        boolean passed = true;    // Boolean literal
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Weight: " + weight);
+        System.out.println("Gender: " + gender);
+        System.out.println("Passed: " + passed);
+    }
+}
+
+
+⸻
+
+🖨 Output:
+
+Name: Deep
+Age: 20
+Weight: 55.5
+Gender: M
+Passed: true
+
+
+⸻
+
+Let me know if you’d like a diagram, quiz, or coding challenge based on literals!

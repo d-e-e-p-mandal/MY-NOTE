@@ -1,0 +1,34 @@
+Yes, ✅ all the exceptions shown in your examples are runtime (logical) errors in Java.
+
+Let’s break it down:
+
+⸻
+
+🔍 What Are Runtime (Logical) Errors?
+	•	Occur while the program is running, not during compilation.
+	•	Code compiles successfully, but fails (throws exceptions) at execution time.
+	•	Usually caused by logic mistakes, such as dividing by zero, accessing invalid array index, or using a null object.
+
+⸻
+
+✅ Your Examples & Their Category:
+
+Exception	Type	Description
+ArithmeticException	Runtime	Dividing by zero.
+ArrayIndexOutOfBoundsException	Runtime	Invalid index access in array.
+NullPointerException	Runtime	Using a null reference.
+NumberFormatException	Runtime	Trying to convert non-numeric string to number.
+ClassNotFoundException	Checked	Requires handling or declaring, but thrown at runtime.
+FileNotFoundException	Checked	Must be handled using try-catch or throws. Checked at compile-time.
+IOException	Checked	General I/O failures — compile-time enforced handling.
+
+
+⸻
+
+🧠 Summary:
+	•	Unchecked Exceptions = Runtime errors (subclass of RuntimeException)
+	•	Checked Exceptions = Still runtime in behavior, but must be declared or caught
+
+⸻
+
+Let me know if you want a table showing compile-time vs runtime errors too.

@@ -1,0 +1,7 @@
+SUPER KEYWORD :
+...............
+
+Use                       Description
+1. super.variable         Access parent class variable
+2. super.method()         Call parent class method
+3. super()                Call parent class constructor (must be first line in subclass constructor)

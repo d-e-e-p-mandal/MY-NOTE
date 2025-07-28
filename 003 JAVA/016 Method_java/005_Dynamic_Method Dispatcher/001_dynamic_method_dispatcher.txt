@@ -1,0 +1,68 @@
+✅ Dynamic Method Dispatch in Java
+
+Also known as runtime polymorphism, Dynamic Method Dispatch is a mechanism in Java where a call to an overridden method is resolved at runtime, not at compile time.
+
+⸻
+
+🔸 When it happens?
+	•	When method overriding is used (inheritance)
+	•	And the object is accessed via a superclass reference
+
+⸻
+
+🔹 Example:
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a; // Superclass reference
+
+        a = new Dog();   // Dog object
+        a.sound();       // Output: Dog barks
+
+        a = new Cat();   // Cat object
+        a.sound();       // Output: Cat meows
+    }
+}
+
+
+⸻
+
+🔍 Output:
+
+Dog barks
+Cat meows
+
+
+⸻
+
+✅ Key Points:
+
+Feature	Explanation
+Method	Must be overridden in subclass
+Reference Type	Superclass
+Object Type	Subclass
+Binding Time	Runtime (not compile time)
+Purpose	Enables runtime polymorphism (flexibility)
+
+
+⸻
+
+Would you like a diagram or real-world example (e.g., payment gateways or shapes)?

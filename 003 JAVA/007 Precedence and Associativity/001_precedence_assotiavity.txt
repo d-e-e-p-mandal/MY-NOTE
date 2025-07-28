@@ -1,0 +1,70 @@
+Here’s a simple and clear explanation of Operator Precedence and Associativity in Java — with examples.
+
+⸻
+
+✅ What is Operator Precedence?
+
+Precedence defines which operator is evaluated first in an expression with multiple operators.
+
+Example:
+
+int result = 10 + 5 * 2; 
+// Output: 20, because * has higher precedence than +
+
+
+⸻
+
+✅ What is Associativity?
+
+Associativity decides the direction of execution when two operators have the same precedence.
+	•	Left to Right → most operators (like +, -, *, /)
+	•	Right to Left → assignment operators (=, +=, etc.), unary operators
+
+⸻
+
+🔹 Java Operator Precedence Table (High to Low)
+
+Precedence	    Operators	    Associativity	    Description
+1 (highest)	    ()	            Left to Right	    Parentheses
+2	            ++, --, +, -, !	Right to Left	    Unary operators
+3	            *, /, %	        Left to Right	    Multiplicative
+4	            +, -	        Left to Right	    Additive
+5	            <, >, <=, >=	Left to Right	    Relational
+6	            ==, !=	        Left to Right	    Equality
+7	            &&	            Left to Right	    Logical AND
+8	            `		                            `
+9	            ?:	            Right to Left	    Ternary
+10	            =, +=, -=, etc.	Right to Left	    Assignment
+
+
+⸻
+
+🔸 Examples
+
+🔹 1. Precedence Example
+
+int result = 10 + 5 * 2;
+// 5 * 2 = 10 → 10 + 10 = 20
+
+🔹 2. Associativity Example
+
+int a = 5, b = 10, c = 15;
+int result = a + b + c;
+// Left to right: (5 + 10) + 15 = 30
+
+🔹 3. Right-to-Left Associativity
+
+int a, b, c;
+a = b = c = 10;
+// Same as: a = (b = (c = 10))
+
+
+⸻
+
+✅ Tip to Remember:
+	•	Use parentheses () when you’re not sure of precedence.
+	•	Keep expressions clean and readable.
+
+⸻
+
+Would you like to try a small quiz or practice question on this topic?

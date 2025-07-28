@@ -1,0 +1,32 @@
+🔹 throw vs throws in Java — One Line Difference
+
+Term	Meaning
+throw	Used to actually throw an exception object manually.
+throws	Declares that a method may throw one or more exceptions.
+
+
+⸻
+
+🔸 throw Example:
+
+throw new ArithmeticException("Divide by zero");
+
+➡️ Used inside a method/block to throw an exception.
+
+⸻
+
+🔸 throws Example:
+
+void test() throws IOException {
+    // code that may throw IOException
+}
+
+➡️ Used in method signature to declare possible exceptions.
+
+⸻
+
+🔹 Summary:
+	•	throw = to give an exception (object).
+	•	throws = to declare you might throw exceptions.
+
+Let me know if you want real working examples!

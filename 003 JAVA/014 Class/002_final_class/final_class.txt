@@ -1,0 +1,20 @@
+// Final calss : A final class in Java is a class that cannot be extended (i.e., no subclass can inherit from it).
+
+final class ClassName {
+    // class code
+}
+
+
+// Final class
+final class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+// ❌ Trying to inherit from final class (will cause error)
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}

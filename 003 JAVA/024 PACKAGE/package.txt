@@ -1,0 +1,2 @@
+package : package package_name
+subpackage  using : package_name.subpackage_name
