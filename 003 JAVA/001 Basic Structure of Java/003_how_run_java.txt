@@ -19,3 +19,7 @@ Compile : javac -d . fileName.java
 Compile all fule :
 ..................
 Compile : javac -d . *.java
+
+package create in another file(abc) :
+....................................
+Compile : javac -d abc *.java
