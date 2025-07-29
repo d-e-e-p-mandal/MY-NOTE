@@ -1,0 +1,165 @@
+Protected vs Public :
+.....................
+
+Here’s a Java program that clearly shows:
+	•	✅ public member is accessible everywhere (even in a different package).
+	•	❌ protected member is not accessible from another package unless using inheritance.
+
+⸻
+
+✅ Step 1: Define a class in one package
+
+Create this file in folder: pkg1/Person.java
+
+package pkg1;
+
+public class Person {
+    public String publicName = "Public Name";
+    protected String protectedName = "Protected Name";
+}
+
+
+⸻
+
+❌ Step 2: Try to access both members in another package
+
+Create this file in folder: pkg2/Main.java
+
+package pkg2;
+
+import pkg1.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+
+        System.out.println(p.publicName);       // ✅ Accessible
+        // System.out.println(p.protectedName); // ❌ Error: not accessible
+    }
+}
+
+
+⸻
+
+🧪 Output:
+
+Public Name
+// Error if you uncomment protectedName line:
+// 'protectedName has protected access in pkg1.Person'
+
+
+⸻
+
+✅ Optional Fix: Access protected using inheritance
+
+package pkg2;
+
+import pkg1.Person;
+
+class Child extends Person {
+    void show() {
+        System.out.println(protectedName); // ✅ accessible via inheritance
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Child().show(); // ✅ Works fine
+    }
+}
+
+
+⸻
+
+🔑 Summary:
+
+Modifier	Other package	Subclass in other package
+public	✅ Yes	✅ Yes
+protected	❌ No	✅ Yes (only via inheritance)
+
+Let me know if you want this example zipped or combined into one file.
+
+
+
+
+
+Default vs Protected :
+......................
+
+
+Let’s look at a clear Java example demonstrating how protected and default (no modifier) access work in:
+	•	✅ Same package
+	•	❌ Different package
+
+⸻
+
+✅ 1. SAME PACKAGE ACCESS
+
+📁 File: samepackage/Person.java
+
+package samepackage;
+
+public class Person {
+    protected String name = "Protected Name";
+    String city = "Default City"; // default access
+}
+
+📁 File: samepackage/Main.java
+
+package samepackage;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+        System.out.println(p.name);  // ✅ protected accessible in same package
+        System.out.println(p.city);  // ✅ default accessible in same package
+    }
+}
+
+
+⸻
+
+❌ 2. DIFFERENT PACKAGE ACCESS
+
+📁 File: differentpackage/Outside.java
+
+package differentpackage;
+
+import samepackage.Person;
+
+public class Outside {
+    public static void main(String[] args) {
+        Person p = new Person();
+        // System.out.println(p.city); // ❌ default not accessible outside package
+        // System.out.println(p.name); // ❌ protected not accessible directly outside package
+    }
+}
+
+✅ You can access protected only through inheritance in a different package.
+
+📁 File: differentpackage/Student.java
+
+package differentpackage;
+
+import samepackage.Person;
+
+class Student extends Person {
+    void show() {
+        System.out.println(name);   // ✅ protected accessible via inheritance
+        // System.out.println(city); // ❌ default still not accessible
+    }
+
+    public static void main(String[] args) {
+        new Student().show();
+    }
+}
+
+⸻
+
+🔑 Summary:
+
+Modifier	Same Package	Different Package	Subclass in Different Package
+protected	✅ Yes	❌ No (unless inherited)	✅ Yes (via inheritance)
+default (no modifier)	✅ Yes	❌ No	❌ No
+
+Let me know if you want these in a ZIP format or combined in one file for practice.
