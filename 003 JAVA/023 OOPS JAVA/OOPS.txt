@@ -156,8 +156,6 @@ class Student extends Person {
 
 ⸻
 
-
-
 🔑 Summary:
 
 Modifier	Same Package	Different Package	Subclass in Different Package
