@@ -1,5 +1,7 @@
 Writing markup in JSX : 
-    write in camelCase
-
+.......................
+1. Return a single root element.
+2. Close all the tags
+3. write in camelCase
     1. id 
-    2. class -> className
+    2. class(we can't class because it reserved keyword in javascript) -> className

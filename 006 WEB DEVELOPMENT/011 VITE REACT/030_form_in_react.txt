@@ -1,0 +1,31 @@
+Form in React :
+...............
+    The standard way with Forms is to use Controlled Components. So we make React State to be the 
+"single source of truth".
+    In HTML, form elements, such as <input>, <textarea>, and <select> typically maintain their own
+state and update it based on user input. In React, mutable state is typically kept in the state 
+property of components, and only updated with setState().
+    We can combine the two by making the React state be the "single source of truth". Then the React
+component that renders a form also controls what happens in that form on subsequent user input. An 
+input form element whose value is controlled by React in this way is called a "controlled component".
+
+
+import { useState } from "react";
+
+export default function Form() {
+    //let [fullName, setFullName] = useState("");
+    let [fullName, setFullName] = useState("Deep Mandal"); // we set the default full name is Deep Mandal
+    
+    let handleNameChange = (event) =>{
+        console.log(event.target.value);
+        setFullName(event.target.value);
+    };
+
+    return (
+        <form>
+        <input type="text" placeholder="Enter full Name" value={fullName} onChange={handleNameChange}/>
+
+        <button>Submit</button>
+        </form>
+    )
+}
