@@ -29,3 +29,14 @@ export default function Form() {
         </form>
     )
 }
+
+
+
+
+label for use in React :
+........................
+for keyword use in javascript. so we use htmlFor.
+
+
+Multiple Input Handle :
+.......................
