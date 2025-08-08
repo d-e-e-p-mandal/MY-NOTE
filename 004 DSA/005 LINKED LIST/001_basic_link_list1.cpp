@@ -17,6 +17,7 @@ struct Node{
     }
 };
 
+
 int main(){
     
     Node *head= new Node(10);   // struct Node *head = new struct Node(10);
