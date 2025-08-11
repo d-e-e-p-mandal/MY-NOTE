@@ -1,0 +1,5 @@
+UseRef :
+........
+1. DOM reference : Use for focus
+2. useRef for storing the previous state
+3. hold mutable value prevent re-render of component

@@ -1,0 +1,5 @@
+useMemo :
+.........
+
+1. optimize expensive operation
+2. Referential equality

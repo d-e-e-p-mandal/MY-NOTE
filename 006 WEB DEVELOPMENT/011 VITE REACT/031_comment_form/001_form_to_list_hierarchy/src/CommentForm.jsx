@@ -24,7 +24,7 @@ export default function CommentForm() {
         if (!formData.username || !formData.remarks || !formData.rating) {
             alert("Please fill in all fields.");
             return;
-        }
+        } 
 
         setComments((prevComments) => [...prevComments, formData]);
 
