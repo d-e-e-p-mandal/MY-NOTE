@@ -1,1 +1,4 @@
 Conditional & Dynamic Style:
+
+{/* { price > 50000 ? <p>Discout 5%</p> : null} */}
+{isDiscout && <p>Discout 5%</p>}

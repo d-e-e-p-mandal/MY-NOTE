@@ -2,3 +2,11 @@ component
     1. create component 
     2. export
         export default
+
+
+    1 . export default function function_name
+
+    2.
+    function function_name
+
+    export default function_name
