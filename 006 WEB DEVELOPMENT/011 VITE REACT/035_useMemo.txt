@@ -1,5 +1,11 @@
 useMemo :
 .........
 
-1. optimize expensive operation
+1. optimize expensive operation 
+    useMemo is used here
+
 2. Referential equality
+        In another function when we send props it is an object even same object send it re-render the function component.
+    If we want to re-render when props change we use : React.memo
+
+    import React from "react"; // ✅ Needed for React.memo

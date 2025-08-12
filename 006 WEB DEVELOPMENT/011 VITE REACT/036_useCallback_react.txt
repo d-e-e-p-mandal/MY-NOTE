@@ -1,0 +1,8 @@
+useCallback in React: 
+.....................
+Memoize the function in Referential or Referential equality for function
+
+
+useCallback vs useMemo :
+........................
+useCallback : Memoize the function .    useMemo : Memoize the value

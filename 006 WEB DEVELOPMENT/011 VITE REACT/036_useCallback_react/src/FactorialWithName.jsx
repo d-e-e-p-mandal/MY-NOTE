@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback ,useEffect } from "react";
 import React from "react"; // ✅ Needed for React.memo
 
 export default function App() {
@@ -20,6 +20,11 @@ export default function App() {
     return result;
   }
 
+  const showName = useCallback((greeting)=> {
+    return greeting + " " +name;
+  },[name])
+
+
   return (
     <div>
       <h2>Number: {num}</h2>
@@ -35,13 +40,19 @@ export default function App() {
         onChange={(e) => setName(e.target.value)}
       />
       <p>Name: {name}</p>
-      <DisplayName name={name} />
+      <DisplayName showName={showName} />
     </div>
   );
 }
 
 // ✅ Only re-renders if `name` changes
-const DisplayName = React.memo(({ name }) => {
+const DisplayName = ({ showName }) => {
   console.log("DisplayName rendered");
-  return <p>Name in Display Function: {name}</p>;
-});
+  const [value,setValue] = useState("");
+
+  useEffect(()=>{
+    setValue(showName("Hi"));
+    console.log("component rendered");
+  },[showName])
+  return <p>Name in Display Function: {value}</p>;
+};
