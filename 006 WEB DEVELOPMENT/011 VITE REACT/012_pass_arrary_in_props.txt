@@ -1,1 +1,3 @@
 Passing array in props :
+........................
+    Use map function to show all value of array.

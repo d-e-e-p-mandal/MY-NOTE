@@ -1,2 +1,6 @@
 useEffect :
 ...........
+    The useEffect Hook lets you perform side effects in function components
+
+    Data fetching, setting up a subscription, and manually changing the DOM in React components are
+    all example of side effects

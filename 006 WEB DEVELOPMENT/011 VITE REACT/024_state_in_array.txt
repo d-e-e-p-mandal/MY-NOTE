@@ -1,4 +1,36 @@
 States & Array :
-
+...............
 
 when we use map function to print we use key
+
+
+Updating One element in Array :
+...............................
+let upperCaseOne = (id) => {
+    setTasks((prevTasks)=>
+        prevTasks.map((todo)=>{
+            if(todo.id===id){
+                return{
+                    ...todo,
+                    task : todo.task.toUpperCase(),
+                };
+            }
+            else {
+                return todo;
+            }
+        })
+    );
+};
+
+Updating All element in Array :
+...............................
+let upperCaseOne = (id) => {
+    setTasks((prevTasks)=>
+        prevTasks.map((todo)=>{
+            return{
+                ...todo,
+                task : todo.task.toUpperCase(),
+            };
+        })
+    );
+};
