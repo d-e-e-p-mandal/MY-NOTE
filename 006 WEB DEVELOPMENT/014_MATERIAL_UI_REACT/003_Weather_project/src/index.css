@@ -1,0 +1,41 @@
+/* Default body background/text */
+body {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light theme body */
+body.light-theme {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+/* IconButton */
+.theme-switcher, .MuiIconButton-root {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Light theme button */
+body.light-theme .theme-switcher, body.light-theme .MuiIconButton-root {
+  background-color: #fff3cd;
+  color: #f39c12;
+  transform: rotate(180deg);
+}
+
+/* Dark theme button */
+body.dark-theme .theme-switcher, body.dark-theme .MuiIconButton-root {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  transform: rotate(0deg);
+}
+
+/* Hover effect */
+.theme-switcher:hover, .MuiIconButton-root:hover {
+  opacity: 0.8;
+}
