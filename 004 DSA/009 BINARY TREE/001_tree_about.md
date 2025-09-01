@@ -60,9 +60,3 @@ Here’s a short and clear explanation of the basic Binary Tree concepts and typ
   2
    \
     3
-
-
-
-⸻
-
-Let me know if you want diagrammatic visuals for these or code examples.

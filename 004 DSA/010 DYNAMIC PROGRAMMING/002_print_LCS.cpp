@@ -1,3 +1,3 @@
-// Print all LCS sequences : GFG :
-// PRINT LONGEST COMMON SUBSEQUENCE
+// Print all LCS sequences : GFG : DP - 26
+// PRINT ALL LONGEST COMMON SUBSEQUENCE
 

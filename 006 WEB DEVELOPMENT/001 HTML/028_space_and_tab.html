@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Spacing Example</title>
+</head>
+<body>
+
+  <!-- Normal spaces (HTML collapses them into one) -->
+  <p>Hello     World (HTML collapses spaces)</p>
+
+  <!-- Using &nbsp; for fixed spaces -->
+  <p>Hello&nbsp;&nbsp;&nbsp;World (3 spaces)</p>
+
+  <!-- Using &ensp; and &emsp; -->
+  <p>Hello&ensp;World (En space ≈ 2 spaces)</p>
+  <p>Hello&emsp;World (Em space ≈ 4 spaces)</p>
+
+  <!-- Line breaks -->
+  <p>Hello<br>World<br>New Line</p>
+
+  <!-- Preserve spaces and new lines -->
+  <pre>
+Hello     World
+This   stays   aligned
+  </pre>
+
+  <!-- Using CSS white-space -->
+  <p style="white-space: pre;">Hello     World (CSS keeps spaces)</p>
+
+  <!-- Indentation with CSS -->
+  <p style="margin-left: 40px;">Indented Text (using margin)</p>
+
+</body>
+</html>
