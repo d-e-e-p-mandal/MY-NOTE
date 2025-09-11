@@ -9,7 +9,6 @@ step 3 : Select & view all your table data
 
 
 
-
 Qs 2. Create a database and find average in a city
 
 Qs 3. In the student table :
