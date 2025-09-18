@@ -1,44 +1,139 @@
+Got it ✅ I’ll give you a ready-to-save .md file with everything, including common aggregation examples.
+Here’s the final Markdown content:
 
-# 🟢 MongoDB Shell Basics
+# 🟢 MongoDB Shell Commands Cheat Sheet
 
 ---
 
-### Shell Commands Overview
+### 1. Database Commands
+- `show dbs` → List all databases  
+- `use <dbName>` → Switch to or create a database  
+- `db` → Show current database name  
+- `db.dropDatabase()` → Delete the current database  
 
-```bash
-mongosh
+---
 
-Open MongoDB shell to interact with databases.
+### 2. Collection Commands
+- `show collections` → List collections in the current database  
+- `db.createCollection("myCollection")` → Create a new collection  
+- `db.myCollection.drop()` → Delete a collection  
 
-use database_name
+---
 
-Switch to a database. Creates a temporary database if it doesn’t exist. Database is saved permanently only after inserting at least one document.
+### 3. Document Querying
+- `db.myCollection.find()` → Show all documents  
+- `db.myCollection.find().pretty()` → Pretty JSON format  
+- `db.myCollection.findOne()` → Find one document  
+- `db.myCollection.countDocuments()` → Count documents  
 
-show databases
+---
 
-Show all databases that contain at least one document.
+### 4. Filtering & Projection
+- `db.myCollection.find({ age: 25 })` → Filter by field  
+- `db.myCollection.find({}, { name: 1, age: 1 })` → Show selected fields  
+- `db.myCollection.find().limit(5)` → Limit results  
+- `db.myCollection.find().sort({ age: 1 })` → Sort results  
+- `db.myCollection.find().skip(5)` → Skip results  
 
-clear    # macOS/Linux (Cmd+K on macOS Terminal)
-cls      # Windows
+---
 
-Clear the shell screen.
+### 5. Update & Delete
+- `db.myCollection.updateOne({ name: "Alex" }, { $set: { age: 30 } })` → Update one  
+- `db.myCollection.updateMany({ active: true }, { $set: { active: false } })` → Update many  
+- `db.myCollection.deleteOne({ name: "Alex" })` → Delete one  
+- `db.myCollection.deleteMany({ status: "inactive" })` → Delete many  
 
-help
-db.help()
+---
 
-Show MongoDB shell and database specific help commands.
+### 6. Indexes
+- `db.myCollection.createIndex({ name: 1 })` → Create index  
+- `db.myCollection.getIndexes()` → Show indexes  
+- `db.myCollection.dropIndex("name_1")` → Drop index  
+
+---
+
+### 7. User & Role Management
+- `use admin` → Switch to admin database  
+- `db.createUser({ user: "myUser", pwd: "mypassword", roles: ["readWrite", "dbAdmin"] })` → Create user  
+- `db.dropUser("myUser")` → Remove user  
+- `db.getUsers()` → Show users  
+
+---
+
+### 8. Aggregation Framework
+- `db.myCollection.aggregate([...])` → Run aggregation pipeline  
+
+#### Common Stages:
+- `$match` → Filter documents  
+- `$group` → Group by field, calculate totals  
+- `$project` → Show or transform fields  
+- `$sort` → Sort results  
+- `$limit` → Limit results  
+- `$skip` → Skip results  
+
+---
+
+### 9. Most Common Aggregation Examples
+
+#### 1. Count documents by category
+``` js
+db.products.aggregate([
+  { $group: { _id: "$category", count: { $sum: 1 } } }
+])
+
+2. Sum sales by product
+
+db.sales.aggregate([
+  { $group: { _id: "$product", totalSales: { $sum: "$amount" } } }
+])
+
+3. Average salary by department
+
+db.employees.aggregate([
+  { $group: { _id: "$department", avgSalary: { $avg: "$salary" } } }
+])
+
+4. Top 5 highest salaries
+
+db.employees.aggregate([
+  { $sort: { salary: -1 } },
+  { $limit: 5 }
+])
+
+5. Filter + Group + Sort (example: active users by city)
+
+db.users.aggregate([
+  { $match: { active: true } },
+  { $group: { _id: "$city", total: { $sum: 1 } } },
+  { $sort: { total: -1 } }
+])
+
+6. Project new field (e.g., age from DOB)
+
+db.users.aggregate([
+  { $project: { name: 1, age: { $subtract: [2025, "$yearOfBirth"] } } }
+])
+
 
 ⸻
 
-🟢 MongoDB Shell Complete Commands Cheat Sheet
-
-1. Create / Switch Database
-
-use testDB
-
-Switch to testDB. Creates temporary database if it doesn’t exist. Insert data to save permanently.
+10. Utility Commands
+	•	help → Shell help
+	•	db.help() → Database help
+	•	db.myCollection.help() → Collection help
+	•	it → Fetch more results from cursor
+	•	cls → Clear screen (Windows)
+	•	clear → Clear screen (Linux/macOS)
 
 ⸻
+
+
+---
+
+👉 Save this as:  
+`mongodb_cheatsheet.md`  
+
+Do you want me to also create a **shorter “Quick Reference” version** (just 1-page max with the most used 20 commands) alongside this full version?
 
 2. Insert Data
 

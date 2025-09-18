@@ -74,15 +74,7 @@ Graphical interface to manage MongoDB visually.
 
 ⸻
 
-9. Enable MongoDB to Start at Login
-
-brew services start mongodb/brew/mongodb-community
-
-MongoDB will automatically start whenever you log in.
-
-⸻
-
-10. Stop MongoDB Service
+9. Stop MongoDB Service
 
 brew services stop mongodb/brew/mongodb-community@7.0
 
@@ -90,7 +82,7 @@ Stop MongoDB service when not needed.
 
 ⸻
 
-11. Uninstall MongoDB
+10. Uninstall MongoDB
 
 brew uninstall mongodb-community@7.0
 brew untap mongodb/brew
@@ -99,7 +91,7 @@ Completely remove MongoDB from your system.
 
 ⸻
 
-12. Useful MongoDB Commands
+11. Useful MongoDB Commands
 
 show dbs         # List databases
 use <dbname>     # Switch to database
