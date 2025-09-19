@@ -5,19 +5,25 @@ npm i mongoose
 ```js
 const mongoose = require("mongoose");
 
-//mongoose.connect("mongodb://127.0.0.1:27017/test");
+  main()
+    .then(() => {
+      console.log("connection successfully");
+    })
+    .catch(err => console.log(err));
 
-// this is the same as before line it working as a async function
+  //or
 
-main()
-  .then(() => {
-    console.log("connection successfully");
-  })
-  .catch(err => console.log(err));
+  main().catch(err => console.log(err));
+```
+---
+```js
+  mongoose.connect("mongodb://127.0.0.1:27017/test");
 
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test');
-}
+  //or
+
+  async function main() {
+    await mongoose.connect('mongodb://127.0.0.1:27017/test');
+  }
 ```
 
 ### Note :

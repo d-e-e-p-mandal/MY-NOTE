@@ -1,7 +1,7 @@
 
 # 🟢 Update with Validation in Mongoose
 
-🔹 Why use runValidators?
+## 🔹 Why use runValidators?
 	•	By default, Mongoose validators don’t run on updates.
 	•	To enforce schema rules during updates, use:
 ``` js
@@ -49,14 +49,21 @@ User.findByIdAndUpdate(
 )
   .then(user => console.log("✅ Updated:", user))
   .catch(err => {
-    if (err.name === "ValidationError") {
-      for (let field in err.errors) {
-        console.log("❌ Validation Error:", err.errors[field].message);
-      }
-    } else {
-      console.log("❌ Other Error:", err.message);
-    }
-  });
+    console.log("❌ Validation Error:", err.errors.price.properties.message);
+
+});
+
+
+
+//   .catch(err => {
+//     if (err.name === "ValidationError") {
+//       for (let field in err.errors) {
+//         console.log("❌ Validation Error:", err.errors[field].message);
+//       }
+//     } else {
+//       console.log("❌ Other Error:", err.message);
+//     }
+//   });
 ```
 
 ⸻

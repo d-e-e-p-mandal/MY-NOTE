@@ -6,6 +6,9 @@ Here’s the final Markdown content:
 ---
 
 ### 1. Database Commands
+### Connect :
+    mongosh
+    
 - `show dbs` → List all databases  
 - `use <dbName>` → Switch to or create a database  
 - `db` → Show current database name  
