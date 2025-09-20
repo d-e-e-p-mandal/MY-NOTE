@@ -1,6 +1,6 @@
 ## Creating the Model and Schema :
 
-We create Model in different folder for handle complex system.
+We create Model in different folder for handle complex system. All scheam write in models folder.
 
 #### chat will have :
 (_id, from, to, message, created_at)
