@@ -65,6 +65,10 @@
             <p><span>Received by:</span>
                 <%= chat.to %>
             </p>
+            <div>
+                Time : <%= chat.created_at.toString().split(" ")[4] %> <br>
+                Date : <%= chat.created_at.toString().split(" ").slice(0, 4).join(" ")  %>
+            </div>
             <hr>
         </div>
         <% } %>

@@ -43,7 +43,22 @@
             border-top: 1px solid #ddd;
             margin: 10px 0 0 0;
         }
+
+        .edit-form {
+            margin-top: 10px;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            display: none;
+            /* initially hidden */
+        }
+
+        .chat-box button {
+            margin-top: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     </style>
+
 </head>
 
 <body>
@@ -59,16 +74,35 @@
             <p><span>From:</span>
                 <%= chat.from %>
             </p>
-            <p><span>Message:</span>
+            <p>
+                <span>Message:</span>
                 <%= chat.msg %>
+                    <!-- ✅ Edit toggle button -->
+                    <button type="button" onclick="toggleEditForm('<%= chat._id %>')">Edit</button>
+                    <!-- ✅ Inline edit form -->
+                    <form id="edit-form-<%= chat._id %>" class="edit-form" method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+                        <label>Message:</label>
+                        <input type="text" name="msg" value="<%= chat.msg %>" required><br>
+                        <button type="submit">Update</button>
+                    </form>
             </p>
             <p><span>Received by:</span>
                 <%= chat.to %>
             </p>
+            <div>
+                Time : <%= chat.created_at.toString().split(" ")[4] %> <br>
+                Date : <%= chat.created_at.toString().split(" ").slice(0, 4).join(" ")  %>
+            </div>
+
             <hr>
         </div>
-        <% } %>
+    <% } %>
 
+    <script>
+        function toggleEditForm(id) {
+            const form = document.getElementById("edit-form-" + id); 
+            form.style.display = (form.style.display === "none") ? "block" : "none";
+        } </script>
 </body>
 
 </html>

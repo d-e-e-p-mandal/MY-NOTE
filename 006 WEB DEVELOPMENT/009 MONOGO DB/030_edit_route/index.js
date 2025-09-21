@@ -10,6 +10,10 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
 
+// for put and delete request
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 //mongo db connection
 const mongoose = require('mongoose');
 main()
@@ -46,7 +50,7 @@ app.post("/chats",(req,res)=>{
         to:to,
         from : from,
         msg:msg,
-        created_at:new Date,
+        created_at:new Date(),
     })
 
     newChat.save()
@@ -55,6 +59,15 @@ app.post("/chats",(req,res)=>{
 
    res.redirect("/chats");
     
+});
+
+app.put("/chats/:id", async (req, res) => {
+    console.log("PUT route hit:", req.params.id, req.body);
+    let { id } = req.params;
+    let { msg: newMsg } = req.body;
+
+    await Chat.findByIdAndUpdate(id, { msg: newMsg, created_at: new Date() }, { new: true });
+    res.redirect("/chats");
 });
 
 
