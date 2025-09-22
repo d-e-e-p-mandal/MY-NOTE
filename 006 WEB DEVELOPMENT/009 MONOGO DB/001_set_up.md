@@ -4,7 +4,8 @@
 This guide walks you through **full MongoDB installation and setup** on macOS.
 
 ---
-<span style="color:red">Red Text</span>
+``` diff
++    <span style="color:red">Red Text</span>
 ### 1. Install Homebrew
 
 
