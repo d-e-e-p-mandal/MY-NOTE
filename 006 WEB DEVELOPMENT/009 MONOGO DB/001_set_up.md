@@ -7,8 +7,8 @@ This guide walks you through **full MongoDB installation and setup** on macOS.
 
 ### 1. Install Homebrew
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 Installs Homebrew, the package manager for macOS.
 
@@ -21,7 +21,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 2. Verify Homebrew Installation
 
-brew --version
+   brew --version
 
 Check if Homebrew is installed correctly.
 
