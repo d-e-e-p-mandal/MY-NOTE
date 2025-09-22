@@ -9,70 +9,70 @@ Here’s the final Markdown content:
 ### Connect :
     mongosh
     
-- `show dbs` → List all databases  
-- `use <dbName>` → Switch to or create a database  
-- `db` → Show current database name  
-- `db.dropDatabase()` → Delete the current database  
+-     show dbs # List all databases  
+-     use <dbName> # Switch to or create a database  
+-     db  # Show current database name  
+-     db.dropDatabase() # Delete the current database  
 
 ---
 
 ### 2. Collection Commands
-- `show collections` → List collections in the current database  
-- `db.createCollection("myCollection")` → Create a new collection  
-- `db.myCollection.drop()` → Delete a collection  
+-     show collections  # List collections in the current database  
+-     db.createCollection("myCollection")  # Create a new collection  
+-     db.myCollection.drop()  # Delete a collection  
 
 ---
 
 ### 3. Document Querying
-- `db.myCollection.find()` → Show all documents  
-- `db.myCollection.find().pretty()` → Pretty JSON format  
-- `db.myCollection.findOne()` → Find one document  
-- `db.myCollection.countDocuments()` → Count documents  
+-     db.myCollection.find()  # Show all documents  
+-     db.myCollection.find().pretty()  # Pretty JSON format  
+-     db.myCollection.findOne()  # Find one document  
+-     db.myCollection.countDocuments()   Count documents  
 
 ---
 
 ### 4. Filtering & Projection
-- `db.myCollection.find({ age: 25 })` → Filter by field  
-- `db.myCollection.find({}, { name: 1, age: 1 })` → Show selected fields  
-- `db.myCollection.find().limit(5)` → Limit results  
-- `db.myCollection.find().sort({ age: 1 })` → Sort results  
-- `db.myCollection.find().skip(5)` → Skip results  
+-     db.myCollection.find({ age: 25 })  # Filter by field  
+-     db.myCollection.find({}, { name: 1, age: 1 })  # Show selected fields  
+-     db.myCollection.find().limit(5)  # Limit results  
+-     db.myCollection.find().sort({ age: 1 })  # Sort results  
+-     db.myCollection.find().skip(5)  # Skip results  
 
 ---
 
 ### 5. Update & Delete
-- `db.myCollection.updateOne({ name: "Alex" }, { $set: { age: 30 } })` → Update one  
-- `db.myCollection.updateMany({ active: true }, { $set: { active: false } })` → Update many  
-- `db.myCollection.deleteOne({ name: "Alex" })` → Delete one  
-- `db.myCollection.deleteMany({ status: "inactive" })` → Delete many  
+-     db.myCollection.updateOne({ name: "Alex" }, { $set: { age: 30 } }) # Update one  
+-     db.myCollection.updateMany({ active: true }, { $set: { active: false } })  # Update many  
+-    db.myCollection.deleteOne({ name: "Alex" })  # Delete one  
+-    db.myCollection.deleteMany({ status: "inactive" })  # Delete many  
 
 ---
 
 ### 6. Indexes
-- `db.myCollection.createIndex({ name: 1 })` → Create index  
-- `db.myCollection.getIndexes()` → Show indexes  
-- `db.myCollection.dropIndex("name_1")` → Drop index  
+-     db.myCollection.createIndex({ name: 1 })  # Create index  
+-     db.myCollection.getIndexes()  # Show indexes  
+-     db.myCollection.dropIndex("name_1")  # Drop index  
 
 ---
 
 ### 7. User & Role Management
-- `use admin` → Switch to admin database  
-- `db.createUser({ user: "myUser", pwd: "mypassword", roles: ["readWrite", "dbAdmin"] })` → Create user  
-- `db.dropUser("myUser")` → Remove user  
-- `db.getUsers()` → Show users  
+-     use admin  # Switch to admin database  
+-     db.createUser({ user: "myUser", pwd: "mypassword", roles: ["readWrite", "dbAdmin"] })   # Create user  
+-     db.dropUser("myUser")  #  Remove user  
+-     db.getUsers()  # Show users  
 
 ---
 
 ### 8. Aggregation Framework
-- `db.myCollection.aggregate([...])` → Run aggregation pipeline  
+-     db.myCollection.aggregate([...])  # Run aggregation pipeline  
 
 #### Common Stages:
-- `$match` → Filter documents  
-- `$group` → Group by field, calculate totals  
-- `$project` → Show or transform fields  
-- `$sort` → Sort results  
-- `$limit` → Limit results  
-- `$skip` → Skip results  
+-     $match  # Filter documents  
+-     $group  # Group by field, calculate totals  
+-     $project  # Show or transform fields  
+-     $sort   # Sort results  
+-     $limit # Limit results  
+-     $skip  # Skip results  
 
 ---
 

@@ -76,27 +76,28 @@ Graphical interface to manage MongoDB visually.
 
 ### 9. Stop MongoDB Service
 
-    brew services stop mongodb/brew/mongodb-community@7.0
+-      brew services stop mongodb/brew/mongodb-community@7.0
 
-Stop MongoDB service when not needed.
+
+-     Stop MongoDB service when not needed.
 
 ⸻
 
 ### 10. Uninstall MongoDB
 
-brew uninstall mongodb-community@7.0
-brew untap mongodb/brew
+-     brew uninstall mongodb-community@7.0
+-     brew untap mongodb/brew
 
 Completely remove MongoDB from your system.
 
 ⸻
 
-11. Useful MongoDB Commands
+### 11. Useful MongoDB Commands
 
-show dbs         # List databases
-use <dbname>     # Switch to database
-db.stats()       # Database stats
-db.collection.find() # Query collection
+-     show dbs         # List databases
+-     use <dbname>     # Switch to database
+-     db.stats()       # Database stats
+-     db.collection.find() # Query collection
 
 Common MongoDB shell commands for daily usage.
 
