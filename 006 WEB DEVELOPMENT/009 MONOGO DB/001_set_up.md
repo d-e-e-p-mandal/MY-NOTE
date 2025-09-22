@@ -10,8 +10,8 @@ This guide walks you through **full MongoDB installation and setup** on macOS.
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 - **Installs Homebrew, the package manager for macOS.**
-
-[ ]      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+-
+       echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 -
       eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -102,4 +102,4 @@ Common MongoDB shell commands for daily usage.
 
 ---
 
-```
+
