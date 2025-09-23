@@ -33,4 +33,26 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.static(path.join(__dirname,"/public")));
 ```
 
-  
+## What do middlewares do ?
+Middleware functions can perform the following tasks:
+- Excute any code.
+- Make changes to the request and the response objects.
+- End the request-response cycle.
+- Call the next middleware function in the stack.
+
+
+## app.use(middleware)
+``` js
+
+app.use(()=>{
+    console.log("Hi, I am a middleware");
+});
+
+// using req, res object in middleware
+
+app.use((req, res)=>{
+    console.log("Hi, I am middleware");
+    res.send("bye");
+});
+
+```
