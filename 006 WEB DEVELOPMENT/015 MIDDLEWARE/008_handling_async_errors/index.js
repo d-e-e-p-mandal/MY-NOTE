@@ -1,5 +1,7 @@
+//require("express-async-errors");
 const express = require("express");
 const app = express();
+
 
 const ExpressError = require("./ExpressError");
 
@@ -41,31 +43,43 @@ app.get("/chats",async (req,res)=>{
     res.render("index.ejs",{chats});
 });
 
-// show route
-app.get("/chats/:id", async (req, res, next) => {
-    try {
-        let { id } = req.params;            // get id from URL
-       // console.log(id);
-        
-        let chat = await Chat.findById(id); // fetch chat by ID
-
-        if (!chat) {
-            throw new ExpressError(404, "chat not found");
-        }
-
-        res.render("index.ejs", { chats: [chat] }); // pass chat to template
-    } catch (err) {
-        next(err);                           // pass any errors to global handler
-    }
-});
-
 // new chat route 
 app.get("/chats/new",(req,res)=>{
   
     res.render("newchat.ejs");
 });
 
-app.post("/chats",(req,res)=>{
+// show route
+app.get("/chats/:id", async (req, res, next) => {
+    try {
+        const { id } = req.params;
+
+        // Check if id is valid ObjectId
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            // Optional: You can throw a 400 for invalid IDs
+            return next(new ExpressError(400, "Invalid Chat ID"));
+        }
+
+        // Find chat by ID
+        const chat = await Chat.findById(id);
+
+        // If chat not found, throw custom error
+        if (!chat) {
+            return next(new ExpressError(404, "Chat not found"));
+        }
+
+        // If chat exists, render template
+        res.render("index.ejs", { chats: [chat] });
+    } catch (err) {
+        // Pass any other errors to global handler
+        next(err);
+    }
+});
+
+
+
+app.post("/chats",async (req,res,next)=>{
+    try{
     let {from, to, msg} = req.body;
     let newChat = new Chat({
         to:to,
@@ -74,21 +88,34 @@ app.post("/chats",(req,res)=>{
         created_at:new Date(),
     })
 
-    newChat.save()
-   .then(() => console.log("chat saved"))
-   .catch(err => console.log(err));
+//     await newChat.save()
+//    .then(() => console.log("chat saved"))
+//    .catch(err => console.log(err));
+
+await newChat.save(); // throws if validation fails
+console.log("Chat saved successfully");
+res.redirect("/chats");
+
 
    res.redirect("/chats");
+    }catch(err) {
+        console.log(err.message);
+       next(err); 
+    }
     
 });
 
 app.put("/chats/:id", async (req, res) => {
+    try{
     console.log("PUT route hit:", req.params.id, req.body);
     let { id } = req.params;
     let { msg: newMsg } = req.body;
 
     await Chat.findByIdAndUpdate(id, { msg: newMsg, created_at: new Date() }, { new: true });
     res.redirect("/chats");
+    }catch(err){
+        next(new ExpressError("500","Error"));
+    }
 });
 
 // DELETE chat route
