@@ -60,10 +60,16 @@ isActive: {
 
 createdAt: {
   type: Date,
-  default: Date.now,      
+  default: Date.now,
+    
   immutable: true,        // always fixed after creation
   get: v => v.toDateString()
 }
+// default set : image link
+image: {
+        type: String,
+        set: (v) => v === ""? "default link" : v,
+    },
 
 
 ⸻
