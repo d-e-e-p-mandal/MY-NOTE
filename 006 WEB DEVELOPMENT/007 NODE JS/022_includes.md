@@ -5,6 +5,26 @@ Example :
     <%- include("includes/head.ejs")%>
 
 
+## EJS Mate :
 
-### Important package Used :
-`Ejs mate`
+#### Important package Used : `Ejs mate`
+
+#### Installation :
+
+    npm install ejs-mate --save
+
+### middleware use :
+```js 
+const ejsMate = require(`ejs-mate`);
+app.engine("ejs", ejsMate);
+
+```
+
+```html
+<div class="container"><%- body %></div>
+```
+
+```html
+<% layout("/layouts/boilerplate") %>
+```
+
