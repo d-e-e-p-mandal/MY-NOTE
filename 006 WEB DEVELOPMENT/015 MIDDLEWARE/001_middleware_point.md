@@ -31,6 +31,9 @@ Middleware in Express are functions that come into play after the server receive
 ```js
 app.use(express.urlencoded({extended : true}));
 app.use(express.static(path.join(__dirname,"/public")));
+
+// Middleware to parse JSON (optional for POST requests)
+app.use(express.json());
 ```
 
 ## What do middlewares do ?
