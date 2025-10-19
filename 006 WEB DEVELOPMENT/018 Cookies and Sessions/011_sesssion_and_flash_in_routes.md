@@ -35,5 +35,12 @@ app.use("/listings/:id/reviews",listings);
 
 - show message ejs/html
 ```html
-<%= sucess %> 
+    <%- include("../includes/flash.ejs") %>
+```
+
+
+```html
+<% if(success && sucess.length) { %>
+    <div> <%= sucess %></div>
+<%= } %>
 ```

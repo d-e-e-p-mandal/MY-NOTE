@@ -5,3 +5,6 @@
 ## 5. react icons
 ## 6. material js
 ## 7. joi
+## 8. session
+## 9. connect-flash
+## 10. passport
