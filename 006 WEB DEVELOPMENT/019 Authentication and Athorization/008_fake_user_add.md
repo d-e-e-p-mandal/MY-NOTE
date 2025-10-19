@@ -1,6 +1,8 @@
 ### User data add (Manually) :
+Passport will add hashing and salting in password. 
+##### Hashing algorithm by passport : pbkdf2
 ```js
-    User.register(fakeUser, "password");
+   await User.register(fakeUser, "password");
 ```
 ```js
 app.get("/demouser", async(req, res)=>{
@@ -9,6 +11,6 @@ app.get("/demouser", async(req, res)=>{
         username: "student", // if we dont write it automatically write by passport
     });
 
-    User.register(fakeUser, "password");
+    let registerdUser = await User.register(fakeUser, "password");
 });
 ```

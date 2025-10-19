@@ -27,19 +27,8 @@ const userSchema = new Schema({
 });
 
 
-User.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", userSchema);
 ```
 
-User data add (Manually) :
-```js
-app.get("/demouser", async(req, res)=>{
-    let fakeUser = new User({
-        email :"student@gmail.com",
-        username: "student", // if we dont write it automatically write by passport
-    });
-
-    User.register(fakeUser, "password");
-});
-```

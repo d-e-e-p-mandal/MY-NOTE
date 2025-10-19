@@ -15,22 +15,3 @@ const sessionOptions = {
     },
 };
 ```
-
-- #### Use this middleware before routes :
-```js
-app.use((req, res, next)=>{
-  res.locals.success = req.flash("success");
-});
-```
-
-```js
-app.use(session(sessionOptions));
-app.use(flash());
-
-app.use((req, res, next)=>{
-  res.locals.success = req.flash("success");
-});
-
-app.use("/listings",listings);
-app.use("/listings/:id/reviews",listings);
-```
