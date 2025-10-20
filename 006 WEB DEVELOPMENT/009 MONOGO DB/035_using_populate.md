@@ -49,3 +49,54 @@ const mongoose = require("mongoose");
 
     findCustomer();
 ```
+
+
+## Mongoose Nested Populate Example
+```js
+// models/user.js
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  username: String,
+  email: String
+});
+
+module.exports = mongoose.model("User", userSchema);
+```
+
+```js
+// models/review.js
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const reviewSchema = new Schema({
+  comment: String,
+  rating: Number,
+  createdAt: { type: Date, default: Date.now },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
+});
+
+module.exports = mongoose.model("Review", reviewSchema);
+```
+#### ⚙️ Nested Populate Usage
+```js
+const Listing = require("./models/listing");
+
+app.get("/listings/:id", async (req, res) => {
+  const listing = await Listing.findById(req.params.id)
+    .populate({
+      path: "reviews",
+      populate: {
+        path: "author",     // Nested populate
+        model: "User"
+      }
+    })
+    .populate("owner"); // Also populate the listing's owner
+
+  res.render("listings/show", { listing });
+});
+```
