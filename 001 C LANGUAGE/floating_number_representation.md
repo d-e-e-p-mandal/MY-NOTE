@@ -13,6 +13,27 @@ These formats can **approximate most decimal numbers**, but **not all** of them 
 | `float` | 32 | 1 | 8 | 23 | ≈ 7 digits |
 | `double` | 64 | 1 | 11 | 52 | ≈ 15 digits |
 
+| Type | Mantissa Bits | Approx. Decimal Digits | Formula |
+|------|----------------|-------------------------|----------|
+| float | 23 | ≈ 6.92 | log₁₀(2²³) ≈ 6.92 |
+| double | 52 | ≈ 15.65 | log₁₀(2⁵²) ≈ 15.65 |
+
+```
+float a = 1234567.0f;     // OK
+float b = 12345678.0f;    // Not exact
+If you print b, you’ll see:
+12345678.0 → stored as 12345680.0
+Because only the first 7 digits are guaranteed accurate.
+
+
+// similar double
+double x = 123456789012345.0;
+double y = 1234567890123456.0;
+output :
+x → 123456789012345.0  ✅ (accurate)
+y → 1234567890123456.0 ❌ (may round)
+
+```
 ### 🧩 Meaning
 - **Mantissa (fraction bits)** determines *how many binary digits* you can represent.
 - **More mantissa bits → more precision**.
