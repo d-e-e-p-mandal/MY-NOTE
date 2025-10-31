@@ -1,0 +1,2 @@
+# What is Machine Learining ?
+Machine Learning (ML) is a branch of Artificial Intelligence (AI) that allows computers to learn from data and improve automatically without being explicitly programmed for every task.
