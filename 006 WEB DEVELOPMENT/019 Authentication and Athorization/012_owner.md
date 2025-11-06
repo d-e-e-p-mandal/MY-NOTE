@@ -47,7 +47,7 @@ const listingSchema = new Schema({
 });
 
 ```
-
+## Review Schema
 ```js
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;

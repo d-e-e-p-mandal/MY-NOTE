@@ -32,3 +32,32 @@ userSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", userSchema);
 ```
 
+
+`When you add passportLocalMongoose to your schema, it injects extra fields and authentication methods automatically.`
+
+Specifically, it adds:
+
+```js
+username: { type: String, unique: true }
+hash: String
+salt: String
+```
+
+
+So even though your code shows only:
+```js
+const userSchema = new Schema({
+  email: { type: String, required: true }
+});
+```
+
+After the plugin runs, your final schema in MongoDB looks like:
+
+```js
+{
+  email: String,
+  username: String,
+  hash: String,
+  salt: String
+}
+```
