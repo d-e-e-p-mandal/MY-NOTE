@@ -18,6 +18,7 @@ These formats can **approximate most decimal numbers**, but **not all** of them 
 | float | 23 | ≈ 6.92 | log₁₀(2²³) ≈ 6.92 |
 | double | 52 | ≈ 15.65 | log₁₀(2⁵²) ≈ 15.65 |
 
+
 ```
 float a = 1234567.0f;     // OK
 float b = 12345678.0f;    // Not exact
