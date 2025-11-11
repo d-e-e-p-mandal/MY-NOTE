@@ -141,3 +141,183 @@ that data into a single unit, and controls access to its inner workings.
 code.
 3. **`Clear Contracts:`** Clients interact only via well-defined methods (the public API).
 4. **`Modularity:`** Code is organized into self-contained units, easing testing and reuse.
+
+
+
+# Inheritance and Polymorphism
+
+---
+
+## 1. Inheritance
+
+### 1.1 What is Inheritance?
+
+- Real-world objects are often related in parent-child relationships.  
+- Example: Object **A (Parent)** and **B (Child)** share properties.  
+- In programming, this relationship is mimicked using **Inheritance**.
+
+---
+
+### 1.2 Real-Life Example: Car Hierarchy
+
+#### Parent Class: Car (Generic)
+**Common Attributes:**
+- Brand  
+- Model  
+- IsEngineOn  
+- CurrentSpeed  
+
+**Common Behaviors:**
+- `startEngine()`  
+- `stopEngine()`  
+- `accelerate()`  
+- `brake()`
+
+#### Child Classes:
+- **ManualCar (inherits Car)**
+  - Specific Attribute: `CurrentGear`
+  - Specific Behavior: `shiftGear()`
+
+- **ElectricCar (inherits Car)**
+  - Specific Attribute: `BatteryPercentage`
+  - Specific Behavior: `chargeBattery()`
+
+---
+
+### 1.3 C++ Syntax
+
+```cpp
+class ManualCar : public Car { ... };
+class ElectricCar : public Car { ... };
+```
+
+- `public` inheritance maintains access specifiers.  
+- `private` and `protected` alter accessibility.
+
+---
+
+### 1.4 Access Specifiers in Inheritance
+
+| Inheritance Type | Effect on Members |
+|------------------|------------------|
+| **public** | Public → Public<br>Protected → Protected |
+| **protected** | Public → Protected<br>Protected → Protected |
+| **private** | All inherited members → Private |
+| *(Note)* | Private members of parent class are **never inherited** |
+
+> 💡 *See code section titled “Access Specifiers in Inheritance Example” for implementation.*
+
+---
+
+## 2. Polymorphism
+
+### 2.1 What is Polymorphism?
+
+- Derived from **"Poly" (many)** + **"Morph" (forms)** = *many forms*.  
+- One stimulus → different responses based on object/situation.
+
+---
+
+### 2.2 Real-Life Scenarios
+
+#### Scenario 1:
+- Different animals (**Duck, Human, Tiger**) all have a `run()` behavior.  
+- Each performs it differently.
+
+#### Scenario 2:
+- Same human `run()`s differently based on context (*tired vs chased*).
+
+---
+
+### 2.3 Types of Polymorphism in Programming
+
+1. **Static Polymorphism – Compile-time**
+   - Achieved via **Method Overloading**  
+
+2. **Dynamic Polymorphism – Runtime**
+   - Achieved via **Method Overriding**
+
+---
+
+## 3. Static Polymorphism (Method Overloading)
+
+- Same method name, different parameter lists.  
+- Overloaded method is resolved at **compile time**.
+
+```cpp
+class ManualCar {
+void accelerate(); // no parameter
+void accelerate(int speed); // with parameter
+};
+```
+
+- Allows the same behavior to adapt based on passed arguments.
+
+**Rules:**
+- Method name: Same  
+- Return type: Can be same or different *(but not used for overloading)*  
+- Parameters: Must vary in **number or type**
+
+---
+
+## 4. Dynamic Polymorphism (Method Overriding)
+
+- Same method signature redefined in child classes.  
+- Achieved using **virtual functions** in C++.  
+- Resolved at **runtime**.
+
+```cpp
+class Car {
+virtual void accelerate() = 0; // Abstract
+};
+class ManualCar : public Car {
+void accelerate() override; // Manual-specific logic
+};
+class ElectricCar : public Car {
+void accelerate() override; // Electric-specific logic
+};
+```
+
+---
+
+## 5. Combined Use of OOP Pillars
+
+> Final code demonstrates all four pillars of OOP.
+
+**Code Title:** *Example — Full Car OOP Implementation Demonstrating Abstraction, Encapsulation, Inheritance & Polymorphism*
+
+- **Abstraction** → Hiding implementation details  
+- **Encapsulation** → Private/protected members  
+- **Inheritance** → Manual/Electric inherit Car  
+- **Polymorphism** → Method overriding & overloading  
+
+---
+
+## Additional Concepts
+
+### Protected
+- Inaccessible outside the class, but **accessible within child classes**.
+
+### Operator Overloading *(Homework)*
+
+**Concept Asked:**
+- What is **Operator Overloading**?
+
+**Question:**
+- Why is it available in **C++** but not in **Java/Python**?
+
+---
+
+## Conclusion & Practice
+
+- Understanding OOPs is best done via real-world relatable examples.  
+- **Practice Suggestion:** Modify/add features to existing car classes.
+
+---
+
+## Homework
+
+1. **Define Operator Overloading.**  
+2. **Why is it not supported in Java/Python?**
+
+---
