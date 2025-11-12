@@ -5,8 +5,6 @@ const MongoStore = require('connect-mongo');
 
 const dbUrl = process.env.ATLASDB_URL;
 
-
-
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
