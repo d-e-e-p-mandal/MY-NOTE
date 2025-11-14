@@ -1,25 +1,30 @@
-✅ User Input in Java (Clean & Simple)
+# User Input in Java (Clean & Simple)
 
 To take user input in Java, we commonly use the Scanner class from java.util package.
 
 ⸻
 
-🔹 1. Import Scanner Class
-
+#### 🔹 1. Import Scanner Class
+```java
 import java.util.Scanner;
-
+```
 
 ⸻
 
-🔹 2. Create Scanner Object
-
+#### 🔹 2. Create Scanner Object
+```java
 Scanner sc = new Scanner(System.in);
+```
 
+#### 3. Close Scanner Class
+```java
+sc.close();
+```
 
 ⸻
 
 ✅ Example: Take Input of All Basic Types
-
+```java
 import java.util.Scanner;
 
 public class Main {
@@ -55,18 +60,18 @@ public class Main {
         System.out.println("Passed : " + passed);
     }
 }
-
+```
 
 ⸻
 
 🔸 Input Example:
-
+``` 
 Enter your name: Deep Mandal
 Enter your age: 20
 Enter your weight: 55.5
 Enter your grade: A
 Did you pass (true/false)? true
-
+```
 
 ⸻
 
@@ -87,8 +92,9 @@ Passed : true
 	•	Use next().charAt(0) to get a single character.
 	•	Always close Scanner at the end:
 
+```java
 sc.close();
-
+```
 
 
 ⸻

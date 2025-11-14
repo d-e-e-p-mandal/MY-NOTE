@@ -94,5 +94,3 @@ Passed: true
 
 
 ⸻
-
-Let me know if you’d like a diagram, quiz, or coding challenge based on literals!
