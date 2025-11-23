@@ -1,8 +1,10 @@
-## Redux :
+# Redux :
 
-State Management Library for JS Apps
-Redux is built for larger, more complex applications.
-Redux Toolkit is the official recommendation of writing Redux code.
+[Documentation](https://redux.js.org/)
+
+- State Management Library for JS Apps
+- Redux is built for larger, more complex applications.
+- Redux Toolkit is the official recommendation of writing Redux code.
 
 
 ### Store :
