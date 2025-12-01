@@ -1,10 +1,10 @@
-## 1. faker package
-## 2. uuid
-## 3. ejs mate
-## 4. awesome font
-## 5. react icons
-## 6. material js
-## 7. joi
+## 1. faker package : FAKE DATA GENERATE
+## 2. uuid  : GENERATE INDEX
+## 3. ejs mate : EJS TEMPLATE
+## 4. awesome font : INCON
+## 5. react icons : INCON
+## 6. material js / SADCN UI
+## 7. joi : 
 ## 8. session
 ## 9. connect-flash
 ## 10. passport
