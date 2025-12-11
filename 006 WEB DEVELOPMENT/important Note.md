@@ -4,7 +4,15 @@
 ## 4. awesome font : INCON
 ## 5. react icons : INCON
 ## 6. material js / SADCN UI
-## 7. joi : 
-## 8. session
+## 7. joi : MongoDB Validaton
+## 8. session - cookies
 ## 9. connect-flash
-## 10. passport
+## 10. passport/bcrypts : authentication
+## 11 EXPRESS ROUTER :
+## 12 MVC STRUCTURE
+## 13 REDUX
+## 14 RTK QUERY
+
+### SECRET FILE : 
+- .env : DEVELOPMENT 
+    - DOTENV
