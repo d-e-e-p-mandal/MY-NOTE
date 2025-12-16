@@ -10,8 +10,9 @@ Utility-first means the framework's main focus is on providing utility classes.
 
 
 > Vite Install :
-> npm i vite
-
+```bash
+ npm i vite
+```
 ```json
 {
     "scripts":{
