@@ -55,6 +55,28 @@ app
 # Dynamic Routing :
 [slug]
 
+
+##### Params and search params
+```js
+export default async function Home(props) {
+    console.log(props);
+  return (
+    <>
+        <h1>This is Home Page</h1>
+    </>
+  );
+}
+
+```
+output :
+```code
+Object {
+  params: ReactPromise {...},
+  searchParams: ReactPromise {...}
+}
+
+
+
 ```code
 http://localhost:3000/user/42?role=admin&status=active
 ```
