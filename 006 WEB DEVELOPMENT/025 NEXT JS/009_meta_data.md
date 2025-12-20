@@ -1,4 +1,4 @@
-### Meta Data In Next Js
+# Meta Data In Next Js
 title tag in layout : (Not recomended)
 
 ``` jsx
@@ -17,8 +17,9 @@ export default function RootLayout({ children }) {
 ```
 
 
-### ADVANCED STYLE :
+# ADVANCED STYLE :
 
+layout.js
 ```jsx
 export const metadata = {
   title: {
@@ -29,6 +30,18 @@ export const metadata = {
 };
 ```
 
+page.js
+```js
+export const metadata = {
+  title: "Home",
+};
+
+export default function Page() {
+  return <h1>Home Page</h1>;
+}
+```
+🔁 Replacement : %s → "Home"
+✅ Browser title : Home | My Website
 
 
 # Dynamic Page : Generate meta data

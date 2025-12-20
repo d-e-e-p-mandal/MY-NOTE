@@ -24,4 +24,7 @@ export default function AuthLayout({ children }) {
 }
 ```
 
-Note : Dont use head or body tag : (Error will be generate)
+Note :Root layout only use head and body otherwise Dont use head or body tag : (Error will be generate)
+
+
+Note : Do using Group() to devide different differnt part
