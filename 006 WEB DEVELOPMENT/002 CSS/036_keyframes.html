@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation – One File</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== PAGE STYLE ===== */
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== ANIMATED BOX ===== */
+    .box {
+      width: 120px;
+      height: 120px;
+      background: #38bdf8;
+      border-radius: 12px;
+
+      animation: bounceRotate 2s ease-in-out infinite;
+    }
+
+    /* ===== KEYFRAMES ===== */
+    @keyframes bounceRotate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        background-color: #38bdf8;
+      }
+
+      50% {
+        transform: translateY(-120px) rotate(180deg);
+        background-color: #22c55e;
+      }
+
+      100% {
+        transform: translateY(0) rotate(360deg);
+        background-color: #38bdf8;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+</html>
