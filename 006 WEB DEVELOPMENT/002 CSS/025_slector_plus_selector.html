@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Adjacent Sibling Selector</title>
+
+  <style>
+    /* Adjacent sibling selector */
+    h2 + p {
+      color: red;
+      font-weight: bold;
+    }
+
+    div + p {
+      background-color: lightyellow;
+      padding: 10px;
+      border-left: 5px solid orange;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Heading</h2>
+  <p>This paragraph is immediately after h2 (styled)</p>
+  <p>This paragraph is NOT styled</p>
+
+  <hr>
+
+  <div>This is a div</div>
+  <p>This paragraph is immediately after div (styled)</p>
+  <p>This paragraph is NOT styled</p>
+
+</body>
+</html>

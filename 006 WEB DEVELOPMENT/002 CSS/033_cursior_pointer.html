@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Cursor Types Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      height: 70px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background: #1e293b;
+      border: 2px solid #334155;
+    }
+
+    .default { cursor: default; }
+    .pointer { cursor: pointer; }
+    .text { cursor: text; }
+    .move { cursor: move; }
+    .not-allowed { cursor: not-allowed; }
+    .wait { cursor: wait; }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Cursor Types Example</h2>
+
+  <div class="container">
+    <div class="box default">cursor: default</div>
+
+    <div class="box pointer">cursor: pointer</div>
+
+    <div class="box text">
+      cursor: text
+      <input type="text" placeholder="Type here">
+    </div>
+
+    <div class="box move">cursor: move</div>
+
+    <div class="box not-allowed">cursor: not-allowed</div>
+
+    <div class="box wait">cursor: wait</div>
+  </div>
+
+</body>
+</html>
