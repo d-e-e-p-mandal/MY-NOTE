@@ -77,3 +77,9 @@ Refresh page	✅ Works
 Direct link	✅ Works
 
 
+daisyUI 
+
+
+Animation :
+1. Particles from "react-tsparticles";
+2. matter.js
