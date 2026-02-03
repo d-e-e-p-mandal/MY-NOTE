@@ -1,4 +1,4 @@
-# 🧠 Floating-Point Precision and Exact Representation in C
+# 🧠 Floating-Point Precision and Exact Representation in C :
 
 ## 🔹 1. Introduction
 In C, real numbers are represented using **floating-point formats** based on the IEEE-754 standard.  
