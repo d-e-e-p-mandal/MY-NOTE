@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <h3>User Information</h3>
+        <form id="userForm">
+            <input type="text" name="name" placeholder="Enter name" required>
+        
+            <input type="email" name="email" placeholder="Enter email" required>
+        
+            <input type="number" name="age" placeholder="Enter age" required>
+        
+            <select name="gender" required>
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="right">
+        <h3>User List</h3>
+        <div id="tableData"></div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
