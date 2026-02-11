@@ -1,24 +1,38 @@
 ### How to Run Java :
+1. Instatll java - jdk environment : 
+2. File saved as public className 
+3. Compile : (file directory) : javac fileName.java
+    -compiler create byte code file of all class : it can run any system where jdk installed 
+4. Run : java fileName
+5. only one public class is allowed per .java file in Java.
+6. Generally we write class Name in 1st letter capital letter
+    1. If it is not public class then we can write 1st letter lower case (But don't write).
+    2. If public class then 1st letter must be capital.
 
-    1. Instatll java - jdk environment : 
-    2. File saved as public className 
-    3. Compile : (file directory) : javac fileName.java
-        compiler create byte code file of all class : it can run any system where jdk installed 
-    4. Run : java fileName
-    5. only one public class is allowed per .java file in Java.
-    6. Generally we write class Name in 1st letter capital letter
-        1. If it is not public class then we can write 1st letter lower case (But don't write).
-        2. If public class then 1st letter must be capital.
+### Without Package :
+Compile :
+```bash
+javac Main.java
+```
+👉 This creates: Main.class
+
+Run :
+```bash
+java Main
+```
 
 
 Run : Create Package
 .....................
 // package package_name;
-Compile : javac -d . fileName.java
+Compile : 
+```bash
+javac -d . fileName.java
+```
 Compile all file :
-..................
+```bash
 Compile : javac -d . *.java
-
+```
 package create in another file(abc) :
 ....................................
 Compile : javac -d abc *.java

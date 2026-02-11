@@ -1,8 +1,5 @@
-Here is the basic structure of a Java program — clean, simple, and beginner-friendly:
 
-⸻
-
-✅ Basic Java Program Structure
+## Basic Java Program Structure
 ```java
 // Class definition
 public class Main {
