@@ -98,3 +98,23 @@ sc.close();
 
 
 ⸻
+Next Line Input : Move before input
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();   // first String
+        int age = sc.nextInt();        // int
+        sc.nextLine();                 // consume leftover newline
+        String course = sc.nextLine(); // second String
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Course: " + course);
+    }
+}
+```

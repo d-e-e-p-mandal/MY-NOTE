@@ -1,5 +1,5 @@
 /*
-Compile : java ArrayInput 1 2 3 4                      
+Run : java ArrayInput 1 2 3 4                      
 */
 
 public class ArrayInput {
