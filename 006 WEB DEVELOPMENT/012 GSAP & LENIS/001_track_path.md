@@ -53,5 +53,3 @@ Because you are using **Lenis**, the scroll progress is "smoothed out." When you
 ### Pro-Tip: Adding Glow to the Tip
 
 If you want the "growing" end of the line to have a glowing effect, you can add a **second circle** to the SVG and use `animateMotion` with the same path, which is what those moving dots in your code are currently doing!
-
-**Would you like me to show you how to attach a "Glowing Pulse" to the exact tip of the drawing line as it grows?**
