@@ -26,3 +26,63 @@ pnpm-debug.log*
 # Editor
 .vscode/
 .idea/
+
+
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Publish output
+publish/
+*.publishproj
+
+# Environment files
+.env
+
+# ASP.NET Core
+appsettings.Development.json
+
+# Entity Framework
+Migrations/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Test results
+TestResults/
+
+# Backup & temp files
+*.bak
+*.tmp
+*.temp
+
+# JetBrains Rider
+*.sln.iml
+
+# Coverage files
+coverage/
+*.coverage
+*.coveragexml
