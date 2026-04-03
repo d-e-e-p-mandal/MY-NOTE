@@ -18,3 +18,19 @@ class Program
     }
 }
 ```
+
+## Structure with Namespace :
+```cs
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");    
+    }
+  }
+}
+```

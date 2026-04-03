@@ -118,8 +118,10 @@
 
 ### Architecture
 	•	Dependency Injection
+	•	Procedure Pattern
 	•	Repository Pattern
 	•	Clean Architecture
+	
 
 ### Security
 	•	Authentication (JWT)

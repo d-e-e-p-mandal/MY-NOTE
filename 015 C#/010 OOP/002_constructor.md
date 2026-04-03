@@ -6,7 +6,7 @@
 - Each and every class requires this constructor if we want to create the instance of that class. (Default Constructor)
 
 #### Implicitly Constructor :
-- Implicityly defined constructors are parameter less and these constructors are also known as default constructors.
+- Implicityly defined constructors are **parameter-less** and these constructors are also known as default constructors.
 
 #### Explicitly Defined Constructor :
 - Implicitly defined constructor are public.
