@@ -1,6 +1,3 @@
-Here is the 📘 ASP.NET Core – SYLLABUS (ONLY, CLEAN FORMAT) 👇
-
-⸻
 
 🌐 ASP.NET CORE – SYLLABUS
 
