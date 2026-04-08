@@ -17,10 +17,7 @@ public class EmployeeController : ControllerBase
     private readonly IDistributedCache _cache;
     private readonly RedisConfig _config;
 
-    public EmployeeController(
-        AppDbContext context,
-        IDistributedCache cache,
-        IOptions<RedisConfig> config)
+    public EmployeeController(AppDbContext context, IDistributedCache cache, IOptions<RedisConfig> config)
     {
         _context = context;
         _cache = cache;
@@ -35,9 +32,7 @@ public class EmployeeController : ControllerBase
         // 🔹 If Redis OFF → DB
         if (!_config.IsEnabled)
         {
-            var dbData = await _context.Employees
-                                      .AsNoTracking()
-                                      .ToListAsync();
+            var dbData = await _context.Employees.AsNoTracking().ToListAsync();
 
             return Ok(dbData);
         }
@@ -52,9 +47,7 @@ public class EmployeeController : ControllerBase
         }
 
         // 🔹 Get from DB
-        var data = await _context.Employees
-                                 .AsNoTracking()
-                                 .ToListAsync();
+        var data = await _context.Employees.AsNoTracking().ToListAsync();
 
         // 🔥 CACHE OPTIONS (3 TYPES)
 

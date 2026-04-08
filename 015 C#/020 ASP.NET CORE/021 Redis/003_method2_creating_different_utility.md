@@ -66,10 +66,8 @@ public class RedisCacheService
             return;
 
         var options = new DistributedCacheEntryOptions()
-            .SetSlidingExpiration(
-                TimeSpan.FromMinutes(_config.SlidingExpirationInMinutes))
-            .SetAbsoluteExpiration(
-                TimeSpan.FromMinutes(_config.AbsoluteExpirationInMinutes));
+            .SetSlidingExpiration(TimeSpan.FromMinutes(_config.SlidingExpirationInMinutes))
+            .SetAbsoluteExpiration(TimeSpan.FromMinutes(_config.AbsoluteExpirationInMinutes));
 
         var jsonData = JsonSerializer.Serialize(value);
 
@@ -152,16 +150,16 @@ public class EmployeeController : ControllerBase
         }
     }
     [HttpPost]
-public async Task<IActionResult> Create(Employee emp)
-{
-    _context.Employees.Add(emp);
-    await _context.SaveChangesAsync();
+    public async Task<IActionResult> Create(Employee emp)
+    {
+        _context.Employees.Add(emp);
+        await _context.SaveChangesAsync();
 
-    // 🔥 Clear cache after insert
-    await _cache.RemoveAsync("employees_all");
+        // 🔥 Clear cache after insert
+        await _cache.RemoveAsync("employees_all");
 
-    return Ok(emp);
-}
+        return Ok(emp);
+    }
 }
 ```
 
