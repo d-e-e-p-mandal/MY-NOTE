@@ -1,83 +1,51 @@
-Got it 👍 — here is UNIT 3: Web API (FULL DETAILED NOTES but in SIMPLE LANGUAGE) 👇
 
-⸻
+# UNIT 3: WEB API (ASP.NET CORE)
 
-🔌 UNIT 3: WEB API (ASP.NET CORE)
+# Introduction to Web API
 
-⸻
+Definition : Web API is used to Send and receive data between client and server (mostly JSON)
 
-🔹 1. Introduction to Web API
+Example
+Mobile app / React app ↔ Web API ↔ Database
 
-🧠 Definition
-
-👉 Web API is used to:
-
-Send and receive data between client and server (mostly JSON)
-
-⸻
-
-📌 Example
-
-👉 Mobile app / React app ↔ Web API ↔ Database
-
-⸻
-
-🔥 Simple Flow
-
+Simple Flow
 Client → API → Database → API → Client
-
 
 ⸻
 
 🔹 2. RESTful Services
 
-🧠 Definition
+Definition : REST = Standard way to build APIs using HTTP
 
-👉 REST = Standard way to build APIs using HTTP
-
-⸻
-
-🔥 Rules of REST
+Rules of REST
 	•	Use proper HTTP methods
 	•	Use URL for resources
 	•	Stateless (no memory of previous request)
 
-⸻
-
-📌 Example URL
-
+Example URL
 GET /api/employees
 
+3. 
+##### HTTP Method
 
-⸻
+Attribute	Purpose
+[HttpGet]	Fetch data
+[HttpPost]	Create data
+[HttpPut]	Update full data
+[HttpPatch]	Partial update
+[HttpDelete]	Delete data
 
-🔹 3. HTTP Methods (VERY IMPORTANT 🔥)
-
-⸻
-
-
-Method	Use
-GET	Get data
-POST	Insert data
-PUT	Update data
-DELETE	Delete data
-
-
-⸻
-
-📌 Example
-
+Example
+```cs
 [HttpGet]
-public IActionResult GetAll()
-
+public IActionResult Task<List<string>> GetAll()
+```
 
 ⸻
 
-🔹 4. API Controllers
+4. API Controllers
 
-🧠 Definition
-
-👉 Controller that handles API requests
+Definition : Controller that handles API requests
 
 ⸻
 

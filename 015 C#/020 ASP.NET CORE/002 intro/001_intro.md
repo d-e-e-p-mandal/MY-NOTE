@@ -1,92 +1,79 @@
-Got it 👍 — you want Web API project structure (simple + clear)
+
 
 ⸻
 
 🌐 ASP.NET Core Web API – Project Structure (Simple)
-
+```
 MyApi/
 │
-├── Controllers/        → API endpoints (handles request)
-├── Models/             → Data structure (classes)
-├── Data/               → DbContext (database connection)
-├── DTOs/ (optional)    → Data transfer objects
-├── Services/ (optional)→ Business logic
+├── Controllers/              → Handles HTTP requests (API endpoints)
 │
-├── Program.cs          → Main entry point
-├── appsettings.json    → Configuration (DB, settings)
-├── appsettings.Development.json → Dev settings
+├── Models/                  → Entity classes (DB tables structure)
+│
+├── Data/                    → Database related files
+│    └── AppDbContext.cs     → DbContext (database connection)
+│
+├── DTOs/                    → Data Transfer Objects (request/response models)
+│
+├── Services/                → Business logic layer
+│    ├── Interfaces/         → Service interfaces
+│    └── Implementations/    → Service implementations
+│
+├── DependencyInjection/     → Service registration (DI setup)
+│    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
+│
+├── Program.cs               → Application entry point
+│
+├── appsettings.json         → Main configuration (DB, JWT, etc.)
+├── appsettings.Development.json → Development-specific config
 │
 └── Properties/
-     └── launchSettings.json → Run settings
+     └── launchSettings.json → Run/debug settings
+```
 
 
-⸻
+## Simple Explanation
 
-🔹 Simple Explanation
+📁 **Controllers/**
+→ Handles HTTP requests
+→ Supports methods like GET, POST, PUT, DELETE
 
-⸻
+📁 **Models/**
+→ Contains entity classes (e.g., Employee, Student)
+→ Represents database tables
 
-📁 Controllers/
+📁 **Data/**
+→ Contains DbContext
+→ Responsible for database connection and configuration
 
-👉 Handles HTTP requests
-👉 Example: GET, POST, PUT, DELETE
+📁 **DTOs/** (Optional)
+→ Used to transfer data between client and server
+→ Helps improve security and performance
 
-⸻
+📁 **Services/** (Optional)
+→ Contains business logic
+→ Keeps controllers clean and maintainable
 
-📁 Models/
+📄 **Program.cs**
+→ Entry point of the application
+→ Configures services and middleware
 
-👉 Contains classes (Employee, Student)
-👉 Represents database tables
+📄 **appsettings.json**
+→ Stores application configuration like:
+• Connection strings
+• App settings
 
-⸻
+📄 **launchSettings.json**
+→ Used for:
+• Running the application
+• Defining port and environment settings
 
-📁 Data/
+---
 
-👉 Contains DbContext
-👉 Connects app to database
+## 🎯 SHORT STRUCTURE
 
-⸻
-
-📁 DTOs/ (Optional)
-
-👉 Used to send/receive data
-👉 Improves security
-
-⸻
-
-📁 Services/ (Optional)
-
-👉 Contains business logic
-👉 Keeps controller clean
-
-⸻
-
-📄 Program.cs
-
-👉 Starts application
-👉 Configures services & middleware
-
-⸻
-
-📄 appsettings.json
-
-👉 Stores:
-	•	Connection string
-	•	App settings
-
-⸻
-
-📄 launchSettings.json
-
-👉 Used for:
-	•	Running app
-	•	Port settings
-
-⸻
-
-🎯 FINAL SHORT STRUCTURE
-
-👉 Flow:
-
+→ **Application Flow:**
 Request → Controller → Service → DbContext → Database
+
+---
 

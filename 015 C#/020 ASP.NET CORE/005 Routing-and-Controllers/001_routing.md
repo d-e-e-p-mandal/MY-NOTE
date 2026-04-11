@@ -1,92 +1,53 @@
-Here is your 📘 UNIT 4: Routing & Controllers (FULL DETAILED + SIMPLE NOTES) 👇
-
-⸻
 
 🛣️ UNIT 4: ROUTING & CONTROLLERS
 
-⸻
-
-🔹 1. Routing Concept
-
-🧠 Definition
-
-👉 Routing means:
-
-Mapping URL → Controller → Action method
-
-⸻
+1. Routing Concept
+Routing means : Mapping URL → Controller → Action method
 
 📌 Example
-
 https://localhost:5001/api/employee
 
-👉 This URL will call:
+This URL will call:
 	•	Controller → EmployeeController
 	•	Action → method inside it
 
-⸻
-
-🔥 Simple Flow
-
-URL → Routing → Controller → Action → Response
-
+Simple Flow : URL → Routing → Controller → Action → Response
 
 ⸻
 
-🔹 2. Conventional Routing
+## 2. Conventional Routing : [002]
 
-⸻
+Definition : Routing defined in one central place (Program.cs)
 
-🧠 Definition
-
-👉 Routing defined in one central place (Program.cs)
-
-⸻
-
-📌 Example
-
+Example
+```cs
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
-
-
-⸻
+```
 
 🧠 Meaning
-
 /controller/action/id
 
-👉 Example:
-
+Example:
 /home/index/1
-
-
-⸻
 
 ✅ Advantage
 	•	Simple
 	•	Central control
-
-⸻
 
 ❌ Disadvantage
 	•	Less flexible
 
 ⸻
 
-🔹 3. Attribute Routing 🔥
+## 3. Attribute Routing [003]
 
-⸻
-
-🧠 Definition
-
-👉 Routing defined directly on controller or method
-
-⸻
+Definition : Routing defined directly on controller or method
 
 📌 Example
-
+```cs
 [Route("api/[controller]")]
 public class EmployeeController : ControllerBase
 {
@@ -96,22 +57,13 @@ public class EmployeeController : ControllerBase
         return Ok("Data");
     }
 }
+```
 
-
-⸻
-
-🧠 URL
-
-/api/employee
-
-
-⸻
+URL : /api/employee
 
 ✅ Advantage
 	•	Flexible
 	•	Easy to understand
-
-⸻
 
 ❌ Disadvantage
 	•	More code
