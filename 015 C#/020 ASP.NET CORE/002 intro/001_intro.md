@@ -54,6 +54,19 @@ MyApi/
 → Contains business logic
 → Keeps controllers clean and maintainable
 
+
+📁 **DependencyInjection/**
+→ Central place to register services
+→ Improves maintainability and loose coupling
+
+📄 ServiceExtensions.cs
+→ Registers services like:
+```cs
+services.AddScoped<IUserService, UserService>();
+services.AddTransient<IEmailService, EmailService>();
+services.AddSingleton<ICacheService, CacheService>();
+```
+
 📄 **Program.cs**
 → Entry point of the application
 → Configures services and middleware
