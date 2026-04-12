@@ -1,6 +1,3 @@
-Here is your 📘 UNIT 5: Middleware (FULL DETAILED + VERY SIMPLE NOTES) 👇
-
-⸻
 
 ⚙️ UNIT 5: MIDDLEWARE (ASP.NET CORE)
 

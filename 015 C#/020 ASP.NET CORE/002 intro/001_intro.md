@@ -1,8 +1,7 @@
 
 
-⸻
+## ASP.NET Core Web API – Project Structure (Simple)
 
-🌐 ASP.NET Core Web API – Project Structure (Simple)
 ```
 MyApi/
 │

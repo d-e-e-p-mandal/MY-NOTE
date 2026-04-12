@@ -1,266 +1,238 @@
-Here is your 📘 COMPLETE STEP-BY-STEP NOTES on DbContext (Full Deep Explanation)
-👉 Written in exam + interview + practical format 👇
 
-⸻
+## What is DbContext?
 
-🧠 DbContext in EF Core (FULL DETAILED NOTES)
+**Definition :**
 
-⸻
+DbContext is the main class of Entity Framework Core
+- It is used to interact with the database
+- It acts as a bridge between your application and database
 
-🔹 STEP 1: What is DbContext?
 
-🧠 Definition
+Comes From
+```cs
+Microsoft.EntityFrameworkCore
+```
+Namespace:
+```cs
+using Microsoft.EntityFrameworkCore;
+```
 
-👉 DbContext is the core class of Entity Framework Core that:
-	•	Connects your application to the database
-	•	Manages data operations
-
-👉 It acts as a bridge between C# objects and database tables
-
-⸻
-
-📌 Comes From
-
-👉 Microsoft.EntityFrameworkCore
-
-👉 Namespace:
-
+Basic Syntax :
+```cs
 using Microsoft.EntityFrameworkCore;
 
-
-⸻
-
-🔹 STEP 2: Create Your Own DbContext
-
-👉 You create a custom class by inheriting:
-
 public class AppDbContext : DbContext
 {
-}
+	// Constructor : (Optional for old system, need in new version)
+	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {} 
 
-
-⸻
-
-🔹 STEP 3: Add DbSet (Table Representation)
-
-👉 Add properties for tables:
-
-public class AppDbContext : DbContext
-{
     public DbSet<Employee> Employees { get; set; }
 }
+```
 
-👉 Meaning:
+Table :
+```cs
+public class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+```
+
+DbContext -> Base class (EF Core)
+AppDbContext -> Your custom context
+DbSet<Employee> -> Represents table
+
+Meaning:
 	•	Employees → Table
 	•	Employee → Structure
 
-⸻
 
-🔹 STEP 4: Configure DbContext
+Constructor :
 
-👉 Two ways:
-
-⸻
-
-✅ Method 1: ASP.NET Core (Best Practice 🔥)
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
+>Without constructor ❌ :   
+	Older versions allowed it, but now:  
+	•	Required for proper configuration  
+	•	Needed for DI
 
 
-⸻
 
-❌ Method 2: OnConfiguring()
+-----------
 
-protected override void OnConfiguring(DbContextOptionsBuilder options)
+Class : DbContext
+```cs
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class DbContext : IDisposable
 {
-    options.UseSqlServer("connection_string");
+    // Options (configuration like connection string)
+    protected DbContextOptions Options { get; }
+
+    // Constructor
+    public DbContext(DbContextOptions options)
+    {
+        Options = options;
+    }
+
+    // Represents tables
+    public DbSet<TEntity> Set<TEntity>() where TEntity : class
+    {
+        // Returns a DbSet for the given entity
+        return new DbSet<TEntity>();
+    }
+
+    // Save changes (sync)
+    public virtual int SaveChanges()
+    {
+        // Detect changes
+        ChangeTracker.DetectChanges();
+
+        // Save to database (simplified)
+        Console.WriteLine("Changes saved to database");
+
+        return 1;
+    }
+
+    // Save changes (async)
+    public virtual async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        ChangeTracker.DetectChanges();
+
+        // Simulate async DB operation
+        await Task.Delay(100);
+
+        Console.WriteLine("Changes saved asynchronously");
+
+        return 1;
+    }
+
+    // Change tracking
+    public ChangeTracker ChangeTracker { get; } = new ChangeTracker();
+
+    // Dispose (cleanup)
+    public void Dispose()
+    {
+        Console.WriteLine("DbContext disposed");
+    }
 }
+```
 
-
-⸻
-
-🔹 STEP 5: Constructor (VERY IMPORTANT)
-
-👉 Required in ASP.NET Core:
-
-public AppDbContext(DbContextOptions<AppDbContext> options)
-    : base(options)
+class : DbContextOptions
+```cs
+public class DbContextOptions
 {
+    // Connection string (database info)
+    public string ConnectionString { get; set; }
+
+    // Database provider (SQL Server, MySQL, etc.)
+    public string Provider { get; set; }
+
+    // Enable logging
+    public bool EnableLogging { get; set; }
+
+    // Constructor
+    public DbContextOptions(string connectionString, string provider)
+    {
+        ConnectionString = connectionString;
+        Provider = provider;
+    }
 }
-
-👉 Purpose:
-	•	Receives configuration from DI
-	•	Passes to base DbContext
-
-⸻
-
-🔹 STEP 6: What DbContext Does Internally
-
-👉 When you write:
-
-db.Employees.Add(emp);
-db.SaveChanges();
-
-👉 Internally:
-	1.	Tracks entity
-	2.	Converts to SQL
-	3.	Executes query
-	4.	Updates database
-
-⸻
-
-🔹 STEP 7: Lifecycle of DbContext
-
-🔄 Full Flow
-
-1. Creation
-
-👉 Created by ASP.NET Core (DI)
-
-⸻
-
-2. Tracking
-
-👉 EF tracks entity changes
-
-db.Employees.Add(emp);
+```
 
 
-⸻
+### What is IDisposable?
 
-3. Saving
+- IDisposable is an interface in .NET
+- Used to release resources manually
 
-db.SaveChanges();
-
-
-⸻
-
-4. Disposal
-
-👉 Automatically destroyed after request
-
-⸻
-
-🔹 STEP 8: Entity States (VERY IMPORTANT)
-
-State	Meaning
-Added	New data
-Modified	Updated
-Deleted	Removed
-Unchanged	No change
+Definition :  
+It provides a method to clean up unmanaged resources like files, database connections, memory, etc.
 
 
-⸻
-
-🔹 STEP 9: Overridable Methods (CUSTOMIZATION)
-
-⸻
-
-🔥 1. OnConfiguring()
-
-protected override void OnConfiguring(DbContextOptionsBuilder options)
+Interface Definition
+```cs
+public interface IDisposable
 {
-    options.UseSqlServer("connection_string");
+    void Dispose();
 }
+```
+- Only one method: Dispose()
 
-👉 Configure DB connection
 
-⸻
+Why do we need it?
+- Some resources are NOT managed by garbage collector:
+	•	Database connections
+	•	File handles
+	•	Network connections
 
-🔥 2. OnModelCreating() (VERY IMPORTANT)
+- So we must release them manually
 
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+Example Without IDisposable 
+```cs
+var connection = new SqlConnection("conn");
+connection.Open();
+```
+- If not closed → memory/resource leak
+
+Example With IDisposable
+```cs
+using (var connection = new SqlConnection("conn"))
 {
-    modelBuilder.Entity<Employee>()
-        .ToTable("EmpTable");
+    connection.Open();
 }
-
-👉 Configure:
-	•	Table name
-	•	Keys
-	•	Relationships
-
-⸻
-
-🔥 3. SaveChanges()
-
-public override int SaveChanges()
+```
+ 
+**Internally : using works ONLY with IDisposable**
+```cs
+var connection = new SqlConnection("conn");
+try
 {
-    Console.WriteLine("Saving...");
-    return base.SaveChanges();
+    connection.Open();
 }
-
-👉 Used for:
-	•	Logging
-	•	Validation
-	•	Auditing
-
-⸻
-
-🔥 4. SaveChangesAsync()
-
-public override async Task<int> SaveChangesAsync(CancellationToken token = default)
+finally
 {
-    return await base.SaveChangesAsync(token);
+    if (connection != null)
+    {
+        connection.Dispose(); // compiler added this
+    }
 }
+```
 
+Automatically calls : connection.Dispose();
 
-⸻
+---
 
-🔥 5. Dispose()
-
-protected override void Dispose(bool disposing)
+Custom Class Example
+```cs
+public class MyResource : IDisposable
 {
-    base.Dispose(disposing);
+    public void Dispose()
+    {
+        Console.WriteLine("Resources released");
+    }
 }
+```
 
-
-⸻
-
-🔹 STEP 10: Important Methods of DbContext
-
-Method	Purpose
-Add()	Insert
-Find()	Get by ID
-Remove()	Delete
-SaveChanges()	Save to DB
-
-
-⸻
-
-🔹 STEP 11: Real Example (Complete Flow)
-
-using (var db = new AppDbContext(options))
+How DbContext Uses It : DbContext implements IDisposable:
+```cs
+public class DbContext : IDisposable
 {
-    var emp = new Employee { Name = "Deep" };
-
-    db.Employees.Add(emp);   // Tracking
-    db.SaveChanges();        // Insert into DB
+    public void Dispose()
+    {
+        // close DB connection
+    }
 }
+```
 
-
-⸻
-
-🔹 STEP 12: Key Points
-	•	DbContext = Core of EF Core
-	•	DbSet = Table
-	•	Entity = Data
-	•	Constructor = Required for DI
-	•	OnModelCreating = Most important override
-
-⸻
-
-🎯 FINAL SUMMARY
-
-👉 DbContext:
-	•	Comes from EF Core
-	•	Manages database operations
-	•	Tracks changes
-	•	Converts LINQ → SQL
-	•	Can be customized using override methods
-
-⸻
-
+Internal Flow
+```
+Create object
+     ↓
+Use resource
+     ↓
+Dispose() called
+     ↓
+Resource released
+```
