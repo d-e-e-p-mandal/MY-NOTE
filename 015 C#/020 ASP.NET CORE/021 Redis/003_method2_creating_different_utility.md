@@ -33,10 +33,10 @@ public class RedisCacheService
         _config = config.Value;
     }
 
-    // 🔹 GET DATA
+    // GET DATA
     public async Task<T?> GetAsync<T>(string key)
     {
-        // 👉 If Redis disabled → skip
+        // If Redis disabled → skip
         if (!_config.IsEnabled)
             return default;
 
@@ -55,10 +55,10 @@ public class RedisCacheService
         }
     }
 
-    // 🔹 SET DATA
+    // SET DATA
     public async Task SetAsync<T>(string key, T value)
     {
-        // 👉 If Redis disabled → skip
+        // If Redis disabled → skip
         if (!_config.IsEnabled)
             return;
 
@@ -74,7 +74,7 @@ public class RedisCacheService
         await _cache.SetStringAsync(key, jsonData, options);
     }
 
-    // 🔹 REMOVE CACHE
+    // REMOVE CACHE
     public async Task RemoveAsync(string key)
     {
         if (!_config.IsEnabled)
@@ -83,7 +83,7 @@ public class RedisCacheService
         await _cache.RemoveAsync(key);
     }
 
-    // 🔹 OPTIONAL: REFRESH CACHE
+    // OPTIONAL: REFRESH CACHE
     public async Task RefreshAsync(string key)
     {
         if (!_config.IsEnabled)
@@ -121,7 +121,7 @@ public class EmployeeController : ControllerBase
 
         try
         {
-            // 🔹 Check Cache
+            // Check Cache
             var cachedData = await _cache.GetAsync<List<Employee>>(cacheKey);
 
             if (cachedData != null)
@@ -129,19 +129,19 @@ public class EmployeeController : ControllerBase
                 return Ok(cachedData);
             }
 
-            // 🔹 Get from DB
+            // Get from DB
             var data = await _context.Employees
-                                     .AsNoTracking()   // 🔥 performance
+                                     .AsNoTracking()   // performance
                                      .ToListAsync();
 
-            // 🔹 Store in Cache
+            // Store in Cache
             await _cache.SetAsync(cacheKey, data);
 
             return Ok(data);
         }
         catch
         {
-            // 🔹 Fallback to DB if Redis fails
+            // Fallback to DB if Redis fails
             var data = await _context.Employees
                                      .AsNoTracking()
                                      .ToListAsync();
@@ -155,7 +155,7 @@ public class EmployeeController : ControllerBase
         _context.Employees.Add(emp);
         await _context.SaveChangesAsync();
 
-        // 🔥 Clear cache after insert
+        // Clear cache after insert
         await _cache.RemoveAsync("employees_all");
 
         return Ok(emp);

@@ -46,7 +46,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 ⸻
 
-📌 Key Points:
+Key Points:
 	•	Keep connection string in appsettings.json
 	•	Improves security & flexibility
 	•	Avoid hardcoding
