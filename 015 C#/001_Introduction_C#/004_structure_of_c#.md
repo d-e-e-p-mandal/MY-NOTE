@@ -8,6 +8,7 @@ int a = 5, b = 10;
 Console.WriteLine("Sum = " + (a + b));
 ```
 
+
 ### With Class :
 ```cs
 class Program
@@ -18,6 +19,7 @@ class Program
     }
 }
 ```
+
 
 ## Structure with Namespace :
 ```cs

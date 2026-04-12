@@ -1,9 +1,5 @@
 
-⚙️ UNIT 5: MIDDLEWARE (ASP.NET CORE)
-
-⸻
-
-🔹 1. Middleware Concept
+# MIDDLEWARE (ASP.NET CORE)
 
 🧠 Definition
 
@@ -137,7 +133,7 @@ app.UseStaticFiles();
 ⸻
 
 📌 Step 1: Create Class
-
+```cs
 public class MyMiddleware
 {
     private readonly RequestDelegate _next;
@@ -156,14 +152,14 @@ public class MyMiddleware
         Console.WriteLine("After Response");
     }
 }
-
+```
 
 ⸻
 
 📌 Step 2: Register Middleware
-
+```cs
 app.UseMiddleware<MyMiddleware>();
-
+```
 
 ⸻
 
