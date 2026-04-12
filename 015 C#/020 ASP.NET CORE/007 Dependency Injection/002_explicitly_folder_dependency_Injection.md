@@ -1,11 +1,11 @@
 
-
+### Service Extension Dependency Injection List in another file :
 
 file : ServiceExtensions.cs
 ```cs
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services) //[Extension Method [Ref :c# Method 005]]
     {
         services.AddScoped<IEmployeeService, EmployeeService>();
 
