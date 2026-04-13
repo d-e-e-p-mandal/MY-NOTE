@@ -52,7 +52,6 @@ A obj = new A();
 obj.Show();
 ```
 
-⸻
 
 ### 2️⃣ Static Class
 
@@ -97,7 +96,6 @@ A obj = new B();
 obj.Show();
 ```
 
-⸻
 
 ### 4️⃣ Sealed Class
 
@@ -117,13 +115,11 @@ sealed class A
 class B : A {} // ERROR
 ```
 
-⸻
 
 ### 5️⃣ Partial Class
 
 - Class  split into multiple files
 
-⸻
 
 ```cs
 partial class A
@@ -149,7 +145,6 @@ obj.Show1();
 obj.Show2();
 ```
 
-⸻
 
 ### 6️⃣ Nested Class
 
@@ -174,7 +169,6 @@ obj.Show();
 ```
 
 
-⸻
 
 **Summary :**
 
