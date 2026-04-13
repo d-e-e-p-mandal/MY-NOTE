@@ -1,5 +1,5 @@
 
-🔹 1️⃣ Real Method Signature
+1️⃣ Real Method Signature
 
 In ASP.NET Core, AddScoped is defined like:
 ```cs

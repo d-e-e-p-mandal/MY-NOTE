@@ -1,9 +1,9 @@
-Class :
+# OOP :
+
+**Class :**
 - class is a blueprint of Object 
-- C# cannot run completely without a class.
 
-
-Object :
+**Object :**
 - It is a instance of class
 
 
@@ -28,78 +28,160 @@ class Program
 ```
 
 
-Yes 👍 — let’s make it very clear and exam-ready 👇
+
+
+
+📘 TYPES OF CLASSES IN C#
+
+### 1️⃣ Normal Class
+
+- Basic  class used to create objects
+
+```cs
+class A
+{
+    public void Show()
+    {
+        Console.WriteLine("Normal Class");
+    }
+}
+```
+**Usage :**
+```cs
+A obj = new A();
+obj.Show();
+```
 
 ⸻
 
-🧠 Default Access Modifiers in C#
+### 2️⃣ Static Class
 
-👉 “By default” = when you don’t write anything
+- Canno t create object, only static members
 
-⸻
+```cs
+static class A
+{
+    public static void Show()
+    {
+        Console.WriteLine("Static Class");
+    }
+}
+```
+**Usage :**
+```cs
+A.Show(); // no object
+```
 
-🔑 1. Class Members (Fields, Methods)
+### 3️⃣ Abstract Class
 
-class Test {
-    int a;   // no modifier
+- Canno t create object, used for inheritance
+- atleast one abstruct function.
+
+```cs
+abstract class A
+{
+    public abstract void Show();
 }
 
-👉 Default = private ❗
-
-✔️ Meaning:
-	•	Accessible only inside the same class
-	•	❌ Not accessible from other classes
-
-⸻
-
-🔑 2. Classes (Top-level)
-
-class Test {
+class B : A
+{
+    public override void Show()
+    {
+        Console.WriteLine("Abstract Class");
+    }
 }
-
-👉 Default = internal
-
-✔️ Meaning:
-	•	Accessible within same project/assembly
-	•	❌ Not outside project
+```
+**Usage :**
+```cs
+A obj = new B();
+obj.Show();
+```
 
 ⸻
 
-🔑 3. Methods
+### 4️⃣ Sealed Class
 
-class Test {
-    void Show() { }
+- Cannot be inherited
+
+```cs
+sealed class A
+{
+    public void Show()
+    {
+        Console.WriteLine("Sealed Class");
+    }
 }
-
-👉 Default = private
-
-⸻
-
-📊 Summary Table
-
-Element	Default :   Access
-Variable (field):  	private
-Method	        :   private
-Class	        :   internal
-
+```
+- Inheritance Not allowed :
+```cs
+class B : A {} // ERROR
+```
 
 ⸻
 
-⚡ Example
+### 5️⃣ Partial Class
 
-using System;
+- Class  split into multiple files
 
-class Test {
-    int a = 10;  // private by default
-}
+⸻
 
-class Program {
-    static void Main() {
-        Test t = new Test();
-        // Console.WriteLine(t.a); ❌ ERROR
+```cs
+partial class A
+{
+    public void Show1()
+    {
+        Console.WriteLine("Part 1");
     }
 }
 
+partial class A
+{
+    public void Show2()
+    {
+        Console.WriteLine("Part 2");
+    }
+}
+```
+**Usage :**
+```cs
+A obj = new A();
+obj.Show1();
+obj.Show2();
+```
 
 ⸻
+
+### 6️⃣ Nested Class
+
+- Class inside another class
+
+```cs
+class Outer
+{
+    public class Inner
+    {
+        public void Show()
+        {
+            Console.WriteLine("Nested Class");
+        }
+    }
+}
+```
+Usage:
+```cs
+Outer.Inner obj = new Outer.Inner();
+obj.Show();
+```
+
+
+⸻
+
+**Summary :**
+
+- Normal → create object
+- Static → no object
+- Abstract → for inheritance
+- Sealed → no inheritance
+- Partial → split class
+- Nested → class inside class
 

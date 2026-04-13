@@ -94,28 +94,24 @@ Scoped    → Y (new)
 Singleton → S (same)
 
 
-⸻
-
 **Important Notes :**
 
 - ❗ Never inject Scoped into Singleton
 - ❗ Singleton must be thread-safe
 - ❗ Scoped is best for DB
 
-⸻
 
-Final Understanding
+**Final Understanding :**  
+- Transient = always new	   
+- Scoped    = per request	  
+- Singleton = one for app	   
 
-Transient = always new
-Scoped    = per request
-Singleton = one for app
 
 - Service lifetime defines how long a service instance lives in the application: transient (new each time), scoped (per request), and singleton (one per application).
 
 
-Simple : 
-
-Transient → many
-Scoped → one per request
-Singleton → one forever
+**Simple :**
+- Transient → many
+- Scoped → one per request
+- Singleton → one forever
 

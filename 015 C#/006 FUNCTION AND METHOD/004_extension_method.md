@@ -52,13 +52,13 @@ Taking Class In Extension Method :
 ```cs
 using System;
 
-// 🔹 Your class
+// Your class
 public class MyClass
 {
     public string Name = "Test";
 }
 
-// 🔹 Extension class
+// Extension class
 public static class MyClassExtensions
 {
     public static void Extra(this MyClass obj)
@@ -67,7 +67,7 @@ public static class MyClassExtensions
     }
 }
 
-// 🔹 Main program
+// Main program
 public class Program
 {
     public static void Main(string[] args)

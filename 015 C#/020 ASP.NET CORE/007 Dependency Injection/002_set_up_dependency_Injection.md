@@ -7,6 +7,7 @@ public static class ServiceExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services) //[Extension Method [Ref :c# Method 005]]
     {
+        // all DI write here : interface -> implementss
         services.AddScoped<IEmployeeService, EmployeeService>();
 
         return services;
