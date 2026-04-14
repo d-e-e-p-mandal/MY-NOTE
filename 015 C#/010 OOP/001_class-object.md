@@ -1,8 +1,57 @@
 # OOP :
 
 **Class :**
-- class is a blueprint of Object 
+- It is a user defined type.
+- class is a blueprint of Object.
 
+**Variable of a Class :** A copy of the class that is not initialized.
+```cs
+class A {
+    int x;
+}
+class Program
+{
+    static void Main()
+    {
+        A a;
+    }
+}
+```
+
+**Instance of a class :** 
+- A copy of the class that is initialized by using the new keyword.
+- Every Instance have seperate memory allocation.
+```cs
+class A {
+    int x;
+}
+class Program
+{
+    static void Main()
+    {
+        A a = new A();
+    }
+}
+```
+
+**Reference of a Class :**  
+- Aa copy of the class that is initialized by using an existing instance and references of class will not have any memory allocation they will be sharing the same memory of the instance that assigned for initializing the variable.
+- Reference of a clas can be called as a pointer to the instance and every modification we perform on the members using instance reflects when we acess those members through refference and vice-versa
+
+```cs
+class A {
+    int x;
+}
+class Program
+{
+    static void Main()
+    {
+        A a = new A();
+        A b;
+        b = a;   // 
+    }
+}
+```
 **Object :**
 - It is a instance of class
 
@@ -27,11 +76,7 @@ class Program
 }
 ```
 
-
-
-
-
-📘 TYPES OF CLASSES IN C#
+## 📘 TYPES OF CLASSES IN C#
 
 ### 1️⃣ Normal Class
 
