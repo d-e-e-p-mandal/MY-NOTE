@@ -283,3 +283,17 @@ class Program
 10
 Hello from Project1
 ```
+
+
+
+
+### C# Access Modifiers Visibility
+
+| Modifier | Same Class | Same Project (Assembly) | Child Class (Derived) | Other Project |
+| :--- | :---: | :---: | :---: | :---: |
+| **Public** | ✅ | ✅ | ✅ | ✅ |
+| **Private** | ✅ | ❌ | ❌ | ❌ |
+| **Protected** | ✅ | ❌ | ✅ | ❌ |
+| **Internal** | ✅ | ✅ | ❌ | ❌ |
+| **Protected Internal** | ✅ | ✅ | ✅ | ❌ |
+
