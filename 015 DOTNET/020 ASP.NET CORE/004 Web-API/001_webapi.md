@@ -1,5 +1,5 @@
 
-# UNIT 3: WEB API (ASP.NET CORE)
+# WEB API (ASP.NET CORE)
 
 # Introduction to Web API
 
@@ -11,7 +11,6 @@ Mobile app / React app ↔ Web API ↔ Database
 Simple Flow
 Client → API → Database → API → Client
 
-⸻
 
 🔹 2. RESTful Services
 

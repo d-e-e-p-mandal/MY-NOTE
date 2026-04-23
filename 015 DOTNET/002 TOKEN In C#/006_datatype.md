@@ -1,7 +1,3 @@
-Here is a complete but still simple Markdown (.md) note of C# Data Types (basic → advanced) 👇
-
-⸻
-
 
 # 🧠 C# Data Types (Full Notes)
 

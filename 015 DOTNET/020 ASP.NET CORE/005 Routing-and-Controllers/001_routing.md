@@ -1,5 +1,5 @@
 
-ROUTING & CONTROLLERS
+# ROUTING & CONTROLLERS
 
 Routing means : Mapping URL → Controller → Action method
 
@@ -10,6 +10,11 @@ This URL will call:
 	•	Action → method inside it
 
 Simple Flow : URL → Routing → Controller → Action → Response
+
+
+### Types of Routing :
+- Conventional Routing
+- Attribute Routing
 
 ## Conventional Routing : [002]
 

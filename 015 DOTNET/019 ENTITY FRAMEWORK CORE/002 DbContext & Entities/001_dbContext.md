@@ -32,6 +32,7 @@ public class AppDbContext : DbContext
 
 Table :
 ```cs
+[Table("TableName")]
 public class Employee
 {
     public int Id { get; set; }
@@ -49,17 +50,16 @@ Meaning:
 
 
 Constructor :
-
->Without constructor ❌ :   
-	Older versions allowed it, but now:  
-	•	Required for proper configuration  
-	•	Needed for DI
+Without constructor - Older versions allowed it, but now:  
+- Required for proper configuration  
+- Needed for DI
 
 
 
 -----------
+# What is DbContext ?
 
-Class : DbContext
+## Class : DbContext
 ```cs
 using System;
 using System.Threading;
