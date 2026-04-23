@@ -1,7 +1,7 @@
 
 ## Validation Techniques
 
-Automatic Validation (BEST)
+## Automatic Validation 
 
 When using [ApiController]
 ```cs
