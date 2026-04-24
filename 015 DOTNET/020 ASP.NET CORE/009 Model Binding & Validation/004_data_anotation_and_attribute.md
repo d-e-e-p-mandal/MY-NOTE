@@ -1,100 +1,154 @@
-## Data Annotations and Attribute
+You’re right 👍 — your list is good, but JSON-related attributes are missing.
+These are very important for Web API (model binding + serialization).
 
-Definition : Attributes used to: validate and control data
+I’ll add ALL JSON attributes + complete list (clean + corrected) 👇
 
-Example Model
-```cs
+⸻
+
+📘 COMPLETE DATA ANNOTATIONS + JSON ATTRIBUTES
+
+⸻
+
+🔹 1. CLASS LEVEL
+
+[Table("Name")]        // table name in DB
+[Keyless]              // no primary key (views / read-only)
+
+
+⸻
+
+🔹 2. PROPERTY LEVEL (CORE)
+
+[Key]                  // primary key
+[Required]             // cannot be null
+[Range(min, max)]      // numeric range
+[StringLength(n)]      // max/min string length
+[MaxLength(n)]         // max length
+[MinLength(n)]         // min length
+[EmailAddress]         // valid email
+
+
+⸻
+
+🔹 3. VALIDATION ATTRIBUTES
+
+[Phone]                        // valid phone
+[Url]                          // valid URL
+[Compare("Property")]          // compare fields
+[RegularExpression("pattern")] // custom regex validation
+[DataType(DataType.Password)]  // UI type (password, date, etc.)
+
+
+⸻
+
+🔹 4. DATABASE / SCHEMA
+
+using System.ComponentModel.DataAnnotations.Schema;
+
+[Column("Name")]                      // column name
+[NotMapped]                          // ignore property
+[ForeignKey("Name")]                 // define FK
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)] // auto increment
+
+
+⸻
+
+🔹 5. DISPLAY / UI
+
+[Display(Name = "Text")]     // display name
+[DisplayFormat]              // format output
+[ScaffoldColumn(false)]      // hide in UI
+
+
+⸻
+
+🔹 6. ADVANCED
+
+[Timestamp]          // row version (concurrency)
+[ConcurrencyCheck]   // prevent update conflicts
+[BindNever]          // ignore in model binding
+[BindRequired]       // must be provided
+
+
+⸻
+
+🔥 🔹 7. JSON ATTRIBUTES (IMPORTANT FOR WEB API)
+
+👉 Namespace:
+
+using System.Text.Json.Serialization;
+
+
+⸻
+
+🧾 JSON ATTRIBUTES
+
+[JsonPropertyName("name")]  
+// change JSON property name
+
+[JsonIgnore]  
+// ignore property in JSON (not sent to client)
+
+[JsonInclude]  
+// include private property in JSON
+
+[JsonConverter(typeof(MyConverter))]  
+// custom conversion logic
+
+[JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]  
+// allow number as string
+
+[JsonPropertyOrder(1)]  
+// order of JSON properties
+
+
+⸻
+
+🔥 FULL EXAMPLE (IMPORTANT)
+
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; //Database Mapping 
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+[Table("Employees")]
 public class Employee
 {
     [Key]
     public int Id { get; set; }
+
     [Required]
+    [JsonPropertyName("employee_name")]  // rename in JSON
     public string Name { get; set; }
+
     [Range(1000, 100000)]
     public int Salary { get; set; }
-    [EmailAddress]
-    public string Email { get; set; }
+
+    [JsonIgnore]   // not returned in API
+    public string InternalCode { get; set; }
+
+    [NotMapped]
+    public string TempData { get; set; }
 }
-```
+
+
 ⸻
 
-##### Attributes
+🎯 FINAL SUMMARY
 
-Attribute : Use
-
-
-1. CLASS LEVEL ATTRIBUTES
-
-🧾 [Table("Name")] : Defines table name in database
-
-🧾 [Keyless] : Entity has no primary key (used for views / read-only)
-
-2. PROPERTY LEVEL : Written above properties
-
-🧾 [Key] : Defines primary key
-
-🧾 [Required] : Field cannot be null or empty
-
-🧾 [Range(min, max)] : Value must be within range
-
-🧾 [StringLength(n)] : Sets max (and optional min) length
-
-🧾 [MaxLength(n)] : Maximum allowed length
-
-🧾 [MinLength(n)] : Minimum required length
-
-🧾 [EmailAddress] : Valid email format
-
-3. VALIDATION ATTRIBUTES (IMPORTANT)
-
-🧾 [Phone] : Valid phone number
-
-🧾 [Url] : Valid URL format
-
-🧾 [Compare("Property")] : Compare two fields (e.g., password confirm)
-
-🧾 [RegularExpression("pattern")] : Custom validation using regex
-
-🧾 [DataType(DataType.Password)] : Specifies data type (UI purpose)
-
-4. DATABASE / SCHEMA ATTRIBUTES
-
-Namespace:
-```cs
-using System.ComponentModel.DataAnnotations.Schema;
-```
-
-🧾 [Column("Name")] : Set column name
-
-🧾 [NotMapped] : Ignore property (not stored in DB)
-
-🧾 [ForeignKey("Name")] : Define foreign key relationship
-
-🧾 [DatabaseGenerated(DatabaseGeneratedOption.Identity)] : Auto-generated value (auto increment)
+DataAnnotations → validation  
+Schema → database mapping  
+JSON attributes → API response/request control  
 
 
-5. DISPLAY / UI ATTRIBUTES
+⸻
 
-🧾 [Display(Name = "Text")] : Custom display name
+💡 INTERVIEW LINE
 
-🧾 [DisplayFormat] : Format output
+“In ASP.NET Core, DataAnnotations handle validation, Schema attributes control database mapping, and Json attributes control serialization behavior in Web APIs.”
 
-🧾 [ScaffoldColumn(false)] : Hide field in UI
+⸻
 
-6. ADVANCED ATTRIBUTES
+🚀 NEXT STEP
 
-🧾 [Timestamp] : Used for concurrency (row version)
-
-🧾 [ConcurrencyCheck] : Prevent multiple updates conflict
-
-🧾 [BindNever] : Prevent model binding
-
-🧾 [BindRequired] : Must be provided in request
-
-**Class Level:**
-  Table, Keyless
-**Property Level:**
-  Key, Required, Range, Column, ForeignKey, etc.
-
+If you want:
+👉 I can show difference between JsonPropertyName vs Column (very confusing interview question 🔥)
