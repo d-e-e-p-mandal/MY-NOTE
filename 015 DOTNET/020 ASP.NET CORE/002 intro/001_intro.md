@@ -12,14 +12,17 @@ MyApi/
 ├── Data/                    → Database related files
 │    └── AppDbContext.cs     → DbContext (database connection)
 │
+├── DependencyInjection/     → Service registration (DI setup)
+│    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
 ├── DTOs/                    → Data Transfer Objects (request/response models)
 │
 ├── Services/                → Business logic layer
 │    ├── Interfaces/         → Service interfaces
 │    └── Implementations/    → Service implementations
 │
-├── DependencyInjection/     → Service registration (DI setup)
-│    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
+├── Repository/              → Business logic layer
+│    ├── Interfaces/         → Repository interfaces
+│    └── Implementations/    → Repository implementations
 │
 ├── Program.cs               → Application entry point
 │

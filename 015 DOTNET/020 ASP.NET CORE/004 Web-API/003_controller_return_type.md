@@ -81,8 +81,6 @@ new BadRequestObjectResult(data);
 new NotFoundObjectResult(data);
 new ObjectResult(data);
 
-⸻
-
 ### ActionResult<T>
 ```cs
 public ActionResult<Employee> Get(int id)
