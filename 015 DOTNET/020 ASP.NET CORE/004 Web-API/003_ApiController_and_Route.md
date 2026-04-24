@@ -1,10 +1,11 @@
 
-# ASP.NET CORE – CONTROLLER & ROUTING
+# CONTROLLER & ROUTING
 
 **CONTROLLER :** A Controller is a class that:
 * Receives HTTP requests
 * Processes data
 * Returns response
+
 ```cs
 [ApiController]
 [Route("api/[controller]")]
@@ -15,107 +16,61 @@ public class EmployeeController : ControllerBase
 Meaning: Entry point for API requests
 
 
-### 2. [ApiController] (VERY IMPORTANT)
+### 2. [ApiController]
 
-👉 📍 UNIT 3: Web API
+Definition : Special attribute for Web API controllers
 
-⸻
-
-✅ Definition
-
+```cs
 [ApiController]
+```
 
-👉 Special attribute for Web API controllers
-
-⸻
-
-🔥 FEATURES
-
-✔ 1. Automatic Model Validation
-
+**FEATURES :**
+- Automatic Model Validation
+```cs
 [HttpPost]
 public IActionResult Create(Employee emp)
 {
     return Ok(emp);
 }
+```
 
-👉 If data is invalid:
+**Binding Source Detection :**
+- GET → Query / Route  
+- POST → Body  
 
+
+If data is invalid: Automatically returns 400 BadRequest
+```json
 {
   "errors": {
     "Name": ["Required"]
   }
 }
-
-👉 Automatically returns 400 BadRequest
-
-⸻
-
-✔ 2. Automatic [FromBody]
-
-public IActionResult Create(Employee emp)
-
-👉 No need to write [FromBody] manually
-
-⸻
-
-✔ 3. Binding Source Detection
-
-GET → Query / Route  
-POST → Body  
-
-⸻
-
-🎯 Meaning
-
-[ApiController] → enables automatic API behavior
-
-⸻
+```
 
 ### 3. [Route] ATTRIBUTE
 
-👉 📍 UNIT 4: Routing
-
-⸻
-
-✅ Definition
-
+Definition : Defines URL pattern
+```cs
 [Route("api/[controller]")]
+```
+Example : [Route("api/employee")]
 
-👉 Defines URL pattern
-
-⸻
-
-🔥 Example
-
-[Route("api/employee")]
-
-👉 URL:
-
-https://localhost:5001/api/employee
-
-⸻
+URL: https://localhost:5001/api/employee
 
 ### TOKEN [controller]
-
+```cs
 [Route("api/[controller]")]
-
-👉 Automatically replaced with:
-
-EmployeeController → employee
-
-⸻
+```
+Automatically replaced with: EmployeeController → employee
 
 ### ROUTE PARAMETERS
 
 [HttpGet("{id}")]
 public IActionResult Get(int id)
 
-👉 URL:
-
-/api/employee/5
-
-👉 id = 5
+URL : /api/employee/5
+> id = 5
 
 ⸻
 

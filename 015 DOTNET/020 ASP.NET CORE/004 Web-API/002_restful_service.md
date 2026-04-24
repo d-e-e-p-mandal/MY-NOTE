@@ -1,24 +1,12 @@
 
-📘 RESTful SERVICES – FULL DETAILED NOTE
+# RESTful SERVICES 
 
-⸻
+**WHAT IS REST?**
+- REST = Representational State Transfer
+- It is an architectural style used to design web APIs.
+- In simple: REST → rules to build APIs using HTTP
 
-🔹 1. WHAT IS REST?
-
-👉 REST = Representational State Transfer
-
-👉 It is an architectural style used to design web APIs.
-
-👉 In simple:
-
-REST → rules to build APIs using HTTP
-
-⸻
-
-🔹 2. WHAT IS A RESTFUL SERVICE?
-
-👉 A RESTful service is an API that:
-
+**A RESTful service is an API that :**
 * Follows REST principles
 * Uses HTTP methods
 * Uses URLs to represent resources

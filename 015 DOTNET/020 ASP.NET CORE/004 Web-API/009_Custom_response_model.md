@@ -1,3 +1,8 @@
+Type Of :
+[Method]() [Constructor]() [Constructor + Method]()
+
+--------
+### Using Mehtod
 ```cs
 public class ApiResponse<T>
 {
@@ -62,6 +67,7 @@ public static class ResponseHelper
 }
 ```
 
+Use Case :
 ```cs
 [HttpGet]
 public async Task<IActionResult> GetEmployees()
@@ -81,7 +87,7 @@ public async Task<IActionResult> GetEmployees()
 
 ----------------
 
-
+### Using Constructor :
 ```cs
 using Microsoft.AspNetCore.Mvc;
 
@@ -126,7 +132,9 @@ public class ApiResponse<T>
         return new NotFoundObjectResult(this);
     }
 }
-
+```
+Calling :
+```cs
 [HttpGet]
 public async Task<IActionResult> GetEmployees()
 {
@@ -138,7 +146,7 @@ public async Task<IActionResult> GetEmployees()
 ```
 
 ------------
-
+### Constructor And Method Both Used: (Industry level)
 ```cs
 public class ApiResponse<T>
 {

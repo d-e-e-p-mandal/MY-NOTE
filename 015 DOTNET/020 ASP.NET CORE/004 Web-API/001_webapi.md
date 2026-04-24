@@ -3,12 +3,12 @@
 
 # Introduction to Web API
 
-Definition : Web API is used to Send and receive data between client and server (mostly JSON)
+**Definition :** Web API is used to Send and receive data between client and server (mostly JSON)
 
-Example
+Example :
 Mobile app / React app ↔ Web API ↔ Database
 
-Simple Flow
+Simple Flow :
 Client → API → Database → API → Client
 
 
@@ -24,15 +24,15 @@ Rules of REST
 Example URL
 GET /api/employees
 
-3. 
-##### HTTP Method
+### HTTP METHOD ATTRIBUTES
 
-Attribute	Purpose
-[HttpGet]	Fetch data
-[HttpPost]	Create data
-[HttpPut]	Update full data
-[HttpPatch]	Partial update
-[HttpDelete]	Delete data
+| Attribute      | Purpose             |
+|---------------|--------------------|
+| [HttpGet]     | Fetch data         |
+| [HttpPost]    | Create data        |
+| [HttpPut]     | Update full data   |
+| [HttpPatch]   | Partial update     |
+| [HttpDelete]  | Delete data        |
 
 Example
 ```cs

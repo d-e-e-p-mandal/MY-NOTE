@@ -61,26 +61,6 @@ public IActionResult Get()
 - ✔ Full control
 - ✔ Any status code
 
-### All IActionResult Methods
-
-return Ok(data);               // 200
-return Created("url", data);   // 201
-return CreatedAtAction(...);   // 201 + location
-return NoContent();            // 204
-return BadRequest();           // 400
-return Unauthorized();         // 401
-return Forbid();               // 403
-return NotFound();             // 404
-return StatusCode(500);        // custom
-return StatusCode(202, data);  // custom + data
-
-🔸 Explicit Result Classes
-
-new OkObjectResult(data);
-new BadRequestObjectResult(data);
-new NotFoundObjectResult(data);
-new ObjectResult(data);
-
 ### ActionResult<T>
 ```cs
 public ActionResult<Employee> Get(int id)
@@ -123,7 +103,7 @@ public async Task<ActionResult<List<Employee>>> Get()
 
 ## STREAMING TYPES
 
-🧾 IAsyncEnumerable<T>
+### IAsyncEnumerable<T>
 ```cs
 public async IAsyncEnumerable<Employee> Get()
 {
@@ -137,20 +117,18 @@ public async IAsyncEnumerable<Employee> Get()
 
 **MIXED TYPE RETURNS :**
 
-🧾 Combination
+### Combination
 ```cs
 public ActionResult<IEnumerable<Employee>> Get()
 {
     return _context.Employees.ToList();
 }
 ```
-⸻
 
-🔹 11. EDGE CASES / ADVANCED
+### EDGE CASES / ADVANCED
 
-⸻
 
-🧾 ValueTask<T>
+### ValueTask<T>
 ```cs
 public async ValueTask<Employee> Get()
 {
@@ -159,9 +137,8 @@ public async ValueTask<Employee> Get()
 ```
 - Rare optimization
 
-⸻
 
-🧾 void / Task
+### void / Task
 
 public void Get() { }     // not recommended
 public Task Get() { }     // avoid
