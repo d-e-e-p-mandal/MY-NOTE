@@ -9,7 +9,7 @@ public Employee Get()
 ```
 - ✔ Returns data only
 - ✔ Auto → 200 OK
- ❌ No error/status control
+- No error/status control
 
 
 ## COLLECTION TYPES
@@ -163,8 +163,8 @@ public async ValueTask<Employee> Get()
 
 🧾 void / Task
 
-public void Get() { }     // ❌ not recommended
-public Task Get() { }     // ❌ avoid
+public void Get() { }     // not recommended
+public Task Get() { }     // avoid
 
 
 EXAMPLE :

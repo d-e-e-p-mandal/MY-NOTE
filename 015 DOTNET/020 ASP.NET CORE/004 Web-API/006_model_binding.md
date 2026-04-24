@@ -289,9 +289,7 @@ public IActionResult Get([FromRoute(Name = "emp_id")] int id)
 }
 
 ⸻
-
-🔹 9. `[FromBody] vs Others (IMPORTANT)
-
+```
 Attribute	Source
 FromBody	JSON body
 FromQuery	Query string
@@ -299,7 +297,7 @@ FromRoute	URL path
 FromForm	Form-data
 FromHeader	Headers
 FromServices	DI container
-
+```
 ⸻
 
 AUTO BEHAVIOR (VERY IMPORTANT)
