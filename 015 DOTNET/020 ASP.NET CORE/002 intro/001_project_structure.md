@@ -16,11 +16,15 @@ MyApi/
 │    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
 ├── DTOs/                    → Data Transfer Objects (request/response models)
 │
-├── Services/                → Business logic layer
+├── Services/                
+│    ├── Interfaces and Implementation Together in one file 
+│    OR
 │    ├── Interfaces/         → Service interfaces
 │    └── Implementations/    → Service implementations
 │
 ├── Repository/              → Business logic layer
+│    ├── Interfaces and Implementation Together in one file 
+│    OR
 │    ├── Interfaces/         → Repository interfaces
 │    └── Implementations/    → Repository implementations
 │
