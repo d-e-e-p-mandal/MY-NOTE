@@ -123,14 +123,14 @@ POST /employees
 - /getEmployees ❌  
 
 **Use plural resources :**
-/employees ✔  
-/employee ❌  
+- /employees ✔  
+- /employee ❌  
 
 **Use proper HTTP methods :**
-GET    → fetch  
-POST   → create  
-PUT    → update  
-DELETE → delete  
+- GET    → fetch  
+- POST   → create  
+- PUT    → update  
+- DELETE → delete  
 
 - Use status codes properly
 
