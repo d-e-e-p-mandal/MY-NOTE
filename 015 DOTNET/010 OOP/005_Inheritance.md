@@ -65,7 +65,7 @@ class Program
 
 ## Types of Inheritance :
 
-🔸 **1. Single Inheritance :**  
+**Single Inheritance :**  
 
 `One parent → one child`
 ```cs
@@ -73,7 +73,7 @@ class A {}
 class B : A {}
 ```
 
-**🔸 2. Multilevel Inheritance :**  
+**Multilevel Inheritance :**  
 
 `A → B → C`
 ```cs
@@ -82,7 +82,7 @@ class B : A {}
 class C : B {}
 ```
 
-**🔸 3. Hierarchical Inheritance :**
+**Hierarchical Inheritance :**
 
 One parent → multiple children
 ```cs
@@ -100,7 +100,7 @@ class C : A {}
 Modifier	Accessible in Child
 public	    - Yes
 protected	- Yes
-private	    ❌ No
+private	    - No
 internal	- (same assembly)
 ```
 
@@ -163,7 +163,7 @@ class B : A
 }
 ```
 
-**Method Overriding (Important) :**
+**Method Overriding :**
 
 - Child modifies parent method
 ```cs
@@ -246,8 +246,8 @@ class Program
     {
         A obj = new B();
 
-        obj.Show();     // ✔ allowed
-        // obj.Display(); ❌ not allowed
+        obj.Show();     // allowed
+        // obj.Display(); // not allowed
     }
 }
 ```
@@ -259,13 +259,13 @@ class Program
 A obj = new B(); // reference of parent, object of child
 ```
 ```cs
-B obj = new A(); // ❌ NOT allowed
+B obj = new A(); // NOT allowed
 ```
 
 
 **Why child method not accessible?**  
 Reference = A  
-So only A methods visible ❌ child hidden
+So only A methods visible, child hidden
 
 
 **2️⃣ Memory Concept**
@@ -284,8 +284,8 @@ Stack: `obj → reference type A`
 ⸻
 
 **Important Rule :**
-✔ `Full object (parent + child) is created in memory`
-✔ `But access depends on reference type`
+- `Full object (parent + child) is created in memory`
+- `But access depends on reference type`
 
 **Does child object take parent memory?**
 

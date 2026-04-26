@@ -2,7 +2,7 @@
 
 ## 1. Output in C#
 
-📌 (a) Console.WriteLine() – Most Used
+(a) Console.WriteLine()
 ```cs
 Console.WriteLine("Hello World");
 ```
@@ -10,7 +10,7 @@ Console.WriteLine("Hello World");
 
 ⸻
 
-📌 (b) Console.Write()
+(b) Console.Write()
 ```cs
 Console.Write("Hello ");
 Console.Write("World");
@@ -19,7 +19,7 @@ Console.Write("World");
 
 ⸻
 
-📌 (c) Formatted Output
+(c) Formatted Output
 ```cs
 int a = 10;
 Console.WriteLine("Value is " + a);
@@ -27,7 +27,7 @@ Console.WriteLine("Value is " + a);
 
 ⸻
 
-📌 (d) String Interpolation (Modern 🔥)
+(d) String Interpolation 
 ```cs
 int a = 10;
 Console.WriteLine($"Value is {a}");
@@ -38,7 +38,7 @@ Console.WriteLine($"Value is {a}");
 
 ## 2. Input in C#
 
-📌 (a) Console.ReadLine()
+(a) Console.ReadLine()
 ```cs
 string name = Console.ReadLine();
 Console.WriteLine("Hello " + name);
@@ -47,7 +47,7 @@ Console.WriteLine("Hello " + name);
 
 ⸻
 
-📌 (b) Taking Integer Input
+(b) Taking Integer Input
 ```cs
 int num = Convert.ToInt32(Console.ReadLine());
 ```
@@ -55,7 +55,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 ⸻
 
-📌 (c) Other Conversions
+(c) Other Conversions
 ```cs
 double d = Convert.ToDouble(Console.ReadLine());
 float f = Convert.ToSingle(Console.ReadLine());
@@ -64,7 +64,7 @@ bool b = Convert.ToBoolean(Console.ReadLine());
 
 ⸻
 
-📌 (d) Using Parse()
+(d) Using Parse()
 ```cs
 int num = int.Parse(Console.ReadLine());
 ```
@@ -72,7 +72,7 @@ int num = int.Parse(Console.ReadLine());
 
 ⸻
 
-📌 (e) Safe Input (Best Practice 🔥)
+(e) Safe Input (Best Practice)
 ```cs
 int num;
 bool result = int.TryParse(Console.ReadLine(), out num);

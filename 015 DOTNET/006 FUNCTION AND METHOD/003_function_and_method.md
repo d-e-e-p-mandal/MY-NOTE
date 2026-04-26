@@ -1,11 +1,11 @@
 
-# 🧠 Functions and Methods in C#
+# Functions and Methods in C#
 
 ## 🔹 What is a Function/Method?
 
-A function (called **method** in C#) is a block of code that performs a specific task.
+- A function (called **method** in C#) is a block of code that performs a specific task.
 
-👉 In C#, all functions are called **methods** because they are defined inside a class.
+- In C#, all functions are called **methods** because they are defined inside a class.
 
 ---
 
