@@ -98,7 +98,7 @@ public class ApiResponse<T>
     public T Data { get; set; }
     public object Errors { get; set; }
 
-    // 🔹 Success Constructor
+    // Success Constructor
     public ApiResponse(T data, string message = "Success")
     {
         Success = true;
@@ -107,7 +107,7 @@ public class ApiResponse<T>
         Errors = null;
     }
 
-    // 🔹 Error Constructor
+    // Error Constructor
     public ApiResponse(string message, object errors = null)
     {
         Success = false;
@@ -116,13 +116,14 @@ public class ApiResponse<T>
         Errors = errors;
     }
 
-    // 🔹 Convert to IActionResult
+    // Convert to IActionResult
     public IActionResult ToOkResult()
     {
         return new OkObjectResult(this);
     }
 
-    public IActionResult ToBadRequest()
+    pu
+    blic IActionResult ToBadRequest()
     {
         return new BadRequestObjectResult(this);
     }
@@ -132,6 +133,7 @@ public class ApiResponse<T>
         return new NotFoundObjectResult(this);
     }
 }
+
 ```
 Calling :
 ```cs
@@ -140,7 +142,8 @@ public async Task<IActionResult> GetEmployees()
 {
     var data = await _context.Employees.ToListAsync();
 
-    return new ApiResponse<List<Employee>>(data, "Fetched successfully")
+    re
+    turn new ApiResponse<List<Employee>>(data, "Fetched successfully")
            .ToOkResult();
 }
 ```
@@ -155,7 +158,7 @@ public class ApiResponse<T>
     public T Data { get; set; }
     public object Errors { get; set; }
 
-    // 🔹 Success Method
+    // Success Method
     public static ApiResponse<T> SuccessResponse(T data, string message = "Success")
     {
         return new ApiResponse<T>
@@ -167,7 +170,7 @@ public class ApiResponse<T>
         };
     }
 
-    // 🔹 Fail Method
+    // Fail Method
     public static ApiResponse<T> FailResponse(string message, object errors = null)
     {
         return new ApiResponse<T>
@@ -178,6 +181,7 @@ public class ApiResponse<T>
             Errors = errors
         };
     }
+
 }
 ```
 
@@ -191,3 +195,5 @@ public async Task<IActionResult> GetEmployees()
               .SuccessResponse(data, "Fetched successfully"));
 }
 ````
+
+------------

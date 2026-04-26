@@ -66,3 +66,12 @@ public class EmployeeController : ControllerBase
 *Disadvantage*  
 	•	More code
 
+------------
+## Routing in HTTP Method :
+
+**We can Route in Http Request :**
+- [HttpGet("Product/Details/{id}")]
+- [HttpPost("Product/Details/{id}")]
+- [HttpPut("Product/Details/{id}")]
+- [HttpPatch("Product/Details/{id}")]
+- [HttpDelete("Product/Details/{id}")]

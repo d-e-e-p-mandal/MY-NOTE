@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// ✅ Conventional Routing
+// Conventional Routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"

@@ -1,15 +1,15 @@
 
 # Attribute Routing
 
-Definition :
-Attribute Routing is a routing technique in ASP.NET Core where routes are defined directly on controllers and action methods using attributes.
+**Definition :**
+- Attribute Routing is a routing technique in ASP.NET Core where routes are defined directly on controllers and action methods using attributes.
 
 - It gives full control over URL structure.
 
-🔹 Why Attribute Routing?
+### Why Attribute Routing?
 
-👉 In Conventional Routing, routes are defined in one place (Program.cs)
-👉 In Attribute Routing, routes are defined where they are used
+- In Conventional Routing, routes are defined in one place (Program.cs)
+- In Attribute Routing, routes are defined where they are used
 
 ✔ More flexible
 ✔ More readable
@@ -26,7 +26,7 @@ Enables:
 
 ---
 
-🔹 Basic Syntax
+### Basic Syntax
 ```cs
 [ApiController]
 [Route("api/[controller]")]
@@ -78,7 +78,7 @@ public IActionResult Get(int id, string name)
 
 URL: /api/employee/5/deep
 
-🔹 Combining Route + HTTP Method
+### Combining Route + HTTP Method
 
 - define route inside HTTP method
 
@@ -91,7 +91,7 @@ public IActionResult GetAll()
 ```
 URL: /api/employee/all
 
-🔹 Controller Level + Action Level Routing
+### Controller Level + Action Level Routing
 
 📌 Example
 ```cs
@@ -213,7 +213,7 @@ public class EmployeeController : ControllerBase
 
 ⸻
 
-🔹 Advantages
+### Advantages
 
 ✅ Full control over URL
 ✅ Easy to understand

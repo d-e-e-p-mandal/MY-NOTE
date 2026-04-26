@@ -167,3 +167,139 @@ Task<>             → async
 IAsyncEnumerable   → streaming  
 ObjectResult       → custom  
 File/Content       → special  
+
+
+------------------------------------
+
+
+# 1. Internal Code of IActionResult
+
+**It’s just an interface :**
+
+**Actual concept :**
+```cs
+public interface IActionResult
+{
+    Task ExecuteResultAsync(ActionContext context);
+}
+```
+```cs
+public async Task ExecuteResultAsync(ActionContext context)
+{
+    var response = context.HttpContext.Response;
+
+    response.StatusCode = 200;
+
+    await response.WriteAsJsonAsync("Hello"); // value : Hellow
+}
+```
+
+### 2. Example Internal Class (OkObjectResult)
+```cs
+public class OkObjectResult : ObjectResult
+{
+    public OkObjectResult(object value) : base(value)
+    {
+        StatusCode = 200;
+    }
+}
+```
+
+### 3. Core Internal Logic (ObjectResult)
+```cs
+public class ObjectResult : IActionResult
+{
+    public object Value { get; set; }
+    public int? StatusCode { get; set; }
+    public ObjectResult(object value)
+    {
+        Value = value;
+    }
+    public async Task ExecuteResultAsync(ActionContext context)
+    {
+        var response = context.HttpContext.Response;
+        response.StatusCode = StatusCode ?? 200;
+        // Convert object → JSON
+        await response.WriteAsJsonAsync(Value);
+    }
+}
+```
+- THIS is the real engine :
+- Sets status code :
+- Serializes data :
+- Sends response :
+
+
+### 4. Internal Code of ActionResult
+
+- It’s just a wrapper class :
+```cs
+public abstract class ActionResult : IActionResult
+{
+    public virtual Task ExecuteResultAsync(ActionContext context)
+    {
+        throw new NotImplementedException();
+    }
+}
+```
+- Most real results (Ok, NotFound, etc.) inherit from this or similar base classes.
+
+
+### 5. Internal Code of ActionResult<T> (Important)
+```cs
+public class ActionResult<T> : IActionResult
+{
+    private readonly IActionResult _result;
+    private readonly T _value;
+    public ActionResult(T value)
+    {
+        _value = value;
+    }
+    public ActionResult(IActionResult result)
+    {
+        _result = result;
+    }
+    public async Task ExecuteResultAsync(ActionContext context)
+    {
+        if (_result != null)
+        {
+            await _result.ExecuteResultAsync(context);
+        }
+        else
+        {
+            var objectResult = new ObjectResult(_value);
+            await objectResult.ExecuteResultAsync(context);
+        }
+    }
+}
+```
+
+⚔️ Internal Difference (Code Level)
+
+### IActionResult
+```cs
+return Ok();  // Already a result object
+```
+**Framework just calls: :**
+```cs
+ExecuteResultAsync()
+```
+
+### ActionResult
+- Same behavior — no extra logic :
+
+### ActionResult<T>
+```cs
+return "Hello";
+```
+**Internally becomes: :**
+```cs
+new ObjectResult("Hello")
+```
+**Because of: :**
+```cs
+if (_result != null)
+   // use it
+else
+    //wrap value
+```

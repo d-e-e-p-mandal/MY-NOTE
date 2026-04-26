@@ -62,12 +62,12 @@ var employee = JsonSerializer.Deserialize<Employee>(json);
 ```
 
 🔄Internally this happens:
-
+```cs
 // pseudo internal logic
 Employee emp = new Employee();
 emp.Name = json["name"];   // map value
 emp.Salary = json["salary"];
-
+```
 Step 3: Property Matching
 
 👉 ASP.NET uses reflection to match properties:

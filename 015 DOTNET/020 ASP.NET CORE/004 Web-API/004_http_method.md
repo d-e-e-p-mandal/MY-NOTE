@@ -31,10 +31,10 @@ public IActionResult Delete(int id)
 
 ### [HttpPatch]
 - Partial update
-
+```cs
 [HttpPatch("{id}")]
 public IActionResult Patch(int id, Employee emp)
-
+```
 
 
 **CONTROLLER + ROUTING INTERNAL FLOW**
@@ -79,4 +79,13 @@ public class EmployeeController : ControllerBase
         return NoContent();
     }
 }
+```
+
+------------
+
+# Routing In HTTP Method :
+
+```cs
+[HttpGet("employee")]
+public IActionResult Get()
 ```
