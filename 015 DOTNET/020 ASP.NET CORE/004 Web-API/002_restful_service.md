@@ -11,100 +11,77 @@
 * Uses HTTP methods
 * Uses URLs to represent resources
 
-⸻
 
-📌 Example
+Example : /api/employees
 
-/api/employees
+“employees” = resource
 
-👉 “employees” = resource
 
-⸻
+### CORE CONCEPTS OF REST
 
-🔹 3. CORE CONCEPTS OF REST
+**Resource :**
 
-⸻
-
-✅ 1. Resource
-
-👉 Anything that can be accessed via API
+- Anything that can be accessed via API
 
 Employee, Product, User
 
-⸻
 
-✅ 2. URI (Uniform Resource Identifier)
+**URI (Uniform Resource Identifier) :**
+- Unique address of resource
 
-👉 Unique address of resource
+URL : /api/employees/1
 
-/api/employees/1
 
-⸻
-
-✅ 3. Representation
-
-👉 Data format of resource
-
+**Representation :**
+- Data format of resource
+```json
 {
   "id": 1,
   "name": "Deep"
 }
-
-👉 Formats:
-
+```
+- Formats:
 * JSON (most common)
 * XML
 
-⸻
+##### HTTP METHODS (VERY IMPORTANT) :
 
-🔹 4. HTTP METHODS (VERY IMPORTANT)
-
-⸻
-
-🔹 GET → Read data
+**GET → Read data :**
 
 GET /api/employees
 
-👉 Fetch data
+- Fetch data
 
-⸻
 
-🔹 POST → Create data
+**POST → Create data :**
 
 POST /api/employees
 
-👉 Add new record
+- Add new record
 
-⸻
 
-🔹 PUT → Update full data
+**PUT → Update full data :**
 
 PUT /api/employees/1
 
-👉 Replace data
+- Replace data
 
-⸻
 
-🔹 PATCH → Partial update
+**PATCH → Partial update :**
 
 PATCH /api/employees/1
 
-👉 Update specific fields
+- Update specific fields
 
-⸻
 
-🔹 DELETE → Remove data
+**DELETE → Remove data :**
 
 DELETE /api/employees/1
 
-👉 Delete resource
+- Delete resource
 
-⸻
 
-🔹 5. HTTP STATUS CODES
-
-⸻
-
+### HTTP STATUS CODES
 200 → OK  
 201 → Created  
 204 → No Content  
@@ -114,176 +91,47 @@ DELETE /api/employees/1
 404 → Not Found  
 500 → Server Error  
 
-⸻
 
-🔹 6. REST PRINCIPLES (IMPORTANT)
+### REST PRINCIPLES
+- Stateless
+- Each request is independent
+- Server does not store client state
+- Client-Server
+- Frontend ≠ Backend
+- Separation of concerns
 
-⸻
 
-✅ 1. Stateless
-
-Each request is independent
-
-👉 Server does not store client state
-
-⸻
-
-✅ 2. Client-Server
-
-Frontend ≠ Backend
-
-👉 Separation of concerns
-
-⸻
-
-✅ 3. Uniform Interface
+##### Uniform Interface
 
 Same rules for all APIs
 
-👉 Example:
-
+- Example:
 GET /employees
 POST /employees
 
-⸻
 
-✅ 4. Resource-Based
+##### Resource-Based
+- URL represents resource, not action
+- Wrong: /getEmployees
+- Correct: /employees
+- Cacheable : Responses can be cached
 
-URL represents resource, not action
 
-❌ Wrong:
+### REST API DESIGN RULES
+**Use nouns, not verbs :**
+- /employees ✔  
+- /getEmployees ❌  
 
-/getEmployees
-
-✅ Correct:
-
-/employees
-
-⸻
-
-✅ 5. Cacheable
-
-👉 Responses can be cached
-
-⸻
-
-🔹 7. REST API DESIGN RULES
-
-⸻
-
-✔ Use nouns, not verbs
-
-/employees ✔  
-/getEmployees ❌  
-
-⸻
-
-✔ Use plural resources
-
+**Use plural resources :**
 /employees ✔  
 /employee ❌  
 
-⸻
-
-✔ Use proper HTTP methods
-
+**Use proper HTTP methods :**
 GET    → fetch  
 POST   → create  
 PUT    → update  
 DELETE → delete  
 
-⸻
+- Use status codes properly
 
-✔ Use status codes properly
-
-⸻
-
-🔹 8. REST IN ASP.NET CORE
-
-⸻
-
-[ApiController]
-[Route("api/[controller]")]
-public class EmployeeController : ControllerBase
-{
-    [HttpGet]
-    public IActionResult Get()
-    {
-        return Ok();
-    }
-    [HttpPost]
-    public IActionResult Create(Employee emp)
-    {
-        return CreatedAtAction(nameof(Get), new { id = 1 }, emp);
-    }
-}
-
-⸻
-
-🔹 9. REST FLOW
-
-⸻
-
-Client → HTTP Request → Controller → DB → Response → Client
-
-⸻
-
-🔹 10. EXAMPLE (FULL)
-
-⸻
-
-📌 Request
-
-POST /api/employees
-
-📌 Body
-
-{
-  "name": "Deep"
-}
-
-⸻
-
-📌 Response
-
-201 Created
-Location: /api/employees/1
-{
-  "id": 1,
-  "name": "Deep"
-}
-
-⸻
-
-🔹 11. ADVANTAGES
-
-⸻
-
-✔ Simple
-✔ Scalable
-✔ Platform independent
-✔ Uses HTTP
-
-⸻
-
-🔹 12. DISADVANTAGES
-
-⸻
-
-❌ No strict standard
-❌ Over-fetching / under-fetching
-
-⸻
-
-🎯 FINAL SUMMARY
-
-REST → API design style  
-Resource → data entity  
-URI → address  
-GET → read  
-POST → create  
-PUT → update  
-DELETE → remove  
-Stateless → no memory  
-
-⸻
+------------------------------------
