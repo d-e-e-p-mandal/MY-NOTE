@@ -89,3 +89,12 @@ public class EmployeeController : ControllerBase
 [HttpGet("employee")]
 public IActionResult Get()
 ```
+
+### ROUTE PARAMETERS
+```cs
+[HttpGet("{id}")]
+public IActionResult Get(int id)
+```
+
+URL : /api/employee/5
+> id = 5

@@ -27,6 +27,7 @@ Definition : Special attribute for Web API controllers
 **FEATURES :**
 - Automatic Model Validation
 ```cs
+[ApiController]
 [HttpPost]
 public IActionResult Create(Employee emp)
 {
@@ -51,9 +52,15 @@ If data is invalid: Automatically returns 400 BadRequest
 ### 3. [Route] ATTRIBUTE
 
 Definition : Defines URL pattern
+Example 1 : 
 ```cs
 [Route("api/[controller]")]
 ```
+Example 2 :
+```cs
+[Route("employe/id"),HttpPost]
+```
+
 Example : [Route("api/employee")]
 
 URL: https://localhost:5001/api/employee
@@ -64,11 +71,4 @@ URL: https://localhost:5001/api/employee
 ```
 Automatically replaced with: EmployeeController → employee
 
-### ROUTE PARAMETERS
-```cs
-[HttpGet("{id}")]
-public IActionResult Get(int id)
-```
 
-URL : /api/employee/5
-> id = 5
