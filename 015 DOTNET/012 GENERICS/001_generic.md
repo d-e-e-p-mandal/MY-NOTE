@@ -3,9 +3,10 @@
 
 **What are Generics?**
 
+- Use <T> as placeholder
 - Generics allow you to write **type-safe and reusable code** by using a placeholder for data type.
 
-- Instead of using fixed types like `int`, `string`, we use a **type parameter (T)**.
+- Instead of using fixed types like `int`, `string`, we use a **type parameter (T)**. *T is identifier (we can declare any word but T is recomended. T stand here for type)*
 
 **Why Generics?**
 - Code reusability  
@@ -13,13 +14,18 @@
 - Better performance (no boxing/unboxing)  
 - Compile-time error checking  
 
+**Use Case :**
+- Used in collections and methods
+- Avoids runtime errors
+- Improves performance
+- Supports multiple type parameters
+
 
 **Basic Syntax :**
 
 **Generic in Function :**
 ```cs
 using System;
-
 class Helper
 {
     public T Show<T>(T data)
@@ -39,6 +45,7 @@ class Program
     }
 }
 ```
+
 Output : 
 ```
 10
@@ -79,13 +86,11 @@ Issues:
 Example 2 :
 ```cs
 using System;
-
 // Generic Class
 class Test<T>
 {
     public T value;
 }
-
 // Main Class
 class Program
 {
@@ -104,95 +109,27 @@ class Program
         ShowData<string>("Hello");
     }
 }
-``
+```
 
-⸻
- With Generics (Solution ✅)
+**Benefits:**
+- Type-safe
+- No casting
+- Compile-time checking
 
-class Test<T>
+
+### Multiple Input Generic Class
+
+**Example :**
+```cs
+class MyKeyValuePair<T, U>
 {
-    public T data;
+    public T Key;
+    public U Value;
 }
+```
 
-👉 Benefits:
-	•	Type-safe
-	•	No casting
-	•	Compile-time checking
-
-⸻
- Generic Method
-
-static void Show<T>(T value)
-{
-    Console.WriteLine(value);
-}
-
-Calling:
-
-Show(10);
-Show("Hello");
-
-
-⸻
- Generic Class with Multiple Types
-
-class Pair<T, U>
-{
-    public T First;
-    public U Second;
-}
-
-Example:
-
-Pair<int, string> p = new Pair<int, string>();
-p.First = 1;
-p.Second = "One";
-
-
-⸻
- Generic Collections (Very Important 🔥)
-
-using System.Collections.Generic;
-
-List<int> list = new List<int>();
-list.Add(10);
-list.Add(20);
-
-Dictionary<int, string> dict = new Dictionary<int, string>();
-dict.Add(1, "One");
-
-👉 Common Generic Collections:
-	•	List
-	•	Dictionary<TKey, TValue>
-	•	Stack
-	•	Queue
-	•	HashSet
-
-⸻
- Constraints in Generics
-
-👉 Used to restrict type of T
-
-class Test<T> where T : class
-{
-}
-
-
-⸻
-
-🔸 Types of Constraints
-
-Constraint	Meaning
-where T : class	Reference type
-where T : struct	Value type
-where T : new()	Must have default constructor
-where T : BaseClass	Must inherit
-where T : Interface	Must implement interface
-
-
-⸻
- Example with Constraint
-
+### Example with Constraint
+```cs
 class Test<T> where T : new()
 {
     public T Create()
@@ -200,39 +137,24 @@ class Test<T> where T : new()
         return new T();
     }
 }
+```
 
-
-⸻
- Generic Interface
-
+### Generic Interface
+```cs
 interface ITest<T>
 {
     void Show(T value);
 }
+```
 
-
-⸻
- Generic Delegate
-
+### Generic Delegate
+```cs
 delegate T MyDelegate<T>(T value);
+```
 
 
-⸻
- Boxing and Generics
 
-❌ Without Generics:
-
-ArrayList list = new ArrayList();
-list.Add(10);   // boxing
-
-✔️ With Generics:
-
-List<int> list = new List<int>();
-list.Add(10);   // no boxing
-
-
-⸻
- Advantages of Generics
+**Advantages of Generics :**
 	•	Type safety
 	•	Reusable code
 	•	Better performance
@@ -240,12 +162,12 @@ list.Add(10);   // no boxing
 	•	Compile-time checking
 
 ⸻
- Disadvantages
+**Disadvantages :**
 	•	Slightly complex syntax
 	•	Hard for beginners
 
 ⸻
- Generics vs Non-Generics
+**Generics vs Non-Generics :**
 
 Feature	Generic	Non-Generic
 Type safety	Yes	No
@@ -263,10 +185,42 @@ Errors	Compile-time	Runtime
 
 ⸻
  Important Points
-	•	Use <T> as placeholder
-	•	Used in collections and methods
-	•	Avoids runtime errors
-	•	Improves performance
-	•	Supports multiple type parameters
+
 
 ⸻
+
+
+
+
+**Generic Class with Multiple Types :**
+```cs
+class Pair<T, U>
+{
+    public T First;
+    public U Second;
+}
+```
+Example:
+```cs
+Pair<int, string> p = new Pair<int, string>();
+p.First = 1;
+p.Second = "One";
+```
+
+**Generic Collections :**
+```cs
+using System.Collections.Generic;
+
+List<int> list = new List<int>();
+list.Add(10);
+list.Add(20);
+
+Dictionary<int, string> dict = new Dictionary<int, string>();
+dict.Add(1, "One");
+```
+**Common Generic Collections :**
+	•	List
+	•	Dictionary<TKey, TValue>
+	•	Stack
+	•	Queue
+	•	HashSet
