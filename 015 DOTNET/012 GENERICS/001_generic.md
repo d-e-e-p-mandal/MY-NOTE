@@ -1,73 +1,113 @@
-Here is a full detailed Markdown (.md) note on Generics in C# (complete + exam ready) 👇
 
-⸻
+# Generics in C# 
 
+**What are Generics?**
 
-# 🧠 Generics in C# (Full Notes)
+- Generics allow you to write **type-safe and reusable code** by using a placeholder for data type.
 
----
+- Instead of using fixed types like `int`, `string`, we use a **type parameter (T)**.
 
-# 🔹 What are Generics?
-
-Generics allow you to write **type-safe and reusable code** by using a placeholder for data type.
-
-👉 Instead of using fixed types like `int`, `string`, we use a **type parameter (T)**.
-
----
-
-# 🔹 Why Generics?
-
+**Why Generics?**
 - Code reusability  
 - Type safety  
 - Better performance (no boxing/unboxing)  
 - Compile-time error checking  
 
----
 
-# 🔹 Basic Syntax
+**Basic Syntax :**
+
+**Generic in Function :**
+```cs
+using System;
+
+class Helper
+{
+    public T Show<T>(T data)
+    {
+        return data;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Helper h = new Helper();   // create object
+
+        Console.WriteLine(h.Show<int>(10));
+        Console.WriteLine(h.Show<string>("Hello"));
+    }
+}
+```
+Output : 
+```
+10
+Hello
+```
+
+**Generic Type in CLass :**
+Example 1 :
 
 ```csharp
 class ClassName<T>
 {
     public T data;
 }
-
-
-⸻
-
-🔹 Example
-
-class Test<T>
-{
-    public T value;
-}
-
+```
 Usage:
-
+```cs
 Test<int> obj1 = new Test<int>();
 obj1.value = 10;
 
 Test<string> obj2 = new Test<string>();
 obj2.value = "Hello";
+```
 
-
-⸻
-
-🔹 Without Generics (Problem ❌)
-
+**Without Generics : Problem**
+```cs
 class Test
 {
     public object data;
 }
+```
+Issues:
+- No type safety
+- Requires casting
+- Runtime errors possible
 
-👉 Issues:
-	•	No type safety
-	•	Requires casting
-	•	Runtime errors possible
+
+Example 2 :
+```cs
+using System;
+
+// Generic Class
+class Test<T>
+{
+    public T value;
+}
+
+// Main Class
+class Program
+{
+    // Generic Function using Generic Class
+    public static void ShowData<T>(T input)
+    {
+        Test<T> obj = new Test<T>();  // create generic class object
+        obj.value = input;
+
+        Console.WriteLine(obj.value);
+    }
+
+    static void Main()
+    {
+        ShowData<int>(10);
+        ShowData<string>("Hello");
+    }
+}
+``
 
 ⸻
-
-🔹 With Generics (Solution ✅)
+ With Generics (Solution ✅)
 
 class Test<T>
 {
@@ -80,8 +120,7 @@ class Test<T>
 	•	Compile-time checking
 
 ⸻
-
-🔹 Generic Method
+ Generic Method
 
 static void Show<T>(T value)
 {
@@ -95,8 +134,7 @@ Show("Hello");
 
 
 ⸻
-
-🔹 Generic Class with Multiple Types
+ Generic Class with Multiple Types
 
 class Pair<T, U>
 {
@@ -112,8 +150,7 @@ p.Second = "One";
 
 
 ⸻
-
-🔹 Generic Collections (Very Important 🔥)
+ Generic Collections (Very Important 🔥)
 
 using System.Collections.Generic;
 
@@ -132,8 +169,7 @@ dict.Add(1, "One");
 	•	HashSet
 
 ⸻
-
-🔹 Constraints in Generics
+ Constraints in Generics
 
 👉 Used to restrict type of T
 
@@ -155,8 +191,7 @@ where T : Interface	Must implement interface
 
 
 ⸻
-
-🔹 Example with Constraint
+ Example with Constraint
 
 class Test<T> where T : new()
 {
@@ -168,8 +203,7 @@ class Test<T> where T : new()
 
 
 ⸻
-
-🔹 Generic Interface
+ Generic Interface
 
 interface ITest<T>
 {
@@ -178,15 +212,13 @@ interface ITest<T>
 
 
 ⸻
-
-🔹 Generic Delegate
+ Generic Delegate
 
 delegate T MyDelegate<T>(T value);
 
 
 ⸻
-
-🔹 Boxing and Generics
+ Boxing and Generics
 
 ❌ Without Generics:
 
@@ -200,8 +232,7 @@ list.Add(10);   // no boxing
 
 
 ⸻
-
-🔹 Advantages of Generics
+ Advantages of Generics
 	•	Type safety
 	•	Reusable code
 	•	Better performance
@@ -209,14 +240,12 @@ list.Add(10);   // no boxing
 	•	Compile-time checking
 
 ⸻
-
-🔹 Disadvantages
+ Disadvantages
 	•	Slightly complex syntax
 	•	Hard for beginners
 
 ⸻
-
-🔹 Generics vs Non-Generics
+ Generics vs Non-Generics
 
 Feature	Generic	Non-Generic
 Type safety	Yes	No
@@ -226,16 +255,14 @@ Errors	Compile-time	Runtime
 
 
 ⸻
-
-🔹 Real-Life Example
+ Real-Life Example
 
 👉 Think like a box:
 	•	Non-generic box → can store anything (confusing)
 	•	Generic box → stores only one type (safe)
 
 ⸻
-
-🔹 Important Points
+ Important Points
 	•	Use <T> as placeholder
 	•	Used in collections and methods
 	•	Avoids runtime errors

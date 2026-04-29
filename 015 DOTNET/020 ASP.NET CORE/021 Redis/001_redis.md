@@ -1,5 +1,6 @@
-Redis Implementation :
-app.setting.json
+## Redis Implementation :
+
+**File : app.setting.json**
 ```json
 {
   "Redis": {

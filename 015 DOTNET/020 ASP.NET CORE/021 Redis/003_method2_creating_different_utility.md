@@ -14,7 +14,7 @@ public class RedisConfig
 }
 ```
 
-RedisCacheService.cs
+**File : RedisCacheService.cs**
 ```cs
 using System.Text.Json;
 using Microsoft.Extensions.Caching.Distributed;
@@ -25,9 +25,7 @@ public class RedisCacheService
     private readonly IDistributedCache _cache;
     private readonly RedisConfig _config;
 
-    public RedisCacheService(
-        IDistributedCache cache,
-        IOptions<RedisConfig> config)
+    public RedisCacheService(IDistributedCache cache, IOptions<RedisConfig> config)
     {
         _cache = cache;
         _config = config.Value;

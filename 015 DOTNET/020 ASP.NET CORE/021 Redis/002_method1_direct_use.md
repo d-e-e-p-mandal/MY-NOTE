@@ -1,7 +1,6 @@
 
 ### Method 1 : Direct Use
 
-
 ```cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +28,7 @@ public class EmployeeController : ControllerBase
     {
         string cacheKey = $"{_config.InstanceName}employees";
 
-        // 🔹 If Redis OFF → DB
+        // If Redis OFF → DB
         if (!_config.IsEnabled)
         {
             var dbData = await _context.Employees.AsNoTracking().ToListAsync();
@@ -37,7 +36,7 @@ public class EmployeeController : ControllerBase
             return Ok(dbData);
         }
 
-        // 🔹 Get from Cache
+        // Get from Cache
         var cachedData = await _cache.GetStringAsync(cacheKey);
 
         if (!string.IsNullOrEmpty(cachedData))
@@ -46,27 +45,27 @@ public class EmployeeController : ControllerBase
             return Ok(result);
         }
 
-        // 🔹 Get from DB
+        // Get from DB
         var data = await _context.Employees.AsNoTracking().ToListAsync();
 
-        // 🔥 CACHE OPTIONS (3 TYPES)
+        // CACHE OPTIONS (3 TYPES)
 
         var options = new DistributedCacheEntryOptions()
 
-            // ✅ WORKING (DEFAULT TIME)
+            // WORKING (DEFAULT TIME)
             .SetAbsoluteExpiration(
                 TimeSpan.FromMinutes(_config.DefaultCacheTimeInMinutes))
 
-            // ❌ COMMENTED (SLIDING)
+            // COMMENTED (SLIDING)
             //.SetSlidingExpiration(
             //    TimeSpan.FromMinutes(_config.SlidingExpirationInMinutes))
 
-            // ❌ COMMENTED (ABSOLUTE MAX LIMIT)
+            // COMMENTED (ABSOLUTE MAX LIMIT)
             //.SetAbsoluteExpiration(
             //    TimeSpan.FromMinutes(_config.AbsoluteExpirationInMinutes))
             ;
 
-        // 🔹 Store in Redis
+        // Store in Redis
         var jsonData = JsonSerializer.Serialize(data);
         await _cache.SetStringAsync(cacheKey, jsonData, options);
 
