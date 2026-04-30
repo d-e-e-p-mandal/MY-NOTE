@@ -148,7 +148,7 @@ class Program
 }
 ```
 
-### Private Member Access Mododifier :
+### Protected Internal Member Access Mododifier :
 - Same project OR derived class in another project
 ```cs
 class A
@@ -160,7 +160,7 @@ class B : A
 {
     public void Show()
     {
-        Console.WriteLine(x); // ✅ allowed (inheritance)
+Console.WriteLine(x); // ✅ allowed (inheritance)
     }
 }
 
@@ -169,7 +169,7 @@ class Program
     static void Main()
     {
         A obj = new A();
-        Console.WriteLine(obj.x); // ✅ allowed (same project)
+Console.WriteLine(obj.x); // allowed (same project)
     }
 }
 ```
@@ -210,7 +210,7 @@ class B
     public void Show()
     {
         A obj = new A();
-        Console.WriteLine(obj.x); // ✅ allowed
+Console.WriteLine(obj.x); // allowed
     }
 }
 ```
@@ -272,8 +272,8 @@ class Program
     {
         A obj = new A();
 
-        Console.WriteLine(obj.x); // ✅ allowed
-        obj.Show();               // ✅ allowed
+Console.WriteLine(obj.x); // allowed
+obj.Show();               // allowed
     }
 }
 ```

@@ -1,92 +1,230 @@
-# Property :
 
+# Field :
 ```cs
-
+public string Brand;
 ```
 
-
-
-The line
-
-public string Brand { get; set; }
-
-belongs to the topic of Properties in C# (specifically Auto-Implemented Properties) in the C#.
-
-⸻
-
-🧠 What is get and set?
-
-👉 This is a property, not a normal variable.
-
-public string Brand { get; set; }
+# Property :
+- `Fields work, but properties give control, safety, and flexibility.`
 
 * get → used to read the value
 * set → used to write/change the value
 
-⸻
+##### C# Field vs Property
 
-🔹 Equivalent (Expanded Form)
+| Feature            | Field | Property |
+|-------------------|-------|----------|
+| Simple            | ✔     | ✔        |
+| Validation        | ❌     | ✔        |
+| Encapsulation     | ❌     | ✔        |
+| Control access    | ❌     | ✔        |
+| Framework support | ❌     | ✔        |
 
-The above line is shorthand for:
 
+### Public :
+```cs
+public string Brand { get; set; }
+```
+- The line is shorthand form.
+- specifically Auto-Implemented Properties in the C#.
+- C# automatically creates the backing field for you
+
+**Equivalent Expanded Form :**
+```cs
 private string _brand;
 public string Brand
 {
     get { return _brand; }
     set { _brand = value; }
 }
+```
 
-👉 C# automatically creates the backing field for you
+**Why Use Properties?**
 
-⸻
+Encapsulation -> Controls access to data
+Safety -> You can validate data
+Clean code	-> Less boilerplate
 
-🔥 Why Use Properties?
 
-Feature	Benefit
-Encapsulation	Controls access to data
-Safety	You can validate data
-Clean code	Less boilerplate
+--------------------
+### Private
 
-⸻
-
-🔹 Example
-
-class Product
+1. Fully Private Property
+```cs
+class A
 {
-    public string Brand { get; set; }
+    private int X { get; set; }
+}
+```
+Meaning:
+* Only accessible inside the same class
+* Cannot be used outside
+
+2. Private Field + Public Property (Most Used ✔)
+```cs
+class A
+{
+    private int x;   // private field
+    public int X     // public property
+    {
+        get { return x; }
+        set { x = value; }
+    }
+}
+```
+Best practice:
+
+* Data is hidden (private x)
+* Access controlled via property (public X)
+
+⸻
+
+3. Public Read, Private Write (Very Important ⭐)
+```cs
+class A
+{
+    public int X { get; private set; }
+}
+```
+Meaning:
+
+* Outside class → only read
+* Inside class → can set value
+
+⸻
+
+✅ 4. Private Get, Public Set (rare)
+
+class A
+{
+    public int X { private get; set; }
+}
+
+👉 Outside:
+
+* Can set value
+* Cannot read value
+
+⸻
+
+**Example :**
+```cs
+class A
+{
+    public int X { get; private set; }
+    public void SetValue(int value)
+    {
+        X = value; // allowed (inside class)
+    }
 }
 class Program
 {
     static void Main()
     {
-        Product p = new Product();
-        p.Brand = "Apple";        // set
-        Console.WriteLine(p.Brand); // get
+        A obj = new A();
+        obj.SetValue(100);
+        Console.WriteLine(obj.X); // ✔ read allowed
+        // obj.X = 200; ❌ not allowed
+    }
+}
+```
+
+--------------------------
+### Protected
+
+✅ protected in C# (with properties)
+
+👉 protected means:
+
+* ✔ Accessible inside the same class
+* ✔ Accessible in derived (child) classes
+* ❌ NOT accessible outside (no direct access via object)
+
+⸻
+
+🔹 1. Protected Property
+
+class A
+{
+    protected int X { get; set; }
+}
+
+👉 X can be used:
+
+* inside A
+* inside any class that inherits A
+
+⸻
+
+🔹 2. Example with Inheritance
+
+using System;
+class A
+{
+    protected int X { get; set; }
+}
+class B : A
+{
+    public void SetValue()
+    {
+        X = 100; // ✔ allowed (derived class)
+    }
+    public void Show()
+    {
+        Console.WriteLine(X); // ✔ allowed
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        B obj = new B();
+        obj.SetValue();
+        obj.Show();
+        // Console.WriteLine(obj.X); ❌ NOT allowed (outside class)
     }
 }
 
 ⸻
 
-🧠 Topic Name (Important)
+🔥 Key Point
 
-👉 This comes under:
+👉 Even if object exists:
 
-* OOP (Object-Oriented Programming)
-* Encapsulation
-* Properties (Auto-properties)
+B obj = new B();
 
-⸻
+❌ You cannot do:
 
-🚀 Interview One-Liner
-
-👉
-
-“get and set are accessors used in properties to read and write values, and they are part of encapsulation in C#.”
+obj.X; // ❌ ERROR
 
 ⸻
 
-If you want, I can explain:
+🔹 3. Protected Setter (Very Useful ⭐)
 
-* 🔥 get; private set;
-* 🔥 Read-only properties
-* 🔥 Validation inside set (important for exams)
+class A
+{
+    public int X { get; protected set; }
+}
+
+👉 Meaning:
+
+* ✔ Everyone can read
+* ✔ Only derived classes can set
+
+⸻
+
+🔹 4. Example
+
+class A
+{
+    public int X { get; protected set; }
+}
+class B : A
+{
+    public void SetValue()
+    {
+        X = 200; // ✔ allowed
+    }
+}
+
+⸻

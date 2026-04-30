@@ -149,6 +149,7 @@ public async Task<IActionResult> GetEmployees()
 ```
 
 ------------
+
 ### Constructor And Method Both Used: (Industry level)
 ```cs
 public class ApiResponse<T>
@@ -181,7 +182,6 @@ public class ApiResponse<T>
             Errors = errors
         };
     }
-
 }
 ```
 

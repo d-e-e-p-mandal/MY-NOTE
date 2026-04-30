@@ -1,3 +1,9 @@
+# Generic Class :
+
+**Directive :**
+```cs
+using System.Collections.Generic;
+```
 
 **Generic Class with Multiple Types :**
 ```cs
