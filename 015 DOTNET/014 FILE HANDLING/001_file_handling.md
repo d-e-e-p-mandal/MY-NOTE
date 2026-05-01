@@ -1,9 +1,5 @@
 
-# 🧠 File Handling in C#
-
----
-
-# 🔹 What is File Handling?
+# File Handling in C#
 
 File handling is used to **create, read, write, append, and delete files** in C#.
 

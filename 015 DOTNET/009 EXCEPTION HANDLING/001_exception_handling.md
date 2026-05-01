@@ -1,26 +1,17 @@
 
-# 🧠 Exception Handling in C#
+# Exception Handling in C#
 
-## 🔹 What is Exception?
-
-An exception is an **error that occurs during program execution (runtime error)**.
-
-👉 Example:
-- Divide by zero
-- Invalid input
-- File not found
-
----
-
-## 🔹 Why Exception Handling?
-
+- An exception is an **error that occurs during program execution (runtime error)**.
 - Prevent program crash  
 - Handle errors gracefully  
 - Improve program reliability  
 
----
+**Example:**
+- Divide by zero
+- Invalid input
+- File not found
 
-# 🔹 Basic Syntax
+**Basic Syntax :**
 
 ```csharp
 try
@@ -33,10 +24,8 @@ catch
 }
 ```
 
-⸻
-
-🔹 Example
-
+**Example 1:**
+```cs
 using System;
 
 class Program
@@ -54,41 +43,10 @@ class Program
         }
     }
 }
+```
 
-
-⸻
-
-🔹 Types of Blocks
-
-1️⃣ try
-	•	Contains code that may cause error
-
-⸻
-
-2️⃣ catch
-	•	Handles exception
-
-catch(Exception e)
-{
-    Console.WriteLine(e.Message);
-}
-
-
-⸻
-
-3️⃣ finally
-	•	Always executes (error or not)
-
-finally
-{
-    Console.WriteLine("Done");
-}
-
-
-⸻
-
-🔹 Full Example
-
+**Example 2:**
+```cs
 using System;
 
 class Program
@@ -109,12 +67,35 @@ class Program
         }
     }
 }
+```
+
+**Types of Blocks :**
+
+**try :**
+- Contains code that may cause error
+
+**catch :**
+- Handles exception
+```cs
+catch(Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+```
+
+**finally :**
+- Always executes (error or not)
+```cs
+finally
+{
+    Console.WriteLine("Done");
+}
+```
 
 
-⸻
 
-🔹 Multiple Catch Blocks
-
+##### Multiple Catch Blocks
+```cs
 try
 {
     int x = int.Parse("abc");
@@ -127,12 +108,10 @@ catch(Exception)
 {
     Console.WriteLine("General error");
 }
+```
+- Specific catch first, general later
 
-👉 Specific catch first, general later
-
-⸻
-
-🔹 Common Exception Types
+Common Exception Types
 
 Exception	Meaning
 DivideByZeroException	Division by zero
@@ -141,57 +120,46 @@ NullReferenceException	Null object
 IndexOutOfRangeException	Invalid index
 
 
-⸻
 
-🔹 throw Keyword
+### throw Keyword
 
-Used to manually throw exception
-
+- Used to manually throw exception
+```cs
 throw new Exception("Error occurred");
-
+```
 
 ⸻
 
-🔹 Custom Exception
-
+##### Custom Exception
+```cs
 class MyException : Exception
 {
     public MyException(string msg) : base(msg) { }
 }
+```
 
-
-⸻
-
-🔹 Checked & Unchecked
-
+##### Checked & Unchecked
+```cs
 checked
 {
     int x = int.MaxValue;
     x++;   // error
 }
-
+```
+```cs
 unchecked
 {
     int x = int.MaxValue;
     x++;   // no error
 }
-
-
-⸻
-
-🔹 Important Points
-	•	Exceptions occur at runtime
-	•	try-catch handles errors
-	•	finally always runs
-	•	Use multiple catch blocks
-	•	Use specific exception types
-	•	Prevent program crash
+```
 
 ⸻
 
-🎯 Final Answer
-
-Exception handling in C# is a mechanism to handle runtime errors using try, catch, and finally blocks, ensuring smooth program execution and preventing crashes.
-
----
-
+**Points :**
+- Exceptions occur at runtime
+- try-catch handles errors
+- finally always runs
+- Use multiple catch blocks
+- Use specific exception types
+- Prevent program crash
