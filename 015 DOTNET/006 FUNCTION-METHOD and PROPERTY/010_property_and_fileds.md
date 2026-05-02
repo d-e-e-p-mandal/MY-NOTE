@@ -1,4 +1,31 @@
 
+# Property :
+
+Short Hand :
+```cs
+public string Name { get; set; }
+```
+
+**Implementation :**
+```cs
+private string name;   // backing field
+
+public string Name
+{
+    get
+    {
+        return name;   // return value
+    }
+    set
+    {
+        name = value;  // assign value
+    }
+}
+```
+
+--------------------------------------------------------------
+
+
 # Field :
 ```cs
 public string Brand;
@@ -49,7 +76,7 @@ Clean code	-> Less boilerplate
 --------------------
 ### Private
 
-1. Fully Private Property
+##### Fully Private Property
 ```cs
 class A
 {
@@ -60,7 +87,7 @@ Meaning:
 * Only accessible inside the same class
 * Cannot be used outside
 
-2. Private Field + Public Property (Most Used ✔)
+##### Private Field + Public Property
 ```cs
 class A
 {
@@ -72,40 +99,35 @@ class A
     }
 }
 ```
-Best practice:
-
+**Best practice:**
 * Data is hidden (private x)
 * Access controlled via property (public X)
 
-⸻
 
-3. Public Read, Private Write (Very Important ⭐)
+##### Public Read, Private Write 
 ```cs
 class A
 {
     public int X { get; private set; }
 }
 ```
-Meaning:
-
+**Meaning :**
 * Outside class → only read
 * Inside class → can set value
 
-⸻
 
-✅ 4. Private Get, Public Set (rare)
-
+##### Private Get, Public Set (rare)
+- not used commonly.
+```cs
 class A
 {
     public int X { private get; set; }
 }
-
-👉 Outside:
-
+```
+**Outside :**
 * Can set value
 * Cannot read value
 
-⸻
 
 **Example :**
 ```cs
@@ -123,41 +145,30 @@ class Program
     {
         A obj = new A();
         obj.SetValue(100);
-        Console.WriteLine(obj.X); // ✔ read allowed
-        // obj.X = 200; ❌ not allowed
+        Console.WriteLine(obj.X); //  read allowed
+        // obj.X = 200; // not allowed
     }
 }
 ```
 
---------------------------
+----------------------------------------
+
 ### Protected
 
-✅ protected in C# (with properties)
-
-👉 protected means:
-
-* ✔ Accessible inside the same class
-* ✔ Accessible in derived (child) classes
-* ❌ NOT accessible outside (no direct access via object)
-
-⸻
-
-🔹 1. Protected Property
-
+##### Protected Property
+```cs
 class A
 {
     protected int X { get; set; }
 }
-
-👉 X can be used:
-
+```
+**X can be used:**
 * inside A
 * inside any class that inherits A
 
-⸻
 
-🔹 2. Example with Inheritance
-
+**Example with Inheritance :**
+```cs
 using System;
 class A
 {
@@ -181,40 +192,24 @@ class Program
         B obj = new B();
         obj.SetValue();
         obj.Show();
-        // Console.WriteLine(obj.X); ❌ NOT allowed (outside class)
+        // Console.WriteLine(obj.X); // NOT allowed (outside class)
     }
 }
+```
 
-⸻
 
-🔥 Key Point
-
-👉 Even if object exists:
-
-B obj = new B();
-
-❌ You cannot do:
-
-obj.X; // ❌ ERROR
-
-⸻
-
-🔹 3. Protected Setter (Very Useful ⭐)
-
+##### Protected Setter (Very Useful)
+```cs
 class A
 {
     public int X { get; protected set; }
 }
+```
+**Meaning :**
+* Everyone can read
 
-👉 Meaning:
-
-* ✔ Everyone can read
-* ✔ Only derived classes can set
-
-⸻
-
-🔹 4. Example
-
+**Example :**
+```cs
 class A
 {
     public int X { get; protected set; }
@@ -223,8 +218,7 @@ class B : A
 {
     public void SetValue()
     {
-        X = 200; // ✔ allowed
+        X = 200; // allowed
     }
 }
-
-⸻
+```

@@ -1,24 +1,20 @@
-Here is a simple and complete Markdown (.md) note on Recursion in C# 👇
 
-⸻
+# Recursion in C#
 
+**What is Recursion? :**
 
-# 🧠 Recursion in C#
-
-## 🔹 What is Recursion?
-
-Recursion is a process where a method **calls itself** to solve a problem.
+- Recursion is a process where a method **calls itself** to solve a problem.
 
 ---
 
-## 🔹 Why Recursion?
+##  Why Recursion?
 
 - Used to solve problems in smaller parts  
 - Useful for problems like factorial, Fibonacci, tree traversal  
 
 ---
 
-## 🔹 Basic Structure
+##  Basic Structure
 
 ```csharp
 returnType MethodName(parameters)
@@ -28,11 +24,11 @@ returnType MethodName(parameters)
 
     return MethodName(smaller input);
 }
-
+```
 
 ⸻
 
-🔹 Important Terms
+ Important Terms
 
 1️⃣ Base Case
 	•	Condition where recursion stops

@@ -49,143 +49,25 @@ class Program
 }
 ```
 
+**How it works internally :**
 
-
-#### Async vs Blocking
-
-Feature	Async (await)	Blocking (Sleep)
-Thread usage	Non-blocking	Blocking
-Performance	Better	Worse
-UI freeze	❌ No	✔ Yes
-
-⸻
-
-**Return Types :**
-
-Return Type	Use Case
-Task	No return value
-Task<T>	Returns value
-void	Event handlers only
-
-⸻
-
-Example with return
-
-public async Task<int> GetData()
-{
-    await Task.Delay(1000);
-    return 10;
-}
-
-⸻
-
-🔹 Parallel Execution
-
-await Task.WhenAll(
-    Task1(),
-    Task2(),
-    Task3()
-);
-
-👉 Runs tasks concurrently
-
-⸻
-
-🔹 Sequential Execution
-
-await Task1();
-await Task2();
-await Task3();
-
-👉 Runs one after another
-
-⸻
-
-🔹 Important Rules
-
-✔ Always use await
-
-await Task.Delay(1000);
-
-⸻
-
-❌ Don’t use .Wait() with async
-
-Task.Delay(1000).Wait(); // bad
-
-⸻
-
-❌ Avoid async void
-
-async void Test() // only for events
-
-⸻
-
-🔹 Common Mistakes
-
-❌ Missing await
-
-Task.Delay(1000); // no effect
-
-⸻
-
-❌ Mixing blocking + async
-
-await Task.Delay(1000).Wait(); // wrong
-
-⸻
-
-🔹 Real Use Cases
-
-* API calls
-* Database operations
-* File reading/writing
-* Web requests
-
-⸻
-
-🔹 Example: API Simulation
-
-public async Task GetData()
-{
-    Console.WriteLine("Fetching...");
-    await Task.Delay(2000);
-    Console.WriteLine("Done");
-}
-
-⸻
-
-🔹 How it works internally
-
-👉 await:
-
+`await:`
 * Pauses method
 * Frees thread
 * Resumes later
 
-⸻
+**Thread vs Async :**
 
-🔹 Thread vs Async
+- Thread - Async
+- Uses multiple threads	- Uses fewer threads
+- Heavy - Lightweight
+- Parallel - Concurrent
 
-Thread	Async
-Uses multiple threads	Uses fewer threads
-Heavy	Lightweight
-Parallel	Concurrent
 
-⸻
-
-🔹 When NOT to use Async
-
+**When NOT to use Async :**
 * Simple calculations
 * CPU-bound work (use multithreading instead)
 
-⸻
-
-🧠 Interview One-Liner
-
-👉 “Async programming in C# allows non-blocking execution using async, await, and Task, improving responsiveness and scalability.”
-
-⸻
 
 ⚡ Final Summary
 
@@ -248,3 +130,13 @@ class Program
     }
 }
 ```
+
+**Parallel Execution :**
+```cs
+await Task.WhenAll(
+    Task1(),
+    Task2(),
+    Task3()
+);
+```
+- Runs tasks concurrently
