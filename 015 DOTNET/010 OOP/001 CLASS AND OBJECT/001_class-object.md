@@ -1,5 +1,5 @@
 # OOP :
------------
+-----------------------------------------------
 
 **Class :**
 - It is a user defined type.
@@ -77,9 +77,9 @@ class Program
 }
 ```
 
-## 📘 TYPES OF CLASSES IN C#
+## Types Of Classes In C#
 
-### 1️⃣ Normal Class
+### Simple Class
 
 - Basic  class used to create objects
 
@@ -99,7 +99,7 @@ obj.Show();
 ```
 
 
-### 2️⃣ Static Class
+### Static Class
 
 - Canno t create object, only static members
 
@@ -117,7 +117,7 @@ static class A
 A.Show(); // no object
 ```
 
-### 3️⃣ Abstract Class
+### Abstract Class
 
 - Canno t create object, used for inheritance
 - atleast one abstruct function.
@@ -142,8 +142,7 @@ A obj = new B();
 obj.Show();
 ```
 
-
-### 4️⃣ Sealed Class
+### Sealed Class
 
 - Cannot be inherited
 
@@ -162,10 +161,9 @@ class B : A {} // ERROR
 ```
 
 
-### 5️⃣ Partial Class
+### Partial Class
 
 - Class  split into multiple files
-
 
 ```cs
 partial class A

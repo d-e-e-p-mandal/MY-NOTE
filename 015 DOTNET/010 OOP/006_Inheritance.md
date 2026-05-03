@@ -95,7 +95,7 @@ class C : A {}
 
 - Supported using interfaces
 
-7️⃣ Access Modifiers in Inheritance
+**Access Modifiers in Inheritance :**
 ```
 Modifier	Accessible in Child
 public	    - Yes
@@ -300,7 +300,8 @@ B object memory:
 [ B (child fields) ]
 ```
 
--------------------------------------
+----------------------------------------------------
+
 # Parent class of all Class :
 
 - Every class in C# has a default parent class called Object, and it can use its methods.

@@ -1,10 +1,10 @@
 
-# 📘 Variables in C# (All Types)
+# Variables in Class in C# (All Types)
 - Instance Variable
 - Static Variable
 - const (Constant) 
 
-#### 1️⃣ Instance (Non-Static) Variable
+#### Instance (Non-Static) Variable
 
 - Each object has its own copy
 - Runs every time a new object is created
@@ -17,9 +17,7 @@ class A
 }
 ```
 
-⸻
-
-#### 2️⃣ Static Variable
+#### Static Variable
 
 - It belongs to the class, not to objects.
 - It is shared among all objects of the class.
@@ -61,7 +59,7 @@ class Program
 }
 ```
 
-#### 3️⃣ const (Constant)
+#### const (Constant)
 
 - Fixed value (compile-time)
 - ✔ Must assign at declaration
@@ -76,7 +74,7 @@ class A
 }
 ```
 
-#### 4️⃣ readonly (Instance)
+#### readonly (Instance)
 
 - ✔ Value set at declaration or constructor
 - ✔ Cannot change after initialization
@@ -95,7 +93,7 @@ class A
 }
 ```
 
-#### 5️⃣ static readonly
+#### static readonly
 
 - Value is assigned once at runtime and shared by all objects of the class.
 - ✔ Belongs to class (static)

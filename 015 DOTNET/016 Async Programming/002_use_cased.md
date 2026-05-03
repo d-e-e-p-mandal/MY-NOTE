@@ -1,159 +1,122 @@
-Got it—you want a clean, complete list of where async/await is used and where it should NOT be used in .NET. I’ll organize it clearly so you can revise quickly (useful for exams + interviews).
 
-⸻
+# WHERE TO USE async/await 
 
-🔷 PART 1 — WHERE TO USE async/await (ALL COMMON CASES)
+- Rule: Use it for I/O-bound operations (waiting tasks)
 
-👉 Rule: Use it for I/O-bound operations (waiting tasks)
+### 1. Database Operations
 
-⸻
-
-🟢 1. Database Operations
-
-Using Entity Framework Core
-
+**Using Entity Framework Core :**
 * ToListAsync()
 * FirstOrDefaultAsync()
 * SaveChangesAsync()
 * FindAsync()
 
-✔ When:
-
+**When:**
 * Fetching data
 * Saving/updating records
 
-⸻
 
-🟢 2. HTTP / API Calls
+### 2. HTTP / API Calls
 
-Using HttpClient
-
+**Using HttpClient :**
 * GetAsync()
 * PostAsync()
 * SendAsync()
 * ReadAsStringAsync()
 
-✔ When:
-
+**When:**
 * Calling external APIs
 * Microservices communication
 
-⸻
 
-🟢 3. File Operations (I/O)
-
+### 3. File Operations (I/O)
 * ReadAllTextAsync()
 * WriteAllTextAsync()
 * ReadAllBytesAsync()
 * WriteAllBytesAsync()
 
-✔ When:
-
+**When :**
 * Reading/writing files
 * Upload/download
 
-⸻
-
-🟢 4. Stream Operations
-
+### 4. Stream Operations
 * ReadAsync()
 * WriteAsync()
 * CopyToAsync()
 
-✔ When:
-
+**When :**
 * Large file handling
 * Network streaming
 
-⸻
 
-🟢 5. Web API Controllers
+### 5. Web API Controllers (Custome Function)
 
-Using ASP.NET Core
-
+**Using ASP.NET Core :**
+```cs
 public async Task<IActionResult> Get()
 {
     var data = await service.GetAsync();
     return Ok(data);
 }
-
-✔ When:
-
+```
+**When :**
 * Calling DB or services inside APIs
 
-⸻
 
-🟢 6. Background Services / Workers
-
+### 6. Background Services / Workers
 * ExecuteAsync()
 * Task.Delay()
 
-✔ When:
-
+**When :**
 * Scheduled jobs
 * Queue processing
 
-⸻
 
-🟢 7. Parallel Task Execution
-
+### 7. Parallel Task Execution
 * Task.WhenAll()
 * Task.WhenAny()
 
-✔ When:
-
+**When :**
 * Running multiple independent tasks
 
-⸻
-
-🟢 8. Timers / Delays
+### 8. Timers / Delays
 
 * Task.Delay()
 
-✔ When:
-
+**When :**
 * Non-blocking wait
 
-⸻
 
-🟢 9. Real-time Apps (SignalR)
+### 9. Real-time Apps (SignalR)
 
 * SendAsync()
 
-✔ When:
-
+**When :**
 * Chat apps
 * Notifications
 
-⸻
+### 10. Third-party SDKs
 
-🟢 10. Third-party SDKs
-
-✔ Examples:
-
+**Examples :**
 * Azure SDK
 * Firebase
 * Payment APIs
 
-👉 If SDK provides async → use await
+- If SDK provides async → use await
 
-⸻
-
-🟢 11. Asynchronous LINQ (DB only)
-
+### 11. Asynchronous LINQ (DB only)
+```cs
 await _context.Users.ToListAsync();
-
-✔ Only when:
-
+```
+**when :**
 * Query runs on database
 
-⸻
-
-🟢 12. Task-based Methods
+### 12. Task-based Methods
 
 * Task.Run() (for background execution)
 
-⸻
+---------------------------------------------
+
 
 🔷 PART 2 — WHEN NOT TO USE async/await
 

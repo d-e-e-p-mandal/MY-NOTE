@@ -7,8 +7,8 @@ public Employee Get()
     return new Employee();
 }
 ```
-- ✔ Returns data only
-- ✔ Auto → 200 OK
+- Returns data only
+- Auto → 200 OK
 - No error/status control
 
 
@@ -169,7 +169,7 @@ ObjectResult       → custom
 File/Content       → special  
 
 
-------------------------------------
+------------------------------------------------
 
 
 # 1. Internal Code of IActionResult

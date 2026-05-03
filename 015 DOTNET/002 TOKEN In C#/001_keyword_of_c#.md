@@ -2,242 +2,242 @@
 
 ---
 
-## 🔹 namespace
+## namespace
 Used to organize code and avoid naming conflicts.
 
 ---
 
-## 🔹 using
+## using
 Used to include namespaces in a program.
 
 ---
 
-## 🔹 class
+## class
 Used to define a class.
 
 ---
 
-## 🔹 static
+## static
 Used to declare static members (shared by all objects).
 
 ---
 
-## 🔹 void
+## void
 Represents no return value.
 
 ---
 
-## 🔹 int
+## int
 Used to store integer values.
 
 ---
 
-## 🔹 string
+## string
 Used to store text.
 
 ---
 
-## 🔹 bool
+## bool
 Used to store true/false values.
 
 ---
 
-## 🔹 char
+## char
 Used to store a single character.
 
 ---
 
-## 🔹 float
+## float
 Used to store decimal numbers.
 
 ---
 
-## 🔹 double
+## double
 Used to store large decimal numbers.
 
 ---
 
-## 🔹 decimal
+## decimal
 Used for high-precision values (money).
 
 ---
 
-## 🔹 var
+## var
 Implicitly typed variable (type decided by compiler).
 
 ---
 
-## 🔹 dynamic
+## dynamic
 Type decided at runtime.
 
 ---
 
-## 🔹 object
+## object
 Base type of all data types.
 
 ---
 
-## 🔹 new
+## new
 Used to create objects.
 
 ---
 
-## 🔹 return
+## return
 Used to return value from method.
 
 ---
 
-## 🔹 if
+## if
 Used for conditional statements.
 
 ---
 
-## 🔹 else
+## else
 Used with if for alternate condition.
 
 ---
 
-## 🔹 switch
+## switch
 Used for multiple conditions.
 
 ---
 
-## 🔹 for
+## for
 Loop for fixed iterations.
 
 ---
 
-## 🔹 while
+## while
 Loop while condition is true.
 
 ---
 
-## 🔹 do
+## do
 Executes loop at least once.
 
 ---
 
-## 🔹 break
+## break
 Terminates loop or switch.
 
 ---
 
-## 🔹 continue
+## continue
 Skips current iteration.
 
 ---
 
-## 🔹 public
+## public
 Accessible from anywhere.
 
 ---
 
-## 🔹 private
+## private
 Accessible within same class.
 
 ---
 
-## 🔹 protected
+## protected
 Accessible within class and derived class.
 
 ---
 
-## 🔹 internal
+## internal
 Accessible within same project.
 
 ---
 
-## 🔹 readonly
+## readonly
 Value assigned once (runtime).
 
 ---
 
-## 🔹 const
+## const
 Constant value (compile-time).
 
 ---
 
-## 🔹 try
+## try
 Used for exception handling.
 
 ---
 
-## 🔹 catch
+## catch
 Handles exception.
 
 ---
 
-## 🔹 finally
+## finally
 Always executes after try-catch.
 
 ---
 
-## 🔹 throw
+## throw
 Used to throw exception.
 
 ---
 
-## 🔹 this
+## this
 Refers to current object.
 
 ---
 
-## 🔹 base
+## base
 Refers to parent class.
 
 ---
 
-## 🔹 virtual
+## virtual
 Allows method overriding.
 
 ---
 
-## 🔹 override
+## override
 Overrides base class method.
 
 ---
 
-## 🔹 sealed
+## sealed
 Prevents inheritance.
 
 ---
 
-## 🔹 abstract
+## abstract
 Defines incomplete class/method.
 
 ---
 
-## 🔹 interface
+## interface
 Defines contract for classes.
 
 ---
 
-## 🔹 enum
+## enum
 Defines named constants.
 
 ---
 
-## 🔹 struct
+## struct
 Defines value type structure.
 
 ---
 
-## 🔹 delegate
+## delegate
 Represents method reference.
 
 ---
 
-## 🔹 event
+## event
 Used for event handling.
 
 ---
 
-## 🔹 async
+## async
 Used for asynchronous programming.
 
 ---
 
-## 🔹 await
+## await
 Waits for async operation.
 
 ---

@@ -1,6 +1,6 @@
-# 🧠 Control Statements in C#
+# Control Statements in C#
 
-## 🔹 What are Control Statements?
+## What are Control Statements?
 Control statements are used to control the flow of execution of a program.
 
 They decide:
@@ -9,7 +9,7 @@ They decide:
 
 ---
 
-# 🔹 Types of Control Statements
+# Types of Control Statements
 
 1. Decision Making (Selection)
 2. Looping (Iteration)
@@ -19,7 +19,7 @@ They decide:
 
 # 1️⃣ Decision Making Statements
 
-## 🔸 if
+## if
 
 ### Syntax:
 if(condition)
@@ -36,7 +36,7 @@ if(a > 5)
 
 ---
 
-## 🔸 if-else
+## if-else
 
 ### Syntax:
 if(condition)
@@ -61,7 +61,7 @@ else
 
 ---
 
-## 🔸 if-else if ladder
+## if-else if ladder
 
 ### Example:
 int marks = 75;
@@ -75,7 +75,7 @@ else
 
 ---
 
-## 🔸 switch
+## switch
 
 ### Syntax:
 switch(value)
@@ -108,7 +108,7 @@ switch(day)
 
 # 2️⃣ Looping Statements
 
-## 🔸 for loop
+## for loop
 
 ### Syntax:
 for(initialization; condition; increment)
@@ -124,7 +124,7 @@ for(int i = 0; i < 3; i++)
 
 ---
 
-## 🔸 while loop
+## while loop
 
 ### Syntax:
 while(condition)
@@ -142,7 +142,7 @@ while(i < 3)
 
 ---
 
-## 🔸 do-while loop
+## do-while loop
 
 ### Syntax:
 do
@@ -160,7 +160,7 @@ do
 
 ---
 
-## 🔸 foreach loop
+## foreach loop
 
 ### Syntax:
 foreach(type var in collection)
@@ -180,7 +180,7 @@ foreach(int x in arr)
 
 # 3️⃣ Jump Statements
 
-## 🔸 break
+## break
 - Stops loop or switch
 
 Example:
@@ -191,7 +191,7 @@ for(int i=0;i<5;i++)
 
 ---
 
-## 🔸 continue
+## continue
 - Skips current iteration
 
 Example:
@@ -203,7 +203,7 @@ for(int i=0;i<5;i++)
 
 ---
 
-## 🔸 return
+## return
 - Exits method and returns value
 
 Example:
@@ -214,7 +214,7 @@ int Add(int a,int b)
 
 ---
 
-## 🔸 goto (rare)
+## goto (rare)
 - Jumps to labeled statement
 
 Example:
@@ -224,7 +224,7 @@ Console.WriteLine("Hello");
 
 ---
 
-# 🔹 Important Points
+# Important Points
 
 - Control statements manage program flow  
 - if and switch are decision statements  
@@ -234,6 +234,6 @@ Console.WriteLine("Hello");
 
 ---
 
-# 🎯 Final Answer
+Final Answer
 
 Control statements in C# control the flow of execution of a program and are mainly divided into decision-making, looping, and jump statements.
