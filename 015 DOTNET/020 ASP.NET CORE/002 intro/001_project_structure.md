@@ -2,6 +2,43 @@
 
 ## ASP.NET Core Web API – Project Structure
 
+### Procedural (Default) Structure:
+
+#####  Services : Business Layer : (Execute Procedure)
+```
+MyApi/
+│
+├── Controllers/              → Handles HTTP requests (API endpoints)
+│
+├── Models/                  → Entity classes (DB tables structure)
+│
+├── Data/                    → Database related files
+│    └── AppDbContext.cs     → DbContext (database connection)
+│
+├── DependencyInjection/     → Service registration (DI setup)
+│    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
+├── DTOs/                    → Data Transfer Objects (request/response models)
+│
+├── Services/                
+│    ├── Interfaces and Implementation Together in one file 
+│    OR
+│    ├── Interfaces/         → Service interfaces
+│    └── Implementations/    → Service implementations
+│
+├── SQL/                     → Optional Direct Store in Database and execute in Service Layer
+│    └── Write SQL Query     → Procedure
+│
+├── Program.cs               → Application entry point
+│
+├── appsettings.json         → Main configuration (DB, JWT, etc.)
+├── appsettings.Development.json → Development-specific config
+│
+└── Properties/
+     └── launchSettings.json → Run/debug settings
+```
+
+
+##### Repository Business Layer
 ```
 MyApi/
 │
@@ -27,6 +64,45 @@ MyApi/
 │    OR
 │    ├── Interfaces/         → Repository interfaces
 │    └── Implementations/    → Repository implementations
+│
+├── Program.cs               → Application entry point
+│
+├── appsettings.json         → Main configuration (DB, JWT, etc.)
+├── appsettings.Development.json → Development-specific config
+│
+└── Properties/
+     └── launchSettings.json → Run/debug settings
+```
+
+##### My Recomended (Custom Structure):
+
+```
+MyApi/
+│
+├── Controllers/              → Handles HTTP requests (API endpoints)
+│
+├── Models/                  → Entity classes (DB tables structure)
+│
+├── Data/                    → Database related files
+│    └── AppDbContext.cs     → DbContext (database connection)
+│
+├── DependencyInjection/     → Service registration (DI setup)
+│    └── ServiceExtensions.cs → AddScoped / AddTransient / AddSingleton
+├── DTOs/                    → Data Transfer Objects (request/response models)
+│
+├── Services/                
+│    ├── Interfaces and Implementation Together in one file 
+│    OR
+│    ├── Interfaces/         → Service interfaces
+│    └── Implementations/    → Service implementations
+│
+├── Repository/              → Business logic layer
+│    ├── Interfaces and Implementation Together in one file 
+│    OR
+│    ├── Interfaces/         → Repository interfaces
+│    └── Implementations/    → Repository implementations
+│
+├── Query/                   → Linq Query stroed here as functional / IQueryable
 │
 ├── Program.cs               → Application entry point
 │

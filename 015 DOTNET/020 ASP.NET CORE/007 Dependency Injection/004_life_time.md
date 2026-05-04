@@ -20,7 +20,7 @@ builder.Services.AddScoped<MyDbContext>();
 builder.Services.AddSingleton<CacheService>();
 ```
 
-### 1️⃣ Transient Lifetime
+### Transient Lifetime
 
 builder.Services.AddTransient<IService, Service>();
 
@@ -38,7 +38,7 @@ Multiple calls → Multiple objects ❗
 	•	No shared state  
 
 
-### 2️⃣ Scoped Lifetime
+### Scoped Lifetime
 
 builder.Services.AddScoped<IService, Service>();
 
@@ -58,7 +58,7 @@ Controller + Service → SAME instance
 
 ⸻
 
-### 3️⃣ Singleton Lifetime
+### Singleton Lifetime
 
 builder.Services.AddSingleton<IService, Service>();
 
@@ -115,3 +115,85 @@ Singleton → S (same)
 - Scoped → one per request
 - Singleton → one forever
 
+
+
+**Custom Code Of All (For Undersstanding) :**
+```cs
+using System;
+
+class Engine
+{
+    public Guid Id = Guid.NewGuid(); // unique ID
+}
+
+class Container
+{
+    private static Engine singletonInstance; // for Singleton
+    private Engine scopedInstance;           // for Scoped
+
+    // Transient → new every time
+    public Engine GetTransient()
+    {
+        return new Engine();
+    }
+
+    // Singleton → same for whole app
+    public Engine GetSingleton()
+    {
+        if (singletonInstance == null)
+            singletonInstance = new Engine();
+
+        return singletonInstance;
+    }
+
+    // Scoped → same within one scope
+    public Engine GetScoped()
+    {
+        if (scopedInstance == null)
+            scopedInstance = new Engine();
+
+        return scopedInstance;
+    }
+
+    // Reset scope
+    public void NewScope()
+    {
+        scopedInstance = null;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Container c = new Container();
+
+        // TRANSIENT
+        Console.WriteLine( TRANSIENT");
+        var t1 = c.GetTransient();
+        var t2 = c.GetTransient();
+        Console.WriteLine($"t1: {t1.Id}");
+        Console.WriteLine($"t2: {t2.Id}");
+
+        // SINGLETON
+        Console.WriteLine("\n🔷 SINGLETON");
+        var s1 = c.GetSingleton();
+        var s2 = c.GetSingleton();
+        Console.WriteLine($"s1: {s1.Id}");
+        Console.WriteLine($"s2: {s2.Id}");
+
+        // SCOPED (Same Scope)
+        Console.WriteLine("\n🔷 SCOPED (Same Scope)");
+        var sc1 = c.GetScoped();
+        var sc2 = c.GetScoped();
+        Console.WriteLine($"sc1: {sc1.Id}");
+        Console.WriteLine($"sc2: {sc2.Id}");
+
+        // SCOPED (New Scope)
+        Console.WriteLine("\n🔷 SCOPED (New Scope)");
+        c.NewScope();
+        var sc3 = c.GetScoped();
+        Console.WriteLine($"sc3: {sc3.Id}");
+    }
+}
+```

@@ -40,6 +40,7 @@ public IQueryable<Employee> Get()
     return _context.Employees;
 }
 ```
+- Employee - Model or DTOs 
 - DB query (lazy execution)
 
 ### ICollection<T> 
