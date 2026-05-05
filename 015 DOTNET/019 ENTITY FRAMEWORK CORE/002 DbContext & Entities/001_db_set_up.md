@@ -36,7 +36,7 @@ public class AppDbContext : DbContext
 }
 ```
 
-👉 In Program.cs:
+Program.cs:
 ```cs
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
@@ -44,14 +44,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 ```
 
-⸻
-
 Key Points:
 	•	Keep connection string in appsettings.json
 	•	Improves security & flexibility
 	•	Avoid hardcoding
-
-⸻
 
 
 

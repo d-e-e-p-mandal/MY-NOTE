@@ -79,7 +79,7 @@ public class EmployeeController : ControllerBase
 
     public EmployeeController(IEmployeeService service)
     {
-        _service = service; // ✅ injected
+        _service = service; // injected
     }
 
     [HttpGet]
@@ -209,7 +209,7 @@ public class EmployeeService
 
     public EmployeeService()
     {
-        _context = new AppDbContext(); // ❌ manual creation
+        _context = new AppDbContext(); // manual creation
     }
 
     public List<Employee> GetAll()
@@ -304,11 +304,12 @@ _service = new EmployeeService();
     - Replace with mock  
     - Change implementation easily 
 
-----
-Compare :
 
-With DI	-> Without DI  
-Loose coupling	-> Tight coupling   
-Testable -> Hard to test   
-Flexible -> Rigid   
-⸻
+**Compare :**
+
+| Feature     | Without DI | With DI |
+|------------|------------|---------|
+| Coupling   | Tight      | Loose   |
+| Flexibility| Low        | High    |
+| Testing    | Hard       | Easy    |
+| Maintenance| Difficult  | Easy    |

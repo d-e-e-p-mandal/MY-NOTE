@@ -57,7 +57,9 @@ Without constructor - Older versions allowed it, but now:
 
 
 -----------
-# What is DbContext ?
+
+
+# DbContext : Internal Implement
 
 ## Class : DbContext
 ```cs
