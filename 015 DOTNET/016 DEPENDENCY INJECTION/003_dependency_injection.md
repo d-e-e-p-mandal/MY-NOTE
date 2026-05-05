@@ -92,184 +92,216 @@ class Program
 
 ### Constructor Injection
 
-👉 Dependency is passed via constructor
+- Dependency is passed via constructor
+
 ```cs
+using System;
+
+// Step 1: Interface (abstraction)
+interface IEngine
+{
+    void Start();
+}
+
+// Step 2: Implementations
+class PetrolEngine : IEngine
+{
+    public void Start()
+    {
+        Console.WriteLine("Petrol Engine Started");
+    }
+}
+
+class DieselEngine : IEngine
+{
+    public void Start()
+    {
+        Console.WriteLine("Diesel Engine Started");
+    }
+}
+
+// Step 3: Class using dependency
 class Car
 {
     private IEngine engine;
+
+    // Constructor Injection
     public Car(IEngine eng)
     {
         engine = eng;
+    }
+
+    public void StartCar()
+    {
+        engine.Start();
+    }
+}
+
+// Step 4: Main Program
+class Program
+{
+    static void Main()
+    {
+        // Choose dependency
+        IEngine engine = new PetrolEngine();
+        // IEngine engine = new DieselEngine(); // just change this line
+
+        // Inject dependency
+        Car car = new Car(engine);
+
+        car.StartCar();
     }
 }
 ```
 - Required dependency
 - Safe and recommended
 
-⸻
-
 ### Property Injection
+```cs
+using System;
 
+// 1. Interface (abstraction)
+interface IEngine
+{
+    void Start();
+}
+
+// 2. Implementations
+class PetrolEngine : IEngine
+{
+    public void Start()
+    {
+        Console.WriteLine("Petrol Engine Started");
+    }
+}
+
+class DieselEngine : IEngine
+{
+    public void Start()
+    {
+        Console.WriteLine("Diesel Engine Started");
+    }
+}
+
+// 3. Class using Property Injection
 class Car
 {
+    // Dependency is set via property
     public IEngine Engine { get; set; }
+
     public void StartCar()
     {
+        // safety check (important in property injection)
+        if (Engine == null)
+        {
+            Console.WriteLine("Engine is not set!");
+            return;
+        }
+
         Engine.Start();
     }
 }
 
-Usage:
+// 4. Main Program
+class Program
+{
+    static void Main()
+    {
+        Car car = new Car();
 
-Car car = new Car();
-car.Engine = new PetrolEngine();
-car.StartCar();
+        // Inject dependency via property
+        car.Engine = new PetrolEngine();
+        // car.Engine = new DieselEngine(); // try switching
 
-❌ Risk: Engine may be null
+        car.StartCar();
+    }
+}
+```
+- Risk: Engine may be null
 
-⸻
 
 ### Method Injection
 ```cs
+using System;
+
+interface IEngine
+{
+    void Start();
+}
+
+class PetrolEngine : IEngine
+{
+    public void Start()
+    {
+        Console.WriteLine("Petrol Engine Started");
+    }
+}
+
 class Car
 {
+    // Method Injection
     public void StartCar(IEngine engine)
     {
         engine.Start();
     }
 }
-```
-Usage:
 
-Car car = new Car();
-car.StartCar(new PetrolEngine());
-
-✔ Used only when needed
-
-⸻
-
-🔷 5. DI Container (Automatic Injection)
-
-Used in:
-👉 ASP.NET Core
-
-⸻
-
-🔹 Registration
-
-builder.Services.AddScoped<IEngine, PetrolEngine>();
-
-⸻
-
-🔹 Usage
-
-class Car
+class Program
 {
-    private IEngine engine;
-    public Car(IEngine eng)
+    static void Main()
     {
-        engine = eng;
+        Car car = new Car();
+
+        // Inject dependency at method call
+        car.StartCar(new PetrolEngine());
     }
 }
+```
 
-👉 .NET automatically injects dependency
+- .NET automatically injects dependency
 
-⸻
+-------------------------------------------------
 
-🔷 6. Service Lifetimes
+## Service Lifetimes
 
-⸻
-
-🟡 1. Transient
-
+##### Transient
+```cs
 services.AddTransient<IEngine, PetrolEngine>();
+```
+- New object every time
 
-👉 New object every time
-
-⸻
-
-🟡 2. Scoped
-
+##### Scoped
+```cs
 services.AddScoped<IEngine, PetrolEngine>();
+```
+- One object per request
 
-👉 One object per request
-
-⸻
-
-🟡 3. Singleton
-
+##### Singleton
+```cs
 services.AddSingleton<IEngine, PetrolEngine>();
-
-👉 Single instance for entire app
-
-⸻
-
-🔷 7. Real-life Analogy
-
-👉 Car does not build engine
-👉 Factory provides engine
-
-👉 Same in DI:
-
-* Class does not create object
-* Object is injected
-
-⸻
-
-🔷 8. Advantages of DI
-
-✔ Loose coupling
-✔ Easy testing (mocking)
-✔ Reusable code
-✔ Easy maintenance
-✔ Flexible design
-
-⸻
-
-🔷 9. DI vs Without DI
-
-Feature	Without DI	With DI
-Coupling	Tight	Loose
-Flexibility	Low	High
-Testing	Hard	Easy
-Maintenance	Difficult	Easy
-
-⸻
-
-🔷 10. Key Terms
-
-Term	Meaning
-Dependency	Required object
-Injection	Providing object
-DI Container	Manages objects
-
-⸻
-
-🔥 FINAL EXAM ANSWER
-
-👉 Dependency Injection is a design pattern in which dependencies are provided to a class from outside rather than created inside the class. It promotes loose coupling, improves flexibility, and is implemented using constructor, property, and method injection.
-
-⸻
-
-🔥 SHORT REVISION
-
-* DI = Provide object from outside
-* Types = Constructor, Property, Method
-* Best = Constructor Injection
-* Benefit = Loose coupling
-
-⸻
-
-If you want next:
-
-* diagram (very helpful for exams)
-* real ASP.NET project structure
-* tricky interview questions
-
-Just tell 👍
+```
+- Single instance for entire app
 
 
+**Advantages of DI:**
 
+- Loose coupling
+- Easy testing (mocking)
+- Reusable code
+- Easy maintenance
+- Flexible design
+
+
+**DI vs Without DI:** 
+
+| Feature     | Without DI | With DI |
+|------------|------------|---------|
+| Coupling   | Tight      | Loose   |
+| Flexibility| Low        | High    |
+| Testing    | Hard       | Easy    |
+| Maintenance| Difficult  | Easy    |
+
+-------------------------------------
 
 **Custom Code Of All (For Undersstanding) :**
 ```cs
