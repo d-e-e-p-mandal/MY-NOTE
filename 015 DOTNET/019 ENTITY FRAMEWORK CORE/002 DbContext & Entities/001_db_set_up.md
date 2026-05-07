@@ -1,7 +1,25 @@
 
 ## DbContext:
 
-### 1. Method 1 :
+### Method 1 : Basic (Not recomended to use)
+
+```cs
+string connectionString = "Server=.;Database=YourDB;Trusted_Connection=True;";
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            con.Open(); // open connection
+            string query = "SELECT Id, Name FROM Students";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["Id"] + " " + reader["Name"]);
+            }
+        }
+```
+
+### Method 2 : (Old System)
+Program.cs:
 ```cs
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +34,7 @@ public class AppDbContext : DbContext
 }
 ```
 
-### 2. Method 2 : (Most Used, Best Practice)
+### Method 3 : (Most Used, Best Practice)
 ```cs
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +60,29 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+```
+
+```cs
+// Create Scope (for DB seeding / initialization)
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    try
+    {
+        var db = services.GetRequiredService<AppDbContext>();
+
+        // Example: ensure DB created
+        db.Database.EnsureCreated();
+
+        // OR you can call:
+        // DbSeeder.Seed(db);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
 ```
 
 Key Points:

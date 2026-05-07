@@ -66,7 +66,7 @@ builder.Services.AddApplicationServices();
 var app = builder.Build();
 
 
-// 🔥 Create Scope (for DB seeding / initialization)
+// Create Scope (for DB seeding / initialization)
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;

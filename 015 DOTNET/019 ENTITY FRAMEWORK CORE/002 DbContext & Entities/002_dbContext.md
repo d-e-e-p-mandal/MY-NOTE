@@ -1,32 +1,46 @@
 
-## What is DbContext?
-
-**Definition :**
+# DbContext: (Internal Details)
 
 DbContext is the main class of Entity Framework Core
 - It is used to interact with the database
 - It acts as a bridge between your application and database
 
 
-Comes From
+**Comes From:**
 ```cs
 Microsoft.EntityFrameworkCore
 ```
-Namespace:
+**Namespace:**
 ```cs
 using Microsoft.EntityFrameworkCore;
 ```
-
-Basic Syntax :
+**Basic Syntax:**
 ```cs
 using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext
 {
-	// Constructor : (Optional for old system, need in new version)
+	// Constructor : 
 	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {} 
 
     public DbSet<Employee> Employees { get; set; }
+}
+```
+
+**Options:** Options carries the database connection information and sends it to the superclass (DbContext). It is predefined in .NET to configure the database automatically.
+```cs
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+```
+
+- Similar configaruation .cs file in dotnet
+```cs
+private readonly IConfiguration _configuration;
+public AppSettings(IConfiguration configuration)
+{
+    _configuration = configuration;
 }
 ```
 
@@ -56,7 +70,7 @@ Without constructor - Older versions allowed it, but now:
 
 
 
------------
+------------------------------------
 
 
 # DbContext : Internal Implement

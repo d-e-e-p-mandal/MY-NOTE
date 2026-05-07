@@ -10,7 +10,7 @@ MyApi/
 │
 ├── Controllers/              → Handles HTTP requests (API endpoints)
 │
-├── Models/                  → Entity classes (DB tables structure)
+├── Models/                  → Entity classes (DB tables structure) / Optional for raw SQL
 │
 ├── Data/                    → Database related files
 │    └── AppDbContext.cs     → DbContext (database connection)
@@ -44,7 +44,7 @@ MyApi/
 │
 ├── Controllers/              → Handles HTTP requests (API endpoints)
 │
-├── Models/                  → Entity classes (DB tables structure)
+├── Models/                  → Entity classes (DB tables structure) / Optional for raw SQL
 │
 ├── Data/                    → Database related files
 │    └── AppDbContext.cs     → DbContext (database connection)
@@ -81,7 +81,7 @@ MyApi/
 │
 ├── Controllers/              → Handles HTTP requests (API endpoints)
 │
-├── Models/                  → Entity classes (DB tables structure)
+├── Models/                  → Entity classes (DB tables structure) / Optional for raw SQL
 │
 ├── Data/                    → Database related files
 │    └── AppDbContext.cs     → DbContext (database connection)
@@ -102,7 +102,7 @@ MyApi/
 │    ├── Interfaces/         → Repository interfaces
 │    └── Implementations/    → Repository implementations
 │
-├── Query/                   → Linq Query stroed here as functional / IQueryable
+├── Query/                   → Linq Query stroed here as functional / IQueryable or SQL(Procedure) (Optional : also cand direct store id db)
 │
 ├── Program.cs               → Application entry point
 │
@@ -165,7 +165,7 @@ services.AddSingleton<ICacheService, CacheService>();
 
 ---
 
-## 🎯 SHORT STRUCTURE
+## SHORT STRUCTURE
 
 → **Application Flow:**
 Request → Controller → Service → DbContext → Database
