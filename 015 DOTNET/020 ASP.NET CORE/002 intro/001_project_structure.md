@@ -1,8 +1,9 @@
 
-
 ## ASP.NET Core Web API – Project Structure
 
 ### Procedural (Default) Structure:
+- SQL / LINQ
+
 
 #####  Services : Business Layer : (Execute Procedure)
 ```
@@ -102,7 +103,7 @@ MyApi/
 │    ├── Interfaces/         → Repository interfaces
 │    └── Implementations/    → Repository implementations
 │
-├── Query/                   → Linq Query stroed here as functional / IQueryable or SQL(Procedure) (Optional : also cand direct store id db)
+├── Query/                   → Linq Query stroed here as functional / IQueryable or SQL(Procedure) (Optional(Better Approach): Direct store id db and execute)
 │
 ├── Program.cs               → Application entry point
 │
@@ -117,32 +118,33 @@ MyApi/
 ## Simple Explanation
 
 📁 **Controllers/**
-→ Handles HTTP requests
-→ Supports methods like GET, POST, PUT, DELETE
+- Handles HTTP requests
+- Supports methods like GET, POST, PUT, DELETE
 
 📁 **Models/**
-→ Contains entity classes (e.g., Employee, Student)
-→ Represents database tables
+- Contains entity classes (e.g., Employee, Student)
+- Represents database tables
+- Optional for Raw SQL
 
 📁 **Data/**
-→ Contains DbContext
-→ Responsible for database connection and configuration
+- Contains DbContext
+- Responsible for database connection and configuration
 
 📁 **DTOs/** (Optional)
-→ Used to transfer data between client and server
-→ Helps improve security and performance
+- Used to transfer data between client and server
+- Helps improve security and performance
 
 📁 **Services/** (Optional)
-→ Contains business logic
-→ Keeps controllers clean and maintainable
+- Contains business logic
+- Keeps controllers clean and maintainable
 
 
 📁 **DependencyInjection/**
-→ Central place to register services
-→ Improves maintainability and loose coupling
+- Central place to register services
+- Improves maintainability and loose coupling
 
 📄 ServiceExtensions.cs
-→ Registers services like:
+- Registers services like:
 ```cs
 services.AddScoped<IUserService, UserService>();
 services.AddTransient<IEmailService, EmailService>();
@@ -150,18 +152,18 @@ services.AddSingleton<ICacheService, CacheService>();
 ```
 
 📄 **Program.cs**
-→ Entry point of the application
-→ Configures services and middleware
+- Entry point of the application
+- Configures services and middleware
 
 📄 **appsettings.json**
-→ Stores application configuration like:
-• Connection strings
-• App settings
+- Stores application configuration like:
+- Connection strings
+- App settings
 
 📄 **launchSettings.json**
-→ Used for:
-• Running the application
-• Defining port and environment settings
+- Used for:
+- Running the application
+- Defining port and environment settings
 
 ---
 
@@ -170,5 +172,5 @@ services.AddSingleton<ICacheService, CacheService>();
 → **Application Flow:**
 Request → Controller → Service → DbContext → Database
 
----
+------------------------------------------------------
 
