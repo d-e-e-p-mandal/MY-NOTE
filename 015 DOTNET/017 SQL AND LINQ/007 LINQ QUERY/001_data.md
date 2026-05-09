@@ -22,3 +22,15 @@ List<Student> students = new List<Student>()
     new Student(){ Id=3, Name="Amit", Marks=70, City="Delhi" }
 };
 ```
+
+# :
+
+**Query Syntax:**
+```cs
+
+```
+
+**Method Syntax:**
+```cs
+
+```

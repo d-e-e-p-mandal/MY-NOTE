@@ -51,3 +51,36 @@ var result =
         s.Name
     });
 ```
+
+
+# Multiple From:
+
+##### Data:
+```cs
+string[] students = { "Ram", "Shyam" };
+string[] subjects = { "Math", "Science" };
+```
+
+**Query Syntax:**
+```cs
+var result = 
+    from s in students
+    from sub in subjects
+    select new 
+    {
+        s,
+        sub
+    };
+```
+
+**Method Syntax:**
+```cs
+var result = 
+    students.SelectMany(
+        s => subjects,
+        (s, sub) => new
+        {
+            s,
+            sub
+        });
+```

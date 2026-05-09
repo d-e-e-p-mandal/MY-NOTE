@@ -2,7 +2,8 @@
 
 **Query Syntax:**
 ```cs
-var result = from s in students
+var result = 
+    from s in students
     group s by s.City;
 ```
 
