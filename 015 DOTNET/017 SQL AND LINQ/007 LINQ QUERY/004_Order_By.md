@@ -71,3 +71,6 @@ var result =
     students.OrderByDescending(s => s.City)
             .ThenByDescending(s = s.Name);
 ```
+
+
+## Reverse:

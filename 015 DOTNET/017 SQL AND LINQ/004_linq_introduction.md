@@ -91,9 +91,13 @@ LINQ executes queries only when data is actually needed.
 ### 9. Automatic Query Translation
 In EF Core, LINQ converts queries into SQL automatically.
 Example:
-`context.Employees.Where(x => x.Id == 1)`
-Converted internally to:
-`SELECT * FROM Employees WHERE Id = 1`
+```cs
+context.Employees.Where(x => x.Id == 1)
+```
+*Converted internally to:*
+```cs
+SELECT * FROM Employees WHERE Id = 1
+```
 
 ---
 
