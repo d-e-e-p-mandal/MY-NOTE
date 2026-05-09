@@ -66,3 +66,12 @@ var result = students.Join(
                         d.DeptName
                     });
 ```
+
+
+
+### Left Join:
+
+### Right Join:
+
+
+## GroupJoin

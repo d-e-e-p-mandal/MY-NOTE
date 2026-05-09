@@ -53,7 +53,7 @@ var result =
 ```
 
 
-# Multiple From:
+## SlectMany (Multiple From):
 
 ##### Data:
 ```cs
