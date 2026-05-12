@@ -73,5 +73,4 @@ var result = students.Join(
 
 ### Right Join:
 
-
 ## GroupJoin
