@@ -70,7 +70,177 @@ var result = students.Join(
 
 
 ### Left Join:
+```text
+ALL LEFT TABLE RECORDS
++
+MATCHING RIGHT TABLE RECORDS
+```
+- NULL value comes
+
+**Quer Syntax:**
+```cs
+var result =
+    from s in students
+
+    join d in departments
+    on s.DeptId equals d.Id
+    into deptGroup
+
+    from dg in deptGroup.DefaultIfEmpty()
+
+    select new
+    {
+        s.Name,
+
+        DeptName =
+            dg != null
+            ? dg.DeptName
+            : "No Department"
+    };
+```
+
+**Method Syntax:**
+```cs
+var result =
+    students.GroupJoin(
+            departments,
+            s => s.DeptId,
+            d => d.Id,
+            (s, deptGroup) => new
+            {
+                s,
+                deptGroup
+            })
+
+        .SelectMany(
+            x => x.deptGroup.DefaultIfEmpty(),
+
+            (x, d) => new
+            {
+                x.s.Name,
+
+                DeptName =
+                    d != null
+                    ? d.DeptName
+                    : "No Department"
+            });
+```
 
 ### Right Join:
 
+```text
+ALL RIGHT TABLE RECORDS
++
+MATCHING LEFT TABLE RECORDS
+```
+- NULL value comes
+
+- Swap tables + Use LEFT JOIN
+
+**Query Syntax:**
+```cs
+var result =
+    from d in departments
+
+    join s in students
+    on d.Id equals s.DeptId
+    into studentGroup
+
+    from sg in studentGroup.DefaultIfEmpty()
+
+    select new
+    {
+        StudentName =
+            sg != null
+            ? sg.Name
+            : "No Student",
+
+        d.DeptName
+    };
+```
+
+**Method Syntax:**
+```cs
+var result =
+    departments.GroupJoin(
+            students,
+            d => d.Id,
+            s => s.DeptId,
+            (d, studentGroup) => new
+            {
+                d,
+                studentGroup
+            })
+
+        .SelectMany(
+            x => x.studentGroup.DefaultIfEmpty(),
+
+            (x, s) => new
+            {
+                StudentName =
+                    s != null
+                    ? s.Name
+                    : "No Student",
+
+                x.d.DeptName
+            });
+```
+
 ## GroupJoin
+
+**Query Syntax:**
+```cs
+var result =
+    from d in departments
+
+    join s in students
+    on d.Id equals s.DeptId
+    into studentGroup
+
+    select new
+    {
+        d.DeptName,
+        Students = studentGroup
+    };
+```
+
+
+**Method Syntax:**
+```cs
+var result =
+    departments.GroupJoin(
+        students,
+
+        d => d.Id,
+
+        s => s.DeptId,
+
+        (d, studentGroup) => new
+        {
+            d.DeptName,
+            Students = studentGroup
+        });
+```
+
+##### Access GroupJoin Data:
+```cs
+foreach(var item in result)
+{
+    Console.WriteLine(item.DeptName);
+
+    foreach(var s in item.Students)
+    {
+        Console.WriteLine(s.Name);
+    }
+}
+```
+
+##### GroupJoin Structure:
+```cs
+outerCollection.GroupJoin(
+    innerCollection,
+    outerKey,
+    innerKey,
+    result
+)
+```
