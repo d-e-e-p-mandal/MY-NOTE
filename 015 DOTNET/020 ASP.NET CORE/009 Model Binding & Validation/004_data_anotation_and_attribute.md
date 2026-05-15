@@ -6,6 +6,28 @@
 * ✅ Response (output) control
 * ✅ All in one place
 
+##### How to Use:
+- Write One by One.
+```cs
+[Table("Employees")]
+public class Employee
+{
+    [Key]
+    [StringLength(50)]
+    public string Id { get; set; }
+}
+```
+ 
+- Write together.
+```cs
+[Table("Employees")]
+public class Employee
+{
+    [key, StringLength(50)]
+    public string Id { get; set; }
+}
+```
+
 
 ### 1. CLASS LEVEL
 ```cs
@@ -124,7 +146,7 @@ public class EmployeeRequest
 ```
 
 
-📌 Controller (Request Handling)
+- Controller (Request Handling)
 ```cs
 [HttpPost]
 public IActionResult Create(EmployeeRequest req)
