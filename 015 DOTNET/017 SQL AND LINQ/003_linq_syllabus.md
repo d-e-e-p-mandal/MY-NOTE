@@ -1,19 +1,19 @@
 # LINQ Syllabus
 
-## 1. Introduction to LINQ
+## Introduction to LINQ
 - What is LINQ
 - Features of LINQ
 - Advantages of LINQ
 - LINQ Architecture
 - LINQ Providers
 
-# 2. LINQ Basics
+# LINQ Basics
 - Query Syntax
 - Method Syntax
 - Lambda Expressions
 - Extension Methods
 
-# 3. LINQ Query Operators
+# LINQ Query Operators
 
 ## Filtering Operators
 - Where()
