@@ -15,17 +15,17 @@
 
 # LINQ Query Operators
 
-## Filtering Operators
+## Filtering Operators:
 - Where()
 - OfType()
 
-## Sorting Operators
+## Sorting Operators:
 - OrderBy()
 - OrderByDescending()
 - ThenBy()
 - Reverse()
 
-## Projection Operators
+## Projection Operators:
 - Select()
 - SelectMany()
 
@@ -41,7 +41,7 @@
 - All()
 - Contains()
 
-## Aggregation Operators
+## Aggregation Operators:
 - Count()
 - Sum()
 - Min()
@@ -49,23 +49,23 @@
 - Average()
 - Aggregate()
 
-## Partitioning Operators
+## Partitioning Operators:
 - Take()
 - Skip()
 - TakeWhile()
 - SkipWhile()
 
-## Set Operators
+## Set Operators:
 - Distinct()
 - Union()
 - Intersect()
 - Except()
 
-## Grouping Operators
+## Grouping Operators:
 - GroupBy()
 - ToLookup()
 
-## Join Operators
+## Join Operators:
 - Join()
 - GroupJoin()
 
@@ -76,12 +76,12 @@
 - AsEnumerable()
 - AsQueryable()
 
-## Generation Operators
+## Generation Operators:
 - Empty()
 - Range()
 - Repeat()
 
-## Concatenation Operators
+## Concatenation Operators:
 - Concat()
 
 ## Equality Operators

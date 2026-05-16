@@ -52,3 +52,17 @@ var result =
 var result =
     nums1.Union(nums2);
 ```
+
+
+------------------------------------
+## Function In Select Before Projection (Excute In database): Can use and Can Not:
+
+#### Can Use:
+- ToString()
+- Substring()
+
+#### Can Not Use:
+- ToString("dd/MM/yyyy") // (All Specified format)
+- UserDefined Function
+- Trim()
+- PadLeft()
