@@ -1,4 +1,3 @@
-Got it 👍 — now I’ll write UNIT 6: CRUD OPERATIONS in FULL DEEP DETAIL including WHY async is used, internal working, performance, and interview-level concepts 👇
 
 ⸻
 
