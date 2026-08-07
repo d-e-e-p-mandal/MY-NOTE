@@ -1,170 +1,165 @@
-System Design Full Syllabus Notes
-
-1. Introduction to System Design
-
-What is System Design?
-
-System Design means designing large-scale software systems that are:
-
-* Scalable
-* Reliable
-* Maintainable
-* Secure
-* Efficient
-
-Goals of System Design
-
-* Handle millions of users
-* Reduce latency
-* Increase availability
-* Ensure fault tolerance
-* Optimize performance
-* Support scalability
-
-Types of System Design
-
-1. High-Level Design (HLD)
-2. Low-Level Design (LLD)
+# SYSTEM DESIGN FULL SYLLABUS
 
 ⸻
 
-2. High-Level Design (HLD)
+# 1. Introduction to System Design
 
-Topics
+## What is System Design
+- Definition of System Design
+- Importance of System Design
+- Goals of System Design
+- Characteristics of Good System Design
 
-Architecture Design
+## Goals
+- Scalability
+- Reliability
+- Availability
+- Maintainability
+- Performance
+- Security
+- Fault Tolerance
 
-* Monolithic Architecture
-* Microservices Architecture
-* Service-Oriented Architecture (SOA)
-* Event-Driven Architecture
-* Serverless Architecture
-
-Client-Server Architecture
-
-* Client
-* Server
-* Request-Response Cycle
-
-2-Tier Architecture
-
-3-Tier Architecture
-
-N-Tier Architecture
-
-Load Balancing
-
-* Round Robin
-* Least Connections
-* IP Hash
-* Weighted Round Robin
-
-Reverse Proxy
-
-* Nginx
-* HAProxy
-
-API Gateway
-
-* Routing
-* Authentication
-* Rate Limiting
-
-Scalability
-
-* Vertical Scaling
-* Horizontal Scaling
-
-Availability
-
-* Uptime
-* Redundancy
-
-Reliability
-
-* Fault Tolerance
-* Failover
-
-CAP Theorem
-
-* Consistency
-* Availability
-* Partition Tolerance
-
-PACELC Theorem
-
-Distributed Systems Basics
-
-* Distributed Computing
-* Network Communication
-* Coordination
+## Types of System Design
+- High-Level Design (HLD)
+- Low-Level Design (LLD)
 
 ⸻
 
-3. Low-Level Design (LLD)
+# 2. High-Level Design (HLD)
 
-OOP Principles
+## Software Architecture
+- Monolithic Architecture
+- Layered Architecture
+- Microservices Architecture
+- Service-Oriented Architecture (SOA)
+- Event-Driven Architecture
+- Serverless Architecture
+- Cloud Native Architecture
 
-* Class
-* Object
-* Inheritance
-* Polymorphism
-* Encapsulation
-* Abstraction
+## Client Server Architecture
+- Client
+- Server
+- Request Response Cycle
+- Stateless vs Stateful
 
-SOLID Principles
+## Tier Architectures
+- 2-Tier Architecture
+- 3-Tier Architecture
+- N-Tier Architecture
 
-* Single Responsibility Principle
-* Open Closed Principle
-* Liskov Substitution Principle
-* Interface Segregation Principle
-* Dependency Inversion Principle
+## Scalability
+- Vertical Scaling
+- Horizontal Scaling
+- Auto Scaling
+- Elasticity
 
-Design Principles
+## Availability & Reliability
+- Uptime
+- High Availability
+- Redundancy
+- Fault Tolerance
+- Failover
 
-* DRY
-* KISS
-* YAGNI
+## Load Balancing
+- Layer 4 Load Balancer
+- Layer 7 Load Balancer
+- Reverse Proxy
+- Forward Proxy
 
-UML Diagrams
+## Load Balancing Algorithms
+- Round Robin
+- Weighted Round Robin
+- Least Connections
+- Least Response Time
+- IP Hash
 
-* Class Diagram
-* Sequence Diagram
-* Use Case Diagram
-* Activity Diagram
+## Reverse Proxy Tools
+- Nginx
+- HAProxy
 
-Design Patterns
+## API Gateway
+- Routing
+- Authentication
+- Authorization
+- Rate Limiting
+- Request Aggregation
 
-Creational Patterns
+## Distributed Systems Basics
+- Distributed Computing
+- Distributed Coordination
+- Distributed Communication
+- Network Partitions
 
-* Singleton
-* Factory
-* Abstract Factory
-* Builder
-* Prototype
+## CAP Theorem
+- Consistency
+- Availability
+- Partition Tolerance
 
-Structural Patterns
-
-* Adapter
-* Decorator
-* Facade
-* Composite
-* Proxy
-
-Behavioral Patterns
-
-* Observer
-* Strategy
-* Command
-* State
-* Mediator
+## PACELC Theorem
 
 ⸻
 
-4. Networking Fundamentals
+# 3. Low-Level Design (LLD)
 
-OSI Model
+## OOP Principles
+- Class
+- Object
+- Inheritance
+- Encapsulation
+- Abstraction
+- Polymorphism
 
+## SOLID Principles
+- SRP
+- OCP
+- LSP
+- ISP
+- DIP
+
+## Design Principles
+- DRY
+- KISS
+- YAGNI
+- Composition Over Inheritance
+
+## UML Diagrams
+- Class Diagram
+- Sequence Diagram
+- Use Case Diagram
+- Activity Diagram
+- Component Diagram
+
+## Design Patterns
+
+### Creational Patterns
+- Singleton
+- Factory
+- Abstract Factory
+- Builder
+- Prototype
+
+### Structural Patterns
+- Adapter
+- Decorator
+- Composite
+- Facade
+- Proxy
+- Bridge
+
+### Behavioral Patterns
+- Observer
+- Strategy
+- Command
+- State
+- Mediator
+- Iterator
+- Chain of Responsibility
+
+⸻
+
+# 4. Networking Fundamentals
+
+## OSI Model
 1. Physical Layer
 2. Data Link Layer
 3. Network Layer
@@ -173,708 +168,673 @@ OSI Model
 6. Presentation Layer
 7. Application Layer
 
-TCP/IP Model
+## TCP/IP Model
 
-IP Address
+## IP Addressing
+- IPv4
+- IPv6
+- CIDR
 
-* IPv4
-* IPv6
+## MAC Address
 
-MAC Address
+## Ports & Sockets
 
-Ports
+## Protocols
+- HTTP
+- HTTPS
+- TCP
+- UDP
+- FTP
+- SMTP
+- DNS
+- SSH
+- WebSocket
 
-Protocols
+## HTTP Methods
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
 
-* HTTP
-* HTTPS
-* TCP
-* UDP
-* FTP
-* SMTP
-* DNS
-* SSH
-* WebSocket
+## HTTP Status Codes
+- 1xx
+- 2xx
+- 3xx
+- 4xx
+- 5xx
 
-HTTP Methods
+## HTTPS & SSL/TLS
 
-* GET
-* POST
-* PUT
-* PATCH
-* DELETE
+## REST API
 
-HTTP Status Codes
+## GraphQL
 
-* 1xx
-* 2xx
-* 3xx
-* 4xx
-* 5xx
+## gRPC
 
-HTTPS & SSL/TLS
+## WebSocket
 
-REST API
+## Long Polling
 
-GraphQL
-
-gRPC
-
-WebSockets
-
-Long Polling
-
-Server-Sent Events (SSE)
+## Server Sent Events (SSE)
 
 ⸻
 
-5. Database Design
+# 5. Database Design
 
-Types of Databases
+## Relational Databases
+- MySQL
+- PostgreSQL
+- SQL Server
+- Oracle
 
-Relational Databases
+## NoSQL Databases
+- MongoDB
+- Cassandra
+- DynamoDB
+- Redis
+- Couchbase
 
-* MySQL
-* PostgreSQL
-* SQL Server
-* Oracle
+## ACID Properties
+- Atomicity
+- Consistency
+- Isolation
+- Durability
 
-NoSQL Databases
+## BASE Properties
 
-* MongoDB
-* Cassandra
-* DynamoDB
-* Redis
+## Database Normalization
+- 1NF
+- 2NF
+- 3NF
+- BCNF
 
-⸻
+## Denormalization
 
-Database Concepts
+## Transactions
 
-ACID Properties
+## Indexing
+- Clustered Index
+- Non Clustered Index
+- Composite Index
 
-* Atomicity
-* Consistency
-* Isolation
-* Durability
+## SQL Joins
+- Inner Join
+- Left Join
+- Right Join
+- Full Join
+- Cross Join
 
-BASE Properties
+## Database Scaling
+- Read Replica
+- Replication
+- Partitioning
+- Sharding
 
-Normalization
+## Backup & Recovery
 
-* 1NF
-* 2NF
-* 3NF
-* BCNF
-
-Denormalization
-
-Transactions
-
-Indexing
-
-* Clustered Index
-* Non-Clustered Index
-* Composite Index
-
-Joins
-
-* Inner Join
-* Left Join
-* Right Join
-* Full Join
-* Cross Join
-
-Sharding
-
-Replication
-
-Partitioning
-
-Database Scaling
-
-Read Replica
-
-Database Backup
-
-Database Recovery
+## Database Optimization
+- Query Optimization
+- Connection Pooling
 
 ⸻
 
-6. Caching
+# 6. Caching
 
-Caching Basics
+## Caching Concepts
+- Cache Hit
+- Cache Miss
+- Cache Warmup
 
-* Why Cache?
-* Cache Hit
-* Cache Miss
+## Cache Types
+- Client Cache
+- Browser Cache
+- CDN Cache
+- Server Cache
+- Database Cache
 
-Cache Types
+## Cache Strategies
+- Cache Aside
+- Write Through
+- Write Back
+- Write Around
 
-* Client Cache
-* CDN Cache
-* Server Cache
-* Database Cache
+## Cache Eviction Policies
+- LRU
+- LFU
+- FIFO
 
-Cache Strategies
+## Redis
+- Data Structures
+- Persistence
+- Pub/Sub
 
-* Write Through
-* Write Back
-* Write Around
-* Cache Aside
-
-Cache Eviction Policies
-
-* LRU
-* LFU
-* FIFO
-
-Redis
-
-Memcached
-
-⸻
-
-7. Load Balancing
-
-Concepts
-
-* Traffic Distribution
-* Health Checks
-
-Types
-
-* Layer 4 Load Balancer
-* Layer 7 Load Balancer
-
-Algorithms
-
-* Round Robin
-* Least Response Time
-* Least Connections
-
-Sticky Sessions
+## Memcached
 
 ⸻
 
-8. CDN (Content Delivery Network)
+# 7. CDN (Content Delivery Network)
 
-Concepts
+## CDN Basics
+- Edge Servers
+- Geographic Distribution
 
-* Edge Servers
-* Geographic Distribution
+## CDN Working
+- Static Content Delivery
+- Dynamic Content Delivery
 
-CDN Working
+## CDN Providers
+- Cloudflare
+- Akamai
+- AWS CloudFront
 
-* Cache Static Files
-* Reduce Latency
-
-CDN Providers
-
-* Cloudflare
-* Akamai
-* AWS CloudFront
-
-⸻
-
-9. Message Queues & Streaming
-
-Message Queue
-
-* Producer
-* Consumer
-
-Queue Systems
-
-* RabbitMQ
-* ActiveMQ
-* Amazon SQS
-
-Streaming Platforms
-
-* Apache Kafka
-* Pulsar
-
-Concepts
-
-* Topics
-* Partitions
-* Offsets
-
-Pub/Sub Architecture
-
-Event-Driven Systems
+## Latency Reduction
 
 ⸻
 
-10. Concurrency & Parallelism
+# 8. Message Queues & Streaming
 
-Concepts
+## Message Queue Concepts
+- Producer
+- Consumer
+- Queue
 
-* Process
-* Thread
-* Multithreading
-* Multiprocessing
+## Queue Systems
+- RabbitMQ
+- ActiveMQ
+- Amazon SQS
 
-Synchronization
+## Streaming Platforms
+- Apache Kafka
+- Apache Pulsar
 
-* Mutex
-* Semaphore
-* Monitor
+## Kafka Concepts
+- Topics
+- Partitions
+- Offsets
+- Brokers
+- Consumer Groups
 
-Deadlock
+## Pub/Sub Architecture
 
-* Prevention
-* Avoidance
-* Detection
-
-Race Condition
-
-Thread Pool
-
-Async Programming
-
-⸻
-
-11. Distributed Systems
-
-Concepts
-
-* Distributed Coordination
-* Consensus
-
-Algorithms
-
-* Raft
-* Paxos
-
-Distributed Locking
-
-Leader Election
-
-Distributed Transactions
-
-Two-Phase Commit
-
-Eventual Consistency
-
-Service Discovery
-
-Distributed Tracing
+## Event Driven Architecture
 
 ⸻
 
-12. Microservices
+# 9. Concurrency & Parallelism
 
-Concepts
+## Concepts
+- Process
+- Thread
+- Multithreading
+- Multiprocessing
 
-* Independent Services
-* Loose Coupling
+## Synchronization
+- Mutex
+- Semaphore
+- Monitor
+- Locks
 
-Communication
+## Deadlock
+- Prevention
+- Avoidance
+- Detection
 
-* REST
-* gRPC
-* Messaging
+## Race Condition
 
-Service Registry
+## Thread Pool
 
-* Eureka
-* Consul
+## Async Programming
 
-Circuit Breaker
-
-API Gateway
-
-Saga Pattern
-
-CQRS
-
-Event Sourcing
-
-⸻
-
-13. Security in System Design
-
-Authentication
-
-* Session Authentication
-* JWT
-* OAuth
-
-Authorization
-
-* RBAC
-* ABAC
-
-Encryption
-
-* Symmetric Encryption
-* Asymmetric Encryption
-
-Security Concepts
-
-* SSL/TLS
-* HTTPS
-* Hashing
-* Salting
-
-Common Attacks
-
-* SQL Injection
-* XSS
-* CSRF
-* DDoS
-
-Rate Limiting
-
-API Security
+## Parallel Computing
 
 ⸻
 
-14. Cloud Computing
+# 10. Distributed Systems
 
-Cloud Basics
+## Distributed System Basics
+- Distributed Coordination
+- Distributed Consensus
 
-* IaaS
-* PaaS
-* SaaS
+## Consensus Algorithms
+- Raft
+- Paxos
 
-Cloud Providers
+## Distributed Locking
 
-* AWS
-* Azure
-* Google Cloud
+## Leader Election
 
-Virtualization
+## Service Discovery
 
-Containers
+## Distributed Transactions
+- Two Phase Commit
+- Saga Pattern
 
-* Docker
+## Eventual Consistency
 
-Container Orchestration
-
-* Kubernetes
-
-Infrastructure as Code
-
-* Terraform
-
-Serverless Computing
-
-* AWS Lambda
+## Distributed Tracing
 
 ⸻
 
-15. Monitoring & Logging
+# 11. Microservices
 
-Monitoring Tools
+## Microservices Basics
+- Independent Services
+- Loose Coupling
+- Bounded Context
 
-* Prometheus
-* Grafana
+## Communication
+- REST
+- gRPC
+- Messaging
 
-Logging Tools
+## Service Registry
+- Eureka
+- Consul
 
-* ELK Stack
-* Splunk
+## Circuit Breaker
 
-Metrics
+## API Gateway
 
-* CPU Usage
-* Memory Usage
-* Latency
-* Throughput
+## CQRS
 
-Alerting Systems
+## Event Sourcing
 
-Distributed Tracing
+## Saga Pattern
 
-* Jaeger
-* Zipkin
-
-⸻
-
-16. DevOps for System Design
-
-CI/CD
-
-* Jenkins
-* GitHub Actions
-* GitLab CI/CD
-
-Deployment Strategies
-
-* Blue-Green Deployment
-* Canary Deployment
-* Rolling Deployment
-
-Version Control
-
-* Git
-
-Automation
+## Service Mesh
 
 ⸻
 
-17. Performance Optimization
+# 12. Security in System Design
 
-Optimization Techniques
+## Authentication
+- Session Authentication
+- JWT
+- OAuth
+- OpenID Connect
 
-* Query Optimization
-* Caching
-* Compression
-* Lazy Loading
+## Authorization
+- RBAC
+- ABAC
 
-Latency Reduction
+## Encryption
+- Symmetric Encryption
+- Asymmetric Encryption
 
-Throughput Improvement
+## Security Concepts
+- HTTPS
+- SSL/TLS
+- Hashing
+- Salting
 
-Profiling
+## Common Attacks
+- SQL Injection
+- XSS
+- CSRF
+- DDoS
 
-Bottleneck Analysis
+## API Security
 
-⸻
+## Rate Limiting
 
-18. Scalability Concepts
-
-Horizontal Scaling
-
-Vertical Scaling
-
-Auto Scaling
-
-Elasticity
-
-Stateless Services
-
-Stateful Services
-
-⸻
-
-19. Reliability Engineering
-
-High Availability
-
-Disaster Recovery
-
-Backup Strategies
-
-Fault Tolerance
-
-Redundancy
-
-Retry Mechanism
-
-Idempotency
+## WAF (Web Application Firewall)
 
 ⸻
 
-20. Real-Time Systems
+# 13. Cloud Computing
 
-Real-Time Communication
+## Cloud Basics
+- IaaS
+- PaaS
+- SaaS
 
-* WebSocket
-* SSE
+## Cloud Providers
+- AWS
+- Azure
+- GCP
 
-Live Streaming
+## Virtualization
 
-Chat Applications
+## Containers
+- Docker
 
-Notification Systems
+## Container Orchestration
+- Kubernetes
 
-⸻
+## Infrastructure as Code
+- Terraform
 
-21. Search Systems
+## Serverless Computing
+- AWS Lambda
 
-Search Engine Basics
-
-Elasticsearch
-
-Full Text Search
-
-Indexing
-
-Ranking Algorithms
-
-⸻
-
-22. Storage Systems
-
-File Storage
-
-Block Storage
-
-Object Storage
-
-Distributed Storage
-
-Data Lake
-
-Data Warehouse
+## Cloud Storage
+- Object Storage
+- Block Storage
+- File Storage
 
 ⸻
 
-23. Big Data Basics
+# 14. Monitoring & Logging
 
-Hadoop
+## Monitoring Tools
+- Prometheus
+- Grafana
 
-Spark
+## Logging Tools
+- ELK Stack
+- Splunk
 
-Batch Processing
+## Metrics
+- CPU Usage
+- Memory Usage
+- Throughput
+- Latency
 
-Stream Processing
+## Alerting Systems
 
-ETL Pipeline
+## Distributed Tracing
+- Jaeger
+- Zipkin
 
-⸻
-
-24. System Design Interview Preparation
-
-Requirement Gathering
-
-Functional Requirements
-
-Non-Functional Requirements
-
-Capacity Estimation
-
-Traffic Estimation
-
-API Design
-
-Database Design
-
-Scaling Strategy
-
-Bottleneck Identification
-
-Trade-Off Analysis
+## Observability
 
 ⸻
 
-25. Famous System Design Problems
+# 15. DevOps for System Design
 
-Design Problems
+## CI/CD
+- Jenkins
+- GitHub Actions
+- GitLab CI/CD
 
-* URL Shortener
-* YouTube
-* WhatsApp
-* Instagram
-* Twitter/X
-* Netflix
-* Uber
-* Zomato
-* Swiggy
-* Dropbox
-* Google Drive
-* News Feed
-* Chat System
-* Notification System
-* Search Engine
-* Payment Gateway
+## Deployment Strategies
+- Blue Green Deployment
+- Canary Deployment
+- Rolling Deployment
+
+## Version Control
+- Git
+
+## Infrastructure Automation
 
 ⸻
 
-26. System Design Calculations
+# 16. Performance Optimization
 
-Estimations
+## Optimization Techniques
+- Query Optimization
+- Compression
+- Lazy Loading
+- Caching
 
-* QPS
-* Storage Estimation
-* Bandwidth Estimation
-* Memory Calculation
+## Bottleneck Analysis
 
-Formula Topics
+## Throughput Improvement
 
-* Availability Formula
-* Throughput Formula
-* Latency Formula
+## Latency Reduction
 
-⸻
-
-27. API Design
-
-RESTful API Design
-
-API Versioning
-
-Pagination
-
-Filtering
-
-Sorting
-
-Idempotency
-
-OpenAPI / Swagger
+## Profiling
 
 ⸻
 
-28. Advanced Topics
+# 17. Scalability Concepts
 
-CQRS
+## Horizontal Scaling
 
-Event Sourcing
+## Vertical Scaling
 
-Data Consistency
+## Auto Scaling
 
-Gossip Protocol
+## Elasticity
 
-Vector Clocks
+## Stateless Services
 
-Bloom Filters
-
-Consistent Hashing
-
-Rate Limiting Algorithms
-
-* Token Bucket
-* Leaky Bucket
-
-Distributed Cache
-
-Geo-Replication
+## Stateful Services
 
 ⸻
 
-29. Tools to Learn
+# 18. Reliability Engineering
 
-Backend
+## High Availability
 
-* Java
-* Spring Boot
-* Node.js
-* .NET
+## Disaster Recovery
 
-Database
+## Backup Strategies
 
-* MySQL
-* PostgreSQL
-* MongoDB
-* Redis
+## Redundancy
 
-DevOps
+## Fault Tolerance
 
-* Docker
-* Kubernetes
-* Jenkins
+## Retry Mechanism
 
-Cloud
-
-* AWS
-* Azure
-* GCP
-
-Monitoring
-
-* Grafana
-* Prometheus
+## Idempotency
 
 ⸻
 
-30. Recommended Learning Path
+# 19. Real Time Systems
 
-Beginner Level
+## Real Time Communication
+- WebSocket
+- SSE
 
+## Live Streaming
+
+## Chat Applications
+
+## Notification Systems
+
+## Multiplayer Systems
+
+⸻
+
+# 20. Search Systems
+
+## Search Engine Basics
+
+## Elasticsearch
+
+## Full Text Search
+
+## Indexing
+
+## Ranking Algorithms
+
+## Search Optimization
+
+⸻
+
+# 21. Storage Systems
+
+## File Storage
+
+## Block Storage
+
+## Object Storage
+
+## Distributed Storage
+
+## Data Lake
+
+## Data Warehouse
+
+⸻
+
+# 22. Big Data Basics
+
+## Hadoop
+
+## Apache Spark
+
+## Batch Processing
+
+## Stream Processing
+
+## ETL Pipeline
+
+## Data Processing Architecture
+
+⸻
+
+# 23. API Design
+
+## RESTful API Design
+
+## API Versioning
+
+## Pagination
+
+## Filtering
+
+## Sorting
+
+## Idempotency
+
+## OpenAPI / Swagger
+
+## API Documentation
+
+⸻
+
+# 24. System Design Calculations
+
+## Estimations
+- QPS
+- RPS
+- Storage Estimation
+- Bandwidth Estimation
+- Memory Calculation
+
+## Formulas
+- Availability Formula
+- Throughput Formula
+- Latency Formula
+
+## Capacity Planning
+
+⸻
+
+# 25. Advanced Topics
+
+## CQRS
+
+## Event Sourcing
+
+## Gossip Protocol
+
+## Vector Clocks
+
+## Bloom Filters
+
+## Consistent Hashing
+
+## Geo Replication
+
+## Distributed Cache
+
+## Rate Limiting Algorithms
+- Token Bucket
+- Leaky Bucket
+
+⸻
+
+# 26. Tools to Learn
+
+## Backend
+- Java
+- Spring Boot
+- Node.js
+- .NET
+
+## Database
+- MySQL
+- PostgreSQL
+- MongoDB
+- Redis
+
+## DevOps
+- Docker
+- Kubernetes
+- Jenkins
+
+## Cloud
+- AWS
+- Azure
+- GCP
+
+## Monitoring
+- Grafana
+- Prometheus
+
+⸻
+
+# 27. System Design Interview Preparation
+
+## Requirement Gathering
+- Functional Requirements
+- Non Functional Requirements
+
+## Capacity Estimation
+
+## Traffic Estimation
+
+## API Design
+
+## Database Design
+
+## Scaling Strategy
+
+## Bottleneck Identification
+
+## Trade Off Analysis
+
+## HLD Design Practice
+
+## LLD Design Practice
+
+⸻
+
+# 28. Famous System Design Problems
+
+## Design These Systems
+- URL Shortener
+- YouTube
+- WhatsApp
+- Instagram
+- Twitter/X
+- Netflix
+- Uber
+- Swiggy
+- Zomato
+- Dropbox
+- Google Drive
+- Chat Application
+- Notification System
+- Search Engine
+- Payment Gateway
+- LMS System
+- E Commerce Backend
+
+⸻
+
+# 29. Important Concepts Checklist
+
+- Scalability
+- Availability
+- Reliability
+- Fault Tolerance
+- Durability
+- Consistency
+- Partition Tolerance
+- Throughput
+- Latency
+- Redundancy
+
+⸻
+
+# 30. Recommended Learning Path
+
+## Beginner Level
 1. Networking Basics
 2. Database Basics
 3. OOP + SOLID
@@ -882,112 +842,66 @@ Beginner Level
 5. Caching
 6. Load Balancer
 
-Intermediate Level
-
+## Intermediate Level
 1. Distributed Systems
 2. Microservices
 3. Docker
 4. Kubernetes
 5. Message Queues
 
-Advanced Level
-
+## Advanced Level
 1. CAP Theorem
-2. Event Sourcing
-3. Kafka
+2. Kafka
+3. Event Sourcing
 4. Consistent Hashing
 5. Large Scale System Design
 
 ⸻
 
-31. Important System Design Concepts
+# 31. Recommended Practice Projects
 
-Concepts
-
-* Scalability
-* Availability
-* Reliability
-* Durability
-* Fault Tolerance
-* Consistency
-* Partition Tolerance
-* Latency
-* Throughput
-* Redundancy
+## Build These Projects
+- Chat Application
+- URL Shortener
+- Food Delivery App
+- Ride Booking App
+- Video Streaming Platform
+- LMS System
+- Notification Service
+- E Commerce Backend
 
 ⸻
 
-32. Recommended Practice Projects
+# 32. Best Books
 
-Build These Systems
-
-* Chat Application
-* URL Shortener
-* Food Delivery App
-* Ride Booking App
-* Video Streaming Platform
-* LMS System
-* Real-Time Notification Service
-* E-commerce Backend
+- Designing Data Intensive Applications
+- System Design Interview Vol 1
+- System Design Interview Vol 2
+- Clean Architecture
+- Clean Code
 
 ⸻
 
-33. Interview Topics Checklist
+# 33. Best Practice Platforms
 
-Must Know
-
-* Load Balancer
-* Cache
-* Database Scaling
-* CAP Theorem
-* Microservices
-* REST API
-* Message Queue
-* CDN
-* Replication
-* Sharding
-* Docker
-* Kubernetes
-* Redis
-* Kafka
+- LeetCode System Design
+- GeeksforGeeks
+- HackerRank
+- Educative
+- Excalidraw
 
 ⸻
 
-34. Best Books
+# 34. Final Mastery Topics
 
-Books
-
-* Designing Data-Intensive Applications
-* System Design Interview Vol 1
-* System Design Interview Vol 2
-* Clean Architecture
-* Clean Code
-
-⸻
-
-35. Best Practice Platforms
-
-Practice Platforms
-
-* LeetCode System Design
-* GeeksforGeeks
-* HackerRank
-* Educative
-* Excalidraw
-
-⸻
-
-36. Final Mastery Topics
-
-Expert Level Topics
-
-* Distributed Consensus
-* Multi-Region Deployment
-* Real-Time Distributed Systems
-* Highly Available Systems
-* Billion User Architecture
-* Cloud Native Architecture
-* Zero Downtime Deployment
-* Chaos Engineering
-* Service Mesh
-* Observability
+## Expert Level Topics
+- Distributed Consensus
+- Multi Region Deployment
+- Real Time Distributed Systems
+- Billion User Architecture
+- Highly Available Systems
+- Cloud Native Architecture
+- Zero Downtime Deployment
+- Chaos Engineering
+- Service Mesh
+- Observability
